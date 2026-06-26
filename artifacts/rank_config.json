@@ -1,0 +1,5 @@
+{
+  "llm_weight": 0.65,
+  "semantic_weight": 0.2,
+  "behavioral_weight": 0.15
+}

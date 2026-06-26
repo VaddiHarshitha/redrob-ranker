@@ -1,0 +1,1202 @@
+{
+  "CAND_0033179": {
+    "score": 0.4,
+    "reasoning": "The candidate has 6.9 years of experience, but most of their experience is in research environments without production deployment experience."
+  },
+  "CAND_0080534": {
+    "score": 0.2,
+    "reasoning": "The candidate has 3.8 years of experience, but most of their experience is in research environments without production deployment experience."
+  },
+  "CAND_0046132": {
+    "score": 0.65,
+    "reasoning": "The candidate has 4.3 years of experience, and they have worked on recommendation-style features in production."
+  },
+  "CAND_0042506": {
+    "score": 0.85,
+    "reasoning": "The candidate has 4.2 years of experience, and they have worked on search and ranking systems in production."
+  },
+  "CAND_0093912": {
+    "score": 0.95,
+    "reasoning": "The candidate has 5.3 years of experience, and they have worked on ranking systems in production."
+  },
+  "CAND_0040887": {
+    "score": 0.65,
+    "reasoning": "4.7 years of experience, but slightly below the required 5+ years and no mention of working with vector databases or hybrid search infrastructure."
+  },
+  "CAND_0074024": {
+    "score": 0.4,
+    "reasoning": "3.9 years of experience, but below the required 5+ years and no mention of working with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0068932": {
+    "score": 0.2,
+    "reasoning": "5.2 years of experience, but most of their experience is in computer vision and time-series forecasting."
+  },
+  "CAND_0068811": {
+    "score": 0.85,
+    "reasoning": "8.0 years of experience, strong background in NLP and recommendation systems, and experience with vector databases."
+  },
+  "CAND_0043860": {
+    "score": 0.2,
+    "reasoning": "6.1 years of experience, but most of their experience is in computer vision and predictive modeling."
+  },
+  "CAND_0018499": {
+    "score": 0.85,
+    "reasoning": "The candidate has 7.2 years of experience in building production ML systems, with a focus on search, retrieval, and ranking. They have hands-on experience with embeddings-based retrieval systems, including handling embedding drift, index refresh, and retrieval-quality regression in real-world environments."
+  },
+  "CAND_0015967": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.4 years of experience in applied machine learning, but their experience is mostly focused on recommendation-style features and predictive modeling."
+  },
+  "CAND_0005509": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.0 years of experience in applied machine learning, but their experience is mostly focused on NLP-based classification and recommendation-style features."
+  },
+  "CAND_0041610": {
+    "score": 0.95,
+    "reasoning": "The candidate has 6.7 years of experience building ML-powered features in production, with a strong background in NLP, recommendation systems, and applied AI. They have hands-on experience with embeddings-based retrieval systems and have designed a ranking layer for an e-commerce search product."
+  },
+  "CAND_0002025": {
+    "score": 0.8,
+    "reasoning": "The candidate has 5.9 years of hands-on experience building production ML systems, with a focus on search, retrieval, and ranking. They have designed a hybrid retrieval system combining BM25 with dense vector recall, which is relevant to the role."
+  },
+  "CAND_0036184": {
+    "score": 0.65,
+    "reasoning": "The candidate has 6 years of experience in building ML-powered features in production, with a strong background in NLP and recommendation systems. However, their experience is mostly limited to developing semantic search features using sentence-transformers and FAISS, which is a good start but not as extensive as required for the Senior AI Engineer role."
+  },
+  "CAND_0039754": {
+    "score": 0.95,
+    "reasoning": "The candidate has 16 years of experience in building production ML systems, with a focus on search, retrieval, and ranking. They have hands-on experience with vector databases, such as Pinecone, and have built a ranking pipeline at Meta that achieved a significant improvement in NDCG@10."
+  },
+  "CAND_0075481": {
+    "score": 0.2,
+    "reasoning": "The candidate has 3.9 years of experience in applied machine learning, but their experience is mostly limited to building lightweight deployment workflows and predictive modeling. They do not have any experience with embeddings-based retrieval systems or vector databases, which are key requirements for the Senior AI Engineer role."
+  },
+  "CAND_0053605": {
+    "score": 0.65,
+    "reasoning": "The candidate has 6.9 years of experience in applied machine learning, with a focus on NLP and analytics. They have built recommendation-style features at Verloop.io, but their experience is mostly limited to collaborative filtering and gradient-boosted trees, which is not as extensive as required for the Senior AI Engineer role."
+  },
+  "CAND_0081852": {
+    "score": 0.65,
+    "reasoning": "The candidate has 5.9 years of experience in building ML-powered features in production, with a strong background in NLP, recommendation systems, and applied AI. They have built a RAG-based customer support chatbot integrated with Pinecone, but their experience is mostly limited to building chatbots and customer support systems, which is not as extensive as required for the Senior AI Engineer role."
+  },
+  "CAND_0064256": {
+    "score": 0.4,
+    "reasoning": "Lack of experience in embeddings-based retrieval systems and vector databases."
+  },
+  "CAND_0007596": {
+    "score": 0.65,
+    "reasoning": "Some experience with recommendation-style features, but not directly related to embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0099806": {
+    "score": 0.85,
+    "reasoning": "Experience with ranking models, feature engineering, and model deployment, and has owned the offline-online serving layer."
+  },
+  "CAND_0079387": {
+    "score": 0.95,
+    "reasoning": "Extensive experience with content recommendation systems, collaborative filtering, and content-based ranking, and has used item-item similarity (via sentence-transformer embeddings) for cold starts."
+  },
+  "CAND_0065786": {
+    "score": 0.4,
+    "reasoning": "Lack of experience in embeddings-based retrieval systems and vector databases."
+  },
+  "CAND_0067866": {
+    "score": 0.4,
+    "reasoning": "Recent work has been on predictive modeling, which is not directly related to embeddings-based retrieval systems."
+  },
+  "CAND_0057191": {
+    "score": 0.0,
+    "reasoning": "No relevant experience in machine learning or AI engineering."
+  },
+  "CAND_0024549": {
+    "score": 0.4,
+    "reasoning": "Recent work has been on recommendation-style features, which is lighter than ranking systems."
+  },
+  "CAND_0011687": {
+    "score": 0.85,
+    "reasoning": "7.8 years of hands-on experience building production ML systems, with a focus on search, retrieval, and ranking."
+  },
+  "CAND_0091417": {
+    "score": 0.0,
+    "reasoning": "No relevant experience in machine learning or AI engineering."
+  },
+  "CAND_0051936": {
+    "score": 0.2,
+    "reasoning": "Tangential only"
+  },
+  "CAND_0008295": {
+    "score": 0.65,
+    "reasoning": "Meets most reqs with minor gaps"
+  },
+  "CAND_0066999": {
+    "score": 0.85,
+    "reasoning": "Strong match"
+  },
+  "CAND_0026362": {
+    "score": 0.4,
+    "reasoning": "Relevant exp but significant gaps"
+  },
+  "CAND_0055905": {
+    "score": 0.95,
+    "reasoning": "Strong match"
+  },
+  "CAND_0065195": {
+    "score": 0.65,
+    "reasoning": "Candidate has 5.1 years of experience in search engineering, but lacks significant experience with embeddings-based retrieval systems and vector databases in a production environment."
+  },
+  "CAND_0052328": {
+    "score": 0.85,
+    "reasoning": "Candidate has 6.5 years of experience in recommendation systems engineering and has worked with Pinecone, a vector database."
+  },
+  "CAND_0003871": {
+    "score": 0.2,
+    "reasoning": "Candidate lacks significant experience with ML and AI, and their background is not relevant to the required skills and experience for the role."
+  },
+  "CAND_0079339": {
+    "score": 0.0,
+    "reasoning": "Candidate lacks significant experience with ML and AI, and their background is not relevant to the required skills and experience for the role."
+  },
+  "CAND_0076587": {
+    "score": 0.4,
+    "reasoning": "Candidate has 4.9 years of experience in AI and ML engineering, but lacks significant experience with embeddings-based retrieval systems and vector databases in a production environment."
+  },
+  "CAND_0048558": {
+    "score": 0.4,
+    "reasoning": "Candidate has 6.7 years of experience, but most of their experience is in predictive modeling and NLP, which is not directly relevant to the role."
+  },
+  "CAND_0013415": {
+    "score": 0.0,
+    "reasoning": "Candidate has 14.5 years of experience, but it is mostly in marketing and business analyst roles, with no experience in AI or ML."
+  },
+  "CAND_0095619": {
+    "score": 0.85,
+    "reasoning": "Candidate has 15.6 years of experience, with 50 months of experience as an NLP Engineer at Nykaa, where they owned the ranking layer for an e-commerce search product."
+  },
+  "CAND_0023215": {
+    "score": 0.2,
+    "reasoning": "Candidate has 4.4 years of experience, but most of their experience is in predictive modeling and NLP, which is not directly relevant to the role."
+  },
+  "CAND_0091513": {
+    "score": 0.0,
+    "reasoning": "Candidate has 2.1 years of experience, but it is mostly in sales and marketing roles, with no experience in AI or ML."
+  },
+  "CAND_0044695": {
+    "score": 0.0,
+    "reasoning": "No relevant experience in AI or machine learning, and background is in marketing and customer support."
+  },
+  "CAND_0050454": {
+    "score": 0.85,
+    "reasoning": "6.8 years of experience in AI engineering, with a strong background in NLP, recommendation systems, and applied AI."
+  },
+  "CAND_0083758": {
+    "score": 0.0,
+    "reasoning": "No relevant experience in AI or machine learning, and background is in graphic design and customer support."
+  },
+  "CAND_0043774": {
+    "score": 0.0,
+    "reasoning": "No relevant experience in AI or machine learning, and background is in sales and marketing."
+  },
+  "CAND_0078492": {
+    "score": 0.85,
+    "reasoning": "5.1 years of experience in AI engineering, with a strong background in NLP, recommendation systems, and applied AI."
+  },
+  "CAND_0026942": {
+    "score": 0.4,
+    "reasoning": "Limited experience with embeddings-based retrieval systems and vector databases."
+  },
+  "CAND_0072660": {
+    "score": 0.85,
+    "reasoning": "Strong background in NLP, recommendation systems, and applied AI, with hands-on experience with MLflow, Kubeflow, and internal feature store."
+  },
+  "CAND_0076840": {
+    "score": 0.0,
+    "reasoning": "No relevant technical experience, mostly in marketing and sales roles."
+  },
+  "CAND_0028677": {
+    "score": 0.0,
+    "reasoning": "No relevant technical experience, mostly in marketing and sales roles."
+  },
+  "CAND_0014440": {
+    "score": 0.85,
+    "reasoning": "Strong background in NLP, recommendation systems, and applied AI, with hands-on experience with learning-to-rank models and relevance labeling pipelines."
+  },
+  "CAND_0098846": {
+    "score": 0.65,
+    "reasoning": "The candidate has 7.6 years of experience building ML-powered features in production, but the specific details about their experience with embeddings-based retrieval systems, vector databases, and operationalizing search infrastructure are not mentioned."
+  },
+  "CAND_0037566": {
+    "score": 0.4,
+    "reasoning": "The candidate has 6.9 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
+  },
+  "CAND_0009024": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.2 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
+  },
+  "CAND_0087744": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.9 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0004402": {
+    "score": 0.4,
+    "reasoning": "The candidate has 6 years of experience in applied machine learning, but there is no mention of production experience with embeddings-based retrieval systems or working with vector databases. Their experience is mostly in research and development roles."
+  },
+  "CAND_0020311": {
+    "score": 0.0,
+    "reasoning": "The candidate has 1.6 years of experience in customer support, which is far below the required 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0064326": {
+    "score": 0.85,
+    "reasoning": "The candidate has 7.6 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a machine learning-based system."
+  },
+  "CAND_0037160": {
+    "score": 0.4,
+    "reasoning": "The candidate has 6 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. They have worked on recommendation-style features, which is lighter weight than ranking systems, but it's not a direct match for the requirements."
+  },
+  "CAND_0010929": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 1.3 years of experience and no relevant technical skills, making them a poor fit for the Senior AI Engineer role."
+  },
+  "CAND_0033445": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.8 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their work experience is mostly in computer vision, which is not a primary requirement for this role."
+  },
+  "CAND_0036437": {
+    "score": 0.4,
+    "reasoning": "The candidate has 4.8 years of experience, which is below the required 5+ years, and their experience is mostly in building ML-powered features, not specifically in embeddings-based retrieval systems."
+  },
+  "CAND_0072688": {
+    "score": 0.4,
+    "reasoning": "The candidate has 6.9 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in analytics and ML, with a focus on NLP pipelines for sentiment analysis and document classification."
+  },
+  "CAND_0000031": {
+    "score": 0.65,
+    "reasoning": "The candidate has 6 years of experience building ML-powered features in production, but there is no specific mention of experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0066690": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 4.8 years of experience, which is below the required 5+ years, and their experience is primarily in analytics & ML, with no specific mention of embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0021410": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 4 years of experience, which is below the required 5 years, and their experience is in analytics and ML, but not specifically in embeddings-based retrieval systems."
+  },
+  "CAND_0014248": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python and vector databases."
+  },
+  "CAND_0052682": {
+    "score": 0.4,
+    "reasoning": "The candidate has 6.6 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
+  },
+  "CAND_0051444": {
+    "score": 0.0,
+    "reasoning": "The candidate has 12.8+ years of experience, but none of it is in AI engineering, and their background is in customer support, marketing, and accounting."
+  },
+  "CAND_0014938": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, and their background is in mechanical engineering, which is unrelated to the role requirements."
+  },
+  "CAND_0051292": {
+    "score": 0.65,
+    "reasoning": "The candidate has 5.2 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust, data-driven approach."
+  },
+  "CAND_0060340": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.1 years of experience, but it's in computer vision, not NLP/IR, and they've worked on recommendation-style features, which is lighter weight than ranking systems."
+  },
+  "CAND_0031842": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.5 years of experience, which is below the required 5 years, and their experience is primarily in computer vision, not NLP/IR."
+  },
+  "CAND_0081846": {
+    "score": 0.65,
+    "reasoning": "The candidate has 6.7 years of hands-on experience building production ML systems, but it's unclear if they have experience with embeddings-based retrieval systems specifically. They have experience building a RAG-based ranking pipeline serving 50M+ queries per month, which is relevant but not directly related to the required skills."
+  },
+  "CAND_0061257": {
+    "score": 0.65,
+    "reasoning": "The candidate has 8 years of production experience, but the specific details about their experience with embeddings-based retrieval systems and vector databases are not mentioned. They have designed a ranking layer for LinkedIn's flagship product, which suggests some experience with ranking systems."
+  },
+  "CAND_0045141": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.3 years of experience, but it's in data science and ML, not specifically in embeddings-based retrieval systems or vector databases. Their experience is also in analytics and ML, not in production deployment of AI systems."
+  },
+  "CAND_0050730": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 1.6 years of experience, which is below the required 5 years, and their background is in marketing and customer support, not AI engineering."
+  },
+  "CAND_0091883": {
+    "score": 0.0,
+    "reasoning": "The candidate has 2.8 years of experience, which is below the required 5 years, and their background is in marketing manager roles, not AI engineering."
+  },
+  "CAND_0061655": {
+    "score": 0.39,
+    "reasoning": "The candidate has 4.6 years of experience, which is below the required 5+ years, and their experience is mostly in building ML-powered features in production, but there is no specific mention of working with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0050553": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.6 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0024620": {
+    "score": 0.65,
+    "reasoning": "The candidate has 5.9 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust, data-driven approach."
+  },
+  "CAND_0094685": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.5 years of experience, which is below the required 5 years, and their experience is primarily in AI research environments without production deployment experience."
+  },
+  "CAND_0003575": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.7 years of experience, which is below the required 5 years, and their experience is primarily as a data scientist, not a senior AI engineer."
+  },
+  "CAND_0045887": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3 years of experience, which is below the required 5 years, and their experience is in computer vision, not embeddings-based retrieval systems."
+  },
+  "CAND_0083629": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills, making them a wrong domain candidate."
+  },
+  "CAND_0020350": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.8 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
+  },
+  "CAND_0058783": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 3.2 years of experience, which is below the required 5 years, and their background is heavily focused on computer vision, which does not match the required NLP/IR exposure."
+  },
+  "CAND_0062247": {
+    "score": 0.4,
+    "reasoning": "The candidate has 7.3 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
+  },
+  "CAND_0004907": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, marketing manager roles, and civil engineering do not match the requirements of the Senior AI Engineer position."
+  },
+  "CAND_0010770": {
+    "score": 0.2,
+    "reasoning": "The candidate has 15.2 years of experience, which exceeds the 5-9 years required, and their experience is primarily in recommendation systems, not embeddings-based retrieval systems."
+  },
+  "CAND_0044213": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.7 years of experience, which is below the required 5 years, and their experience is primarily in time-series forecasting models, which is not relevant to embeddings-based retrieval systems."
+  },
+  "CAND_0004212": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI or related fields, and their background is in marketing, sales, and graphic design."
+  },
+  "CAND_0042867": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python or vector databases."
+  },
+  "CAND_0076163": {
+    "score": 0.65,
+    "reasoning": "The candidate has 6.9 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product at Ola, evolving it from a hand-tuned scoring system to a more robust model. However, the candidate's experience is mostly in NLP, and there is no explicit mention of working with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0077296": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.8 years of experience, but it's in computer vision, not NLP/IR, and they have no experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0070525": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.4 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building NLP pipelines for sentiment analysis and document classification."
+  },
+  "CAND_0011327": {
+    "score": 0.4,
+    "reasoning": "The candidate has 6.3 years of experience, but it's unclear if they have production experience with embeddings-based retrieval systems, and their experience is primarily in AI research environments."
+  },
+  "CAND_0031829": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.5 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their background is in chemical engineering and computer science, which doesn't align with the requirements."
+  },
+  "CAND_0071974": {
+    "score": 0.65,
+    "reasoning": "The candidate has 7.8 years of hands-on experience building production ML systems, but the provided experience is mostly in recommendations-heavy consumer products, which may not directly align with the requirements of embeddings-based retrieval systems."
+  },
+  "CAND_0015372": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI, embeddings-based retrieval systems, or vector databases, and their background is in civil engineering."
+  },
+  "CAND_0022484": {
+    "score": 0.0,
+    "reasoning": "The candidate has 4.1 years of experience as a Mechanical Engineer, which is below the required 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0085347": {
+    "score": 0.0,
+    "reasoning": "The candidate has 13.2+ years of experience, but none of it is in AI engineering, and their background is in marketing, project management, and civil engineering."
+  },
+  "CAND_0057390": {
+    "score": 0.0,
+    "reasoning": "The candidate has 4.4 years of experience, which is below the required 5+ years, and their background is in QA engineering and full-stack development, not AI engineering."
+  },
+  "CAND_0009276": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills, and their background is in business analysis and accounting."
+  },
+  "CAND_0051004": {
+    "score": 0.2,
+    "reasoning": "The candidate has 4.7 years of experience, which is below the required 5+ years, and their experience is primarily as a Senior Data Scientist, not specifically in AI engineering or production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0012840": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.7 years of experience, which is below the required 5 years, and their experience is in analytics & ML, not specifically in embeddings-based retrieval systems."
+  },
+  "CAND_0082918": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python or vector databases."
+  },
+  "CAND_0054394": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 4.1 years of experience, which is below the required 5 years, and their experience is primarily in building ML-powered features, not specifically in embeddings-based retrieval systems."
+  },
+  "CAND_0044222": {
+    "score": 0.65,
+    "reasoning": "The candidate has 7.7 years of experience, which meets the 5-9 year requirement, and has worked on a semantic search feature for an internal knowledge base of ~500K documents, indicating some experience with embeddings-based retrieval systems. However, the description does not explicitly mention experience with vector databases or hybrid search infrastructure, or strong Python skills with a focus on code quality and maintainability."
+  },
+  "CAND_0075249": {
+    "score": 0.4,
+    "reasoning": "The candidate has 6.2 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
+  },
+  "CAND_0000098": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 1.7 years of experience and has spent their career in marketing manager roles, which does not align with the requirements of 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0043228": {
+    "score": 0.65,
+    "reasoning": "The candidate has 6.8 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust ML-based system."
+  },
+  "CAND_0077552": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.4 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0077640": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python, vector databases, or hybrid search infrastructure."
+  },
+  "CAND_0059029": {
+    "score": 0.0,
+    "reasoning": "The candidate has 12.4+ years of experience, but none of it is in AI engineering or related fields, and their education is in Data Science, not a relevant field for this role."
+  },
+  "CAND_0086022": {
+    "score": 0.65,
+    "reasoning": "The candidate has 5.3 years of hands-on experience building production ML systems, with a focus on LLMs, RAG, and vector search, but the provided information does not explicitly mention experience with embeddings-based retrieval systems or operationalizing vector databases."
+  },
+  "CAND_0091385": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, project management, or relevant technical fields, and their background is in marketing and HR."
+  },
+  "CAND_0064888": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.8 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their work experience is mostly in computer vision, not NLP/IR."
+  },
+  "CAND_0018723": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, embeddings-based retrieval systems, or vector databases, and their background is in business analysis and accounting."
+  },
+  "CAND_0002120": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.5 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their background is in analytics & ML rather than NLP/IR."
+  },
+  "CAND_0067424": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, customer support experience is not relevant to the role, and their educational background is in electronics and mechanical engineering, which does not match the requirements."
+  },
+  "CAND_0075927": {
+    "score": 0.0,
+    "reasoning": "The candidate has 12.1+ years of experience as a Graphic Designer, Marketing Manager, Sales Executive, Content Writer, and Mechanical Engineer, but none of these roles match the requirements of the Senior AI Engineer position."
+  },
+  "CAND_0032887": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.1 years of experience, but it's not clear if they have experience with embeddings-based retrieval systems, and their background is in applied machine learning rather than NLP/IR."
+  },
+  "CAND_0062999": {
+    "score": 0.0,
+    "reasoning": "The candidate has 14.1+ years of experience, but it's all in marketing manager roles, which doesn't match the required 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0013627": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, and their background is in graphic design, accounting, content writing, civil engineering, mechanical engineering, and marketing management, which does not align with the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0024878": {
+    "score": 0.39,
+    "reasoning": "The candidate has 5.7 years of experience in applied machine learning, but there is no mention of production experience with embeddings-based retrieval systems or experience with vector databases. Their work experience is also limited to two roles, with no clear indication of handling embedding drift, index refresh, or retrieval-quality regression in real-world environments."
+  },
+  "CAND_0053591": {
+    "score": 0.39,
+    "reasoning": "The candidate has 5.3 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift or index refresh."
+  },
+  "CAND_0014292": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.5 years of experience, which is below the required 5 years, and their experience is primarily in data pipelines and backend systems, not embeddings-based retrieval systems."
+  },
+  "CAND_0062621": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 2.7 years of experience, which is below the required 5+ years, and their background is in data engineering rather than AI or NLP."
+  },
+  "CAND_0088315": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI, embeddings-based retrieval systems, or vector databases, and their background is in mechanical engineering, marketing management, and accounting."
+  },
+  "CAND_0008561": {
+    "score": 0.0,
+    "reasoning": "The candidate has 11.3+ years of experience in marketing manager roles, but there is no mention of experience with embeddings-based retrieval systems, vector databases, or Python skills."
+  },
+  "CAND_0076080": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI or related fields, and their background is in mechanical engineering and accounting."
+  },
+  "CAND_0084283": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.6 years of experience, which is below the required 5 years, and their experience is in analytics & ML, not specifically in embeddings-based retrieval systems."
+  },
+  "CAND_0030348": {
+    "score": 0.2,
+    "reasoning": "The candidate has 4.5 years of experience, which is below the required 5 years, and their experience is primarily in building ML-powered features, not specifically in embeddings-based retrieval systems."
+  },
+  "CAND_0040521": {
+    "score": 0.2,
+    "reasoning": "The candidate has 7.9 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their experience is mostly in backend development and data engineering, which doesn't directly align with the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0010251": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, marketing manager roles are unrelated to the required experience, and there is no mention of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0095528": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.3 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
+  },
+  "CAND_0028900": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 1.4 years of experience and their background is in mechanical engineering design, not AI or NLP."
+  },
+  "CAND_0007460": {
+    "score": 0.39,
+    "reasoning": "The candidate has 4.7 years of experience, which is below the required 5+ years, and their experience is mostly in building ML-powered features in production, but there is no specific mention of working with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0065114": {
+    "score": 0.0,
+    "reasoning": "The candidate has 2 years of experience as a Mechanical Engineer, which is significantly less than the required 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0072301": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, embeddings-based retrieval systems, or vector databases, and their background is in data analysis and software engineering."
+  },
+  "CAND_0053695": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.8 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of working with ranking, retrieval, or matching systems."
+  },
+  "CAND_0070333": {
+    "score": 0.2,
+    "reasoning": "The candidate has 4.7 years of experience, which is below the required 5+ years, and their experience is primarily in AI research environments without production deployment experience."
+  },
+  "CAND_0046650": {
+    "score": 0.2,
+    "reasoning": "The candidate has 4.2 years of experience, which is below the required 5+ years, and their experience is primarily in backend development with Python, but there is no mention of experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0054318": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.5 years of experience, which is below the required 5 years, and their experience is primarily in AI research environments without production deployment experience."
+  },
+  "CAND_0046064": {
+    "score": 0.85,
+    "reasoning": "The candidate has 8.9 years of hands-on experience building production ML systems, including fine-tuning LLaMA-2-7B and Mistral-7B variants using LoRA and QLoRA for domain-specific candidate-JD, and has experience as a Senior ML Engineer in Search & Ranking at Amazon."
+  },
+  "CAND_0049538": {
+    "score": 0.65,
+    "reasoning": "The candidate has 5.8 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust, data-driven approach. However, the candidate's experience is mostly in building ML-powered features rather than specifically working with embeddings-based retrieval systems."
+  },
+  "CAND_0037980": {
+    "score": 0.85,
+    "reasoning": "The candidate has 9 years of experience and has spent the last several years building systems that connect users with relevant information, including designing the ranking layer for Niramai's flagship product and working as a Senior ML Engineer - Search & Ranking at Verloop.io and Salesforce."
+  },
+  "CAND_0046785": {
+    "score": 0.0,
+    "reasoning": "The candidate has 1.5 years of experience as a Graphic Designer, which is significantly less than the required 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0086668": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, and their background is in marketing and customer support, which does not align with the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0070544": {
+    "score": 0.2,
+    "reasoning": "The candidate has 4.9 years of experience, which is below the required 5 years, and their experience is primarily in AI research environments without production deployment experience."
+  },
+  "CAND_0016659": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 4.4 years of experience, which is below the required 5+ years, and their experience is primarily in building NLP pipelines for sentiment analysis and document classification, which does not demonstrate production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0037377": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in mechanical engineering, accounting, operations management, and content writing."
+  },
+  "CAND_0029439": {
+    "score": 0.39,
+    "reasoning": "The candidate has 6.4 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their work experience is mostly in time-series forecasting and supply-chain demand prediction, which is not directly related to the role requirements."
+  },
+  "CAND_0025246": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python, vector databases, or hybrid search infrastructure."
+  },
+  "CAND_0000273": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.8 years of experience in applied machine learning, but there is no mention of production experience with embeddings-based retrieval systems or experience with vector databases."
+  },
+  "CAND_0037000": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 2.7 years of experience, which is below the required 5 years, and their experience is mostly in building ML-powered features, not specifically in embeddings-based retrieval systems."
+  },
+  "CAND_0030031": {
+    "score": 0.65,
+    "reasoning": "Built a content recommendation system serving 10M+ users that combined collaborative filtering with embeddings-based retrieval, and has experience working at Microsoft and Google, but the description does not explicitly mention handling embedding drift, index refresh, or retrieval-quality regression in real-world environments."
+  },
+  "CAND_0078474": {
+    "score": 0.0,
+    "reasoning": "The candidate's background is in marketing and HR management, with no experience in AI engineering or production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0055172": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, and their background is in HR management, not relevant to the role."
+  },
+  "CAND_0026109": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 3.4 years of experience, which is below the required 5 years, and their background is in Java development, not AI or NLP."
+  },
+  "CAND_0006538": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.7 years of experience in applied machine learning, but there is no mention of production experience with embeddings-based retrieval systems or experience with vector databases or hybrid search infrastructure."
+  },
+  "CAND_0012621": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 2.3 years of experience and their background is in marketing, which does not match the requirements of 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0017918": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.2 years of experience, which is below the required 5 years, and their experience is primarily in sentiment analysis and document classification, which is not directly related to embeddings-based retrieval systems."
+  },
+  "CAND_0019845": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.4 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0042688": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, embeddings-based retrieval systems, or vector databases, and their background is in mechanical engineering."
+  },
+  "CAND_0042221": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI or software engineering, and their background is in accounting and marketing management."
+  },
+  "CAND_0009335": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills, and their background is in marketing manager roles."
+  },
+  "CAND_0003483": {
+    "score": 0.0,
+    "reasoning": "The candidate has 2.8 years of experience, which is below the required 5 years, and their background is in HR management, not AI engineering."
+  },
+  "CAND_0016141": {
+    "score": 0.0,
+    "reasoning": "The candidate has 2.8 years of experience in marketing manager roles, which does not meet the 5+ years of production experience with embeddings-based retrieval systems required for the role."
+  },
+  "CAND_0038806": {
+    "score": 0.0,
+    "reasoning": "The candidate has 10 years of experience, but none of it is in AI engineering, and their background is in Electrical Engineering, not relevant to the role."
+  },
+  "CAND_0048756": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, and their background is in business analysis and marketing management."
+  },
+  "CAND_0035637": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI or related fields, and their background is in sales and marketing."
+  },
+  "CAND_0041257": {
+    "score": 0.0,
+    "reasoning": "The candidate has 13+ years of experience, but none of it is in AI engineering or related fields, and their education is in Data Science, not a relevant field for this role."
+  },
+  "CAND_0088240": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python or vector databases."
+  },
+  "CAND_0080099": {
+    "score": 0.0,
+    "reasoning": "The candidate has 3.7 years of experience, but it's in marketing manager roles, not AI engineering, and their education is in Data Science, not a relevant field."
+  },
+  "CAND_0039464": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in marketing, graphic design, mechanical engineering, accounting, and civil engineering."
+  },
+  "CAND_0010839": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in accounting and marketing management."
+  },
+  "CAND_0065742": {
+    "score": 0.0,
+    "reasoning": "The candidate has 4.5 years of experience, which is below the required 5+ years, and their background is in QA engineering and full-stack development, not AI engineering."
+  },
+  "CAND_0014802": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python, vector databases, or hybrid search infrastructure."
+  },
+  "CAND_0087426": {
+    "score": 0.0,
+    "reasoning": "The candidate's background is in marketing and operations management, with no experience in AI engineering or production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0007704": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 1.3 years of experience and their background is in marketing management, which does not align with the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0046278": {
+    "score": 0.2,
+    "reasoning": "The candidate has 4.6 years of experience, which is below the required 5+ years, and their experience is primarily in analytics & ML, with no specific mention of embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0043381": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.6 years of experience, which is below the required 5 years, and their experience is primarily in AI research environments without production deployment experience."
+  },
+  "CAND_0097176": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.9 years of experience, but it's unclear if they have production experience with embeddings-based retrieval systems. Their experience is mostly in NLP pipelines and sentiment analysis, which is relevant but not directly applicable to the role."
+  },
+  "CAND_0003717": {
+    "score": 0.2,
+    "reasoning": "The candidate has 7.9 years of experience, but it's unclear if they have any experience with embeddings-based retrieval systems or vector databases, and their education is in Information Technology, not a relevant field like Computer Science or AI."
+  },
+  "CAND_0083857": {
+    "score": 0.0,
+    "reasoning": "The candidate has 2.8 years of experience as a Graphic Designer, which does not meet the 5+ years of production experience with embeddings-based retrieval systems required for the role."
+  },
+  "CAND_0077337": {
+    "score": 0.65,
+    "reasoning": "The candidate has 7 years of hands-on experience building production ML systems, but there is no specific mention of experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0018549": {
+    "score": 0.65,
+    "reasoning": "The candidate has 6.8 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product at Uber, evolving it from a hand-tuned scoring system to a more scalable and maintainable one. However, the provided information does not explicitly mention experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0073949": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 1.9 years of experience and is currently a Business Analyst, which does not match the 5+ years of production experience with embeddings-based retrieval systems required for the role."
+  },
+  "CAND_0070849": {
+    "score": 0.0,
+    "reasoning": "The candidate has 14.9+ years of experience, but it's in marketing manager roles and civil engineering, not AI engineering or production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0069638": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.2 years of experience, but it's in computer vision, not NLP/IR, and they've worked primarily in recommendation-style features, not embeddings-based retrieval systems."
+  },
+  "CAND_0075574": {
+    "score": 0.85,
+    "reasoning": "Owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a production-ready ML model, and has experience building ML-powered features in production."
+  },
+  "CAND_0063972": {
+    "score": 0.0,
+    "reasoning": "The candidate has 12.1+ years of experience, but none of it is in AI engineering, and their background is in mechanical engineering, marketing, HR, graphic design, operations, customer support, and project management."
+  },
+  "CAND_0080629": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant education in machine learning."
+  },
+  "CAND_0025151": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, and their background is in graphic design and accounting."
+  },
+  "CAND_0043516": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience with embeddings-based retrieval systems, vector databases, or hybrid search infrastructure, and their background is in Java development rather than AI engineering."
+  },
+  "CAND_0064414": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python or vector databases."
+  },
+  "CAND_0051596": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 2.4 years of experience, which is below the required 5 years, and their experience is in .NET development, not AI or embeddings-based retrieval systems."
+  },
+  "CAND_0070952": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, and their background is in sales and mechanical engineering, which does not align with the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0017093": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.9 years of experience, but there is no mention of production experience with embeddings-based retrieval systems, and their work experience is mostly in time-series forecasting and AI research, which does not align with the requirements of the role."
+  },
+  "CAND_0086893": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.9 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0019680": {
+    "score": 0.0,
+    "reasoning": "The candidate has 2 years of experience, which is below the required 5 years, and their background is in frontend engineering, not AI or NLP."
+  },
+  "CAND_0083873": {
+    "score": 0.0,
+    "reasoning": "The candidate has 4.6 years of experience, which is below the required 5+ years, and their background is in mechanical engineering, not AI or software engineering."
+  },
+  "CAND_0055308": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 1.9 years of experience, which is below the required 5 years, and their background is in marketing management, not AI engineering."
+  },
+  "CAND_0092706": {
+    "score": 0.39,
+    "reasoning": "The candidate has 5.8 years of experience in applied machine learning, but there is no mention of production experience with embeddings-based retrieval systems or experience with vector databases. Their work experience is mostly in research environments, which is a disqualifying career pattern."
+  },
+  "CAND_0040407": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.5 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases, and their background is in data engineering rather than AI engineering."
+  },
+  "CAND_0000499": {
+    "score": 0.0,
+    "reasoning": "The candidate has 11+ years of experience, but none of it is in AI engineering or related fields, and their education is in Machine Learning, not a relevant field for this role."
+  },
+  "CAND_0043637": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.5 years of experience, but it's described as 'Junior ML Engineer', indicating a lack of seniority, and their experience is primarily in 'applied machine learning' without specific mention of embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0022019": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 3.5 years of experience and has no experience in AI or production deployment, which is a disqualifying career pattern."
+  },
+  "CAND_0098454": {
+    "score": 0.4,
+    "reasoning": "The candidate has 6.6 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in data science and ML engineering, with no specific mention of production experience in real-world environments."
+  },
+  "CAND_0047119": {
+    "score": 0.0,
+    "reasoning": "The candidate has 4.9 years of experience, but it's in marketing manager roles, not AI engineering, and their education is in Computer Science, not a relevant field."
+  },
+  "CAND_0085492": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python or vector databases."
+  },
+  "CAND_0008239": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 4 years of experience, which is below the required 5 years, and their experience is mostly in building ML-powered features, not specifically in embeddings-based retrieval systems."
+  },
+  "CAND_0049615": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.1 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their work experience is also focused on building ML-powered solutions, which doesn't directly align with the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0027691": {
+    "score": 0.65,
+    "reasoning": "The candidate has 6.5 years of experience building ML-powered features in production, but there is no specific mention of experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0021842": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python, vector databases, or hybrid search infrastructure."
+  },
+  "CAND_0002247": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in marketing, accounting, HR, and sales."
+  },
+  "CAND_0039237": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, marketing management, and has a background in machine learning, but no production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0045716": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, machine learning, or related fields, and their background is in customer support, marketing, and accounting."
+  },
+  "CAND_0058746": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in accounting, marketing, and engineering, which does not align with the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0063622": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.2 years of experience, but it's in computer vision, not NLP/IR, and they've worked exclusively on closed-source proprietary systems for 15 months at Niramai and 25 months at Zoho."
+  },
+  "CAND_0007351": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, and their background is in business analysis, which does not align with the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0035879": {
+    "score": 0.2,
+    "reasoning": "The candidate has 4.5 years of experience, which is below the required 5 years, and their experience is primarily in AI research environments without production deployment experience."
+  },
+  "CAND_0074342": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.7 years of experience, but it's in data science and ML, not specifically in embeddings-based retrieval systems or vector databases. Their experience is also in analytics and ML, not in production deployment of AI systems."
+  },
+  "CAND_0013665": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.2 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in applied machine learning and fraud-detection product development."
+  },
+  "CAND_0009031": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 2.8 years of experience, which is below the required 5 years, and their experience is in .NET development, not AI or embeddings-based retrieval systems."
+  },
+  "CAND_0038414": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python, vector databases, or hybrid search infrastructure."
+  },
+  "CAND_0049911": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, sales experience is unrelated to the role, and their education is in Mathematics, not relevant to the position."
+  },
+  "CAND_0015522": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 2.3 years of experience, which is below the required 5+ years, and their background is in Backend Engineering, not AI or NLP/IR."
+  },
+  "CAND_0063736": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.7 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0030501": {
+    "score": 0.0,
+    "reasoning": "The candidate has 3.5 years of experience as a Business Analyst, which is below the required 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0088091": {
+    "score": 0.0,
+    "reasoning": "The candidate has 4 years of experience as a Mechanical Engineer, which is below the required 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0070514": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.5 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their work experience is mostly in time-series forecasting and supply-chain demand prediction, which is not directly related to the role."
+  },
+  "CAND_0094999": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 3.9 years of experience and their background is in data analysis, not AI engineering, and they have no experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0099445": {
+    "score": 0.0,
+    "reasoning": "The candidate has 12.4+ years of experience in customer support, but there is no mention of experience with embeddings-based retrieval systems, vector databases, or Python skills."
+  },
+  "CAND_0016769": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, marketing management, and has a background in chemical engineering, which is unrelated to the role."
+  },
+  "CAND_0006015": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, marketing, and project management roles, and their education background is in Data Science and MBA, which does not match the requirements of the Senior AI Engineer position."
+  },
+  "CAND_0091342": {
+    "score": 0.0,
+    "reasoning": "The candidate has 14.7 years of experience in customer support and has no relevant experience in AI engineering, embeddings-based retrieval systems, or vector databases."
+  },
+  "CAND_0041669": {
+    "score": 0.85,
+    "reasoning": "The candidate has 8 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a machine learning-based system."
+  },
+  "CAND_0016361": {
+    "score": 0.0,
+    "reasoning": "The candidate has 13.6+ years of experience, but none of it is in AI engineering or related fields, and their background is in operations management, sales, and marketing."
+  },
+  "CAND_0025640": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.6 years of experience, but it's in AI research, not production deployment, and their work experience is focused on building recommendation-style features, which is lighter than ranking systems."
+  },
+  "CAND_0084282": {
+    "score": 0.0,
+    "reasoning": "The candidate has 13.6+ years of experience, but none of it is in AI engineering, and their background is in customer support, marketing, and civil engineering."
+  },
+  "CAND_0063647": {
+    "score": 0.0,
+    "reasoning": "The candidate has 2.9 years of experience, which is below the required 5 years, and their background is in HR management, not AI engineering."
+  },
+  "CAND_0028676": {
+    "score": 0.0,
+    "reasoning": "The candidate has 13.4+ years of experience, but it's all in marketing manager roles, and there's no mention of AI, machine learning, or production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0017171": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.7 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases, and their job titles are not directly related to AI engineering."
+  },
+  "CAND_0089095": {
+    "score": 0.0,
+    "reasoning": "The candidate's background is in marketing and operations management, with no experience in AI engineering or production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0023841": {
+    "score": 0.0,
+    "reasoning": "The candidate's background is in customer support and marketing management, with no experience in AI engineering or production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0056804": {
+    "score": 0.0,
+    "reasoning": "The candidate has 14.3+ years of experience, but none of it is in AI engineering or related fields, and their education is in Data Science, not a relevant field for this role."
+  },
+  "CAND_0091205": {
+    "score": 0.0,
+    "reasoning": "The candidate has 2.7 years of experience as a Graphic Designer, which is significantly less than the required 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0084855": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills, and their background is in sales and marketing roles."
+  },
+  "CAND_0012640": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI or related fields, and their background is in accounting and HR management."
+  },
+  "CAND_0083879": {
+    "score": 0.65,
+    "reasoning": "The candidate has 7.1 years of experience building ML-powered features in production, but there is no specific mention of experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0043635": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, marketing leadership, and HR management, which are unrelated to the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0077037": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.1 years of experience, which is below the required 5 years, and their background is in analytics engineering, not AI or NLP/IR."
+  },
+  "CAND_0093193": {
+    "score": 0.65,
+    "reasoning": "The candidate has 7.9 years of production experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. They have experience building systems that connect users with relevant information, but the specific technologies used are not mentioned."
+  },
+  "CAND_0021706": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.2 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their education is in Computer Engineering, which may not be directly relevant to the role."
+  },
+  "CAND_0019127": {
+    "score": 0.0,
+    "reasoning": "The candidate has 2.8 years of experience as a Graphic Designer, which is significantly less than the required 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0038436": {
+    "score": 0.0,
+    "reasoning": "The candidate has 1.3 years of experience, which is below the required 5+ years, and their background is in marketing manager roles, not AI engineering."
+  },
+  "CAND_0050876": {
+    "score": 0.65,
+    "reasoning": "The candidate has 6 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust, data-driven approach. However, there is no explicit mention of experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0007008": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.7 years of experience, which is below the required 5 years, and their experience is primarily in computer vision, not embeddings-based retrieval systems."
+  },
+  "CAND_0077694": {
+    "score": 0.0,
+    "reasoning": "The candidate's background is in sales and accounting, with no experience in AI engineering or production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0091291": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, and their background is in sales and marketing, which does not align with the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0024466": {
+    "score": 0.65,
+    "reasoning": "The candidate has 5.2 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust ML-based system. However, there is no explicit mention of experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0040473": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, embeddings-based retrieval systems, or vector databases, and their background is in QA engineering and backend systems."
+  },
+  "CAND_0070152": {
+    "score": 0.2,
+    "reasoning": "The candidate has 8.6 years of experience, but it's unclear if they have any experience with embeddings-based retrieval systems or vector databases, and their education is in Physics, not a relevant field for this role."
+  },
+  "CAND_0096209": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 4.2 years of experience, which is below the required 5 years, and their experience is primarily in computer vision, not NLP/IR."
+  },
+  "CAND_0055992": {
+    "score": 0.19,
+    "reasoning": "The candidate has 16.9 years of experience, which is significantly more than the required 5 years, and their experience is mostly in AI Engineer roles, but there is no mention of production experience with embeddings-based retrieval systems or working with vector databases."
+  },
+  "CAND_0083740": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in mechanical engineering and sales."
+  },
+  "CAND_0065878": {
+    "score": 0.85,
+    "reasoning": "The candidate has 7.8 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust, data-driven approach."
+  },
+  "CAND_0069756": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, marketing manager experience is unrelated to the role, and their background is in civil engineering."
+  },
+  "CAND_0097036": {
+    "score": 0.2,
+    "reasoning": "The candidate has 4.6 years of experience, which is below the required 5+ years, and their background is in data engineering rather than AI or NLP."
+  },
+  "CAND_0090919": {
+    "score": 0.0,
+    "reasoning": "The candidate has only 3.8 years of experience, which is below the required 5 years, and their background is in marketing management, not AI engineering."
+  },
+  "CAND_0047542": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. They have worked on computer vision models, which is a different domain from NLP/IR."
+  },
+  "CAND_0090345": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in mechanical engineering and marketing management."
+  },
+  "CAND_0053673": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, machine learning, or related fields, and their background is heavily focused on customer support, marketing, and graphic design."
+  },
+  "CAND_0046525": {
+    "score": 0.85,
+    "reasoning": "With 6.1 years of hands-on experience building production ML systems, including leading the migration from keyword-based to embedding-based search across a 30M+ candidate corpus, and having worked at Genpact AI and LinkedIn, this candidate demonstrates strong production experience in embeddings-based retrieval systems."
+  },
+  "CAND_0061441": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, and their background is in marketing and mechanical engineering design, which does not align with the requirements of the Senior AI Engineer role."
+  },
+  "CAND_0067339": {
+    "score": 0.0,
+    "reasoning": "The candidate has 3.3 years of experience in customer support, which is significantly less than the required 5+ years of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0004252": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills, and their background is in marketing manager roles."
+  },
+  "CAND_0079550": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.9 years of experience, which is below the required 5 years, and their experience is mostly in time-series forecasting models, which is not relevant to the role's focus on embeddings-based retrieval systems."
+  },
+  "CAND_0035987": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.8 years of experience, but it's in data engineering, not AI engineering, and there's no mention of experience with embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0066035": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.7 years of experience, but it's not clear if they have experience with embeddings-based retrieval systems, and their work experience is mostly in building ML-powered solutions rather than production deployment of ranking systems."
+  },
+  "CAND_0024591": {
+    "score": 0.2,
+    "reasoning": "The candidate has 5.6 years of experience, but it's unclear if they have any experience with embeddings-based retrieval systems or vector databases, and their education is in Data Science, not a relevant field for this role."
+  },
+  "CAND_0023587": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 3.2 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0047280": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI or related fields, and their background is in mechanical engineering."
+  },
+  "CAND_0052195": {
+    "score": 0.2,
+    "reasoning": "The candidate has 6.3 years of experience, but it's in computer vision, not NLP/IR, and there's no mention of production experience with embeddings-based retrieval systems."
+  },
+  "CAND_0052066": {
+    "score": 0.0,
+    "reasoning": "The candidate has 1.3 years of experience as a Graphic Designer and has an M.S. in Data Science, but there is no mention of AI, machine learning, or production experience in embeddings-based retrieval systems."
+  },
+  "CAND_0064609": {
+    "score": 0.2,
+    "reasoning": "The candidate has 7.4 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their experience is mostly in data pipelines and analytics."
+  },
+  "CAND_0093391": {
+    "score": 0.0,
+    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in marketing, graphic design, civil engineering, project management, and customer support."
+  },
+  "CAND_0014266": {
+    "score": 0.0,
+    "reasoning": "The candidate has 12.5+ years of experience, but none of it is in AI engineering, and their background is in mechanical engineering and marketing management."
+  },
+  "CAND_0071131": {
+    "score": 0.2,
+    "reasoning": "The candidate has only 4.1 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
+  },
+  "CAND_0048848": {
+    "score": 0.0,
+    "reasoning": "The candidate has spent their career in marketing manager roles, mostly unrelated to AI engineering, and has no experience in production deployment of embeddings-based retrieval systems."
+  },
+  "CAND_0006335": {
+    "score": 0.0,
+    "reasoning": "The candidate has 9.2 years of experience as a Java Developer, but there is no mention of experience with embeddings-based retrieval systems, vector databases, or Python skills, which are essential requirements for the Senior AI Engineer role."
+  },
+  "CAND_0081348": {
+    "score": 0.0,
+    "reasoning": "The candidate has a background in mechanical engineering and marketing management, with no experience in AI or software engineering."
+  },
+  "CAND_0019880": {
+    "score": 0.4,
+    "reasoning": "The candidate has 5.7 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their work experience is mostly in data science and predictive modeling, which is tangential to the requirements of the role."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "embedding_text": "As a seasoned AI engineer, I thrive in environments where I can leverage my technical expertise to drive business impact. I've spent years honing my skills in modern ML systems, with a focus on embeddings, retrieval, and ranking. My experience has taught me the importance of balancing technical depth with a scrappy, product-engineering mindset, allowing me to ship working solutions quickly while continuously learning from real users. I'm passionate about designing and evaluating ranking systems, and I've developed a strong understanding of how to optimize for user engagement and satisfaction. With a background in applied ML/AI roles at product companies, I've had the opportunity to work on end-to-end ranking, search, and recommendation systems, and I'm excited to bring my expertise to a new challenge.",
+  "role_summary": "As a Senior AI Engineer at Redrob AI, you'll own the intelligence layer of the company's product, focusing on ranking, retrieval, and matching systems. Your daily work will involve designing and evaluating these systems, as well as collaborating with cross-functional teams to drive business impact. You'll be responsible for driving the long-term architecture of candidate-JD matching at scale and mentoring junior engineers.",
+  "hard_requirements": [
+    "You have 5+ years of production experience with embeddings-based retrieval systems, including handling embedding drift, index refresh, and retrieval-quality regression in real-world environments.",
+    "You've worked with vector databases or hybrid search infrastructure, such as Pinecone, Weaviate, or Elasticsearch, and have hands-on experience with operationalizing these systems.",
+    "You have strong Python skills, with a focus on code quality and maintainability, and have experience designing evaluation frameworks for ranking systems, including metrics such as NDCG, MRR, and MAP."
+  ],
+  "disqualifier_patterns": [
+    "You've spent your career in pure research environments without any production deployment experience, or your AI experience consists primarily of recent projects using LangChain to call OpenAI without substantial pre-LLM-era ML production experience.",
+    "You're a senior engineer who hasn't written production code in the last 18 months, having moved into architecture or tech lead roles, or you're a title-chaser who optimizes for seniority rather than technical expertise.",
+    "You have a background that is heavily focused on computer vision, speech, or robotics without significant NLP/IR exposure, or you've worked exclusively on closed-source proprietary systems for 5+ years without external validation."
+  ],
+  "preferred_location": "Pune/Noida, India (Hybrid \u2014 flexible cadence) | Open to relocation candidates from Tier-1 Indian cities",
+  "experience_years": {
+    "min": 5,
+    "max": 9
+  },
+  "notice_preference": "sub-30-day notice, with the option to buy out up to 30 days",
+  "evaluation_guidance": "When evaluating candidates, focus on their ability to balance technical depth with a scrappy, product-engineering mindset, and prioritize those with production experience in embeddings-based retrieval systems and vector databases. Be cautious of title-chasers and framework enthusiasts, and look for candidates who can defend their technical decisions with reference to systems they've actually built. Consider behavioral signals, such as a candidate's activity on the Redrob platform and their recruiter response rate, when evaluating their fit for the role."
+}

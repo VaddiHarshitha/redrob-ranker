@@ -1,0 +1,8 @@
+data/
+.venv/
+__pycache__/
+*.pyc
+.env
+artifacts/candidate_embeddings.npy
+artifacts/candidate_ids.txt
+artifacts/shortlist.jsonl
