@@ -57,7 +57,7 @@ def compute_behavioral_score(candidate: dict[str, Any]) -> float:
                 if isinstance(last_active_raw, str)
                 else last_active_raw
             )
-            reference = date(2026, 6, 24)
+            reference = date.today()
             days_inactive = (reference - last_active).days
             if days_inactive > 180:
                 last_active_multiplier = 0.30
