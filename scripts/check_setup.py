@@ -3,7 +3,7 @@
 One-off environment verification script.
 
 Checks:
-  1. sentence-transformers model downloads and produces (1, 384) shape output.
+  1. sentence-transformers model downloads and produces (1, 768) shape output.
   2. Groq API is reachable via a lightweight "Reply with: OK" probe.
 
 Prints a green checkmark (PASS) or red X (FAIL) for each check.
@@ -24,12 +24,12 @@ def check_embedding_model() -> bool:
     try:
         from sentence_transformers import SentenceTransformer
 
-        print("Loading sentence-transformers model (all-MiniLM-L6-v2) ...", end=" ", flush=True)
-        model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
+        print("Loading sentence-transformers model (all-mpnet-base-v2) ...", end=" ", flush=True)
+        model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
         embedding = model.encode(["Test sentence for shape verification."])
         shape = embedding.shape
 
-        expected = (1, 384)
+        expected = (1, 768)
         if shape == expected:
             print(f"PASS  shape={shape}")
             return True

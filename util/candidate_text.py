@@ -1,7 +1,7 @@
 """
 Convert a candidate record into a dense text string for embedding.
 
-The generated text is used as input to the ``all-MiniLM-L6-v2`` sentence-
+The generated text is used as input to the ``all-mpnet-base-v2`` sentence-
 transformer model.  The text prioritises career history as the primary
 signal, uses headline and summary for context, and includes skills only
 when they have meaningful evidence (endorsements or duration).

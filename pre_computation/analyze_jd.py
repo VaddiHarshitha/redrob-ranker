@@ -4,7 +4,7 @@ Extract a semantic JD profile via Groq LLM and embed it.
 Outputs
 -------
 artifacts/jd_profile.json  — structured semantic context
-artifacts/jd_embedding.npy — 384-dim vector (L2-normalised)
+artifacts/jd_embedding.npy — 768-dim vector (L2-normalised)
 """
 
 from __future__ import annotations
@@ -19,32 +19,65 @@ from sentence_transformers import SentenceTransformer
 
 from util.llm_client import build_groq_llm, parse_json_response
 
+from pre_computation.config import (
+    ARTIFACTS_DIR,
+    EMBEDDING_DIM,
+    EMBEDDING_MODEL,
+    GROQ_MAX_TOKENS,
+    GROQ_MODEL,
+    JD_EMBEDDING_FILE,
+    JD_PROFILE_FILE,
+)
+
 # ---------------------------------------------------------------------------
 # Prompt
 # ---------------------------------------------------------------------------
 
-JD_EXTRACTION_PROMPT = """You are an expert technical recruiter analysing a job description.
+JD_EXTRACTION_PROMPT = """You are analyzing a job description to power an AI candidate ranking system.
 
-Return a JSON object (no markdown fences, no extra commentary) with exactly these fields:
+Read this job description carefully — including any sections addressed to hackathon participants or systems being built to evaluate it. Pay special attention to what the role explicitly says it does NOT want, and what it says about how candidates should be evaluated.
 
-{
-  "embedding_text": "200-250 word present-tense prose from the perspective of the ideal candidate, describing the work they do, the problems they solve, and the impact they have in this role. Write as if describing a LinkedIn 'About' section for this ideal person. Focus on demonstrable capabilities, not wish-list keywords.",
-  "role_summary": "2-3 sentence plain-English description of what the daily work involves in this role.",
-  "hard_requirements": ["list of prose descriptions (NOT keyword lists) of technical capabilities the candidate must have DEMONSTRATED through work experience — be specific about depth and context, e.g. '3+ years building and shipping production REST APIs at scale' rather than just 'REST APIs'"],
-  "disqualifier_patterns": ["list of prose descriptions of career patterns that would make a candidate unsuitable — e.g. 'Has spent the majority of the last 5 years in a non-technical management role with no hands-on coding' or 'Has never worked on a team that shipped to production'"],
-  "preferred_location": "city/region preference if stated, otherwise 'Any'",
-  "experience_years": {"min": integer minimum years, "max": integer maximum years or null},
-  "notice_preference": "notice period preference as a prose string, e.g. '30 days or less' or 'immediate' or 'any'",
-  "evaluation_guidance": "2-3 sentences summarising what this JD is really looking for, including any common pitfalls or traps to watch out for (e.g. requiring '5 years of Kubernetes' when the JD only mentions 2 years experience total, or red flags like excessive on-call expectations not reflected in compensation)."
-}
+CRITICAL DISTINCTION — hard vs. nice-to-have:
+The JD typically signals three tiers of requirements using different language:
+  - HARD (required / must have / X+ years / "we need" / "you will"): missing these disqualifies the candidate
+  - NICE-TO-HAVE (preferred / "good to have" / "bonus" / "would be a plus" / "ideally"): boosts fit but not required
+  - DISQUALIFIERS (avoid / "we don't want" / red flags): presence of these disqualifies
 
-Guidelines
-----------
-- hard_requirements: Each item must be a full prose sentence describing a capability, not a bullet-point keyword list.
-- disqualifier_patterns: Be specific enough that an LLM evaluator could use these as guidance.
-- Do NOT add any field not listed above.
-- Return ONLY the JSON object — no preamble, no explanation.
-"""
+You MUST separate hard_requirements from nice_to_have_requirements. A capability that appears in the JD only inside a "nice to have" or "bonus" section must NOT appear in hard_requirements.
+
+Extract the following and return as a single valid JSON object. No other text.
+
+{{
+  "embedding_text": "<200-250 word dense prose written in the PRESENT TENSE describing what an ideal candidate HAS ACTUALLY SHIPPED and DELIVERED in this role. Write it from the candidate's perspective — as if it is the ideal candidate's career summary. CRITICAL: describe DEMONSTRATED OUTCOMES, not vocabulary. Say 'designed and shipped a production embedding retrieval pipeline that served 50M daily queries with sub-100ms p99 latency and was measured against NDCG@10 in offline evaluation' — NOT 'experienced with embeddings and vector databases'. The embedding model must be able to discriminate a candidate who actually built these systems from one who merely mentions the same terms in passing. Optimize for semantic vector comparison against real candidate career descriptions.>",
+
+  "role_summary": "<2-3 sentence plain-English description of what this person does day to day in this role — useful for explaining the role to an LLM evaluator who has never seen the JD>",
+
+  "hard_requirements": [
+    "<Specific technical capability the candidate MUST have DEMONSTRATED — describe the actual work, not just a technology name. E.g. 'Shipped a production embedding-based retrieval system that served real user queries at scale' rather than 'knows sentence-transformers'. These are items the JD signals as required / must-have / X+ years / 'we need'.>",
+    ...list all HARD requirements this way. If the JD says something only in a 'nice to have' or 'bonus' section, it goes in nice_to_have_requirements instead, NOT here....
+  ],
+
+  "nice_to_have_requirements": [
+    "<Preferred-but-not-required capability the JD signals with language like 'nice to have', 'good to have', 'bonus', 'would be a plus', 'ideally'. Describe the actual work, not just a technology name. E.g. 'Experience mentoring junior engineers' or 'Familiarity with reinforcement learning from user feedback'. These BOOST a candidate's fit but their absence does NOT disqualify.>",
+    ...list all nice-to-have items this way. Empty array [] if the JD has no such section....
+  ],
+
+  "disqualifier_patterns": [
+    "<Career pattern that makes a candidate unsuitable — describe the pattern, not the technology. E.g. 'Entire career at IT outsourcing/consulting firms with no product company experience' or 'Current AI experience is limited to calling hosted LLM APIs via LangChain without any pre-LLM production ML depth'>",
+    ...list all disqualifiers this way...
+  ],
+
+  "preferred_location": "<City/region preferences from the JD, as a plain string>",
+
+  "experience_years": {{"min": <integer>, "max": <integer>}},
+
+  "notice_preference": "<What the JD says about notice period, as a plain string>",
+
+  "evaluation_guidance": "<2-3 sentences of guidance for the LLM that will score individual candidates — summarizing the spirit of what this JD is really looking for, including any warnings about traps or anti-patterns to avoid when scoring. Note: nice-to-have items should INCREASE a candidate's score only if their hard requirements are already met — they should never rescue a candidate who is missing hard requirements.>"
+}}
+
+Job Description:
+{jd_text}"""
 
 
 # ---------------------------------------------------------------------------
@@ -123,7 +156,7 @@ def embed_jd_profile(jd_profile: dict, embedder) -> np.ndarray:
     Returns
     -------
     np.ndarray
-        384-dim L2-normalised embedding vector (float32).
+        768-dim L2-normalised embedding vector (float32).
     """
     embedding_text = jd_profile.get("embedding_text", "")
     if not embedding_text:
@@ -137,7 +170,7 @@ def embed_jd_profile(jd_profile: dict, embedder) -> np.ndarray:
     return vector.astype(np.float32)
 
 
-def run(jd_path: str = "data/job_description.docx", artifacts_dir: str = "artifacts") -> dict:
+def run(jd_path: str = "data/job_description.docx", artifacts_dir: str = ARTIFACTS_DIR) -> dict:
     """
     Orchestrate the full JD analysis pipeline.
 
@@ -161,12 +194,15 @@ def run(jd_path: str = "data/job_description.docx", artifacts_dir: str = "artifa
     print(f"[analyze_jd] Read JD from {jd_path!r} ({len(jd_text)} chars)")
 
     # 2. Extract profile via LLM
-    llm = build_groq_llm(model="llama-3.3-70b-versatile", max_tokens=4096)
+    llm = build_groq_llm(model=GROQ_MODEL, max_tokens=GROQ_MAX_TOKENS)
     jd_profile = extract_jd_profile(jd_text, llm)
     print("[analyze_jd] JD profile extracted successfully")
+    print(f"  Hard requirements:     {len(jd_profile.get('hard_requirements', []))}")
+    print(f"  Nice-to-have:          {len(jd_profile.get('nice_to_have_requirements', []))}")
+    print(f"  Disqualifiers:         {len(jd_profile.get('disqualifier_patterns', []))}")
 
     # 3. Embed
-    embedder = SentenceTransformer("all-MiniLM-L6-v2")
+    embedder = SentenceTransformer(EMBEDDING_MODEL)
     embedding = embed_jd_profile(jd_profile, embedder)
     print(f"[analyze_jd] Embedding shape: {embedding.shape}")
 
@@ -174,11 +210,11 @@ def run(jd_path: str = "data/job_description.docx", artifacts_dir: str = "artifa
     out_dir = Path(artifacts_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    profile_path = out_dir / "jd_profile.json"
+    profile_path = out_dir / JD_PROFILE_FILE
     profile_path.write_text(json.dumps(jd_profile, indent=2), encoding="utf-8")
     print(f"[analyze_jd] Profile saved → {profile_path}")
 
-    embedding_path = out_dir / "jd_embedding.npy"
+    embedding_path = out_dir / JD_EMBEDDING_FILE
     np.save(embedding_path, embedding)
     print(f"[analyze_jd] Embedding saved → {embedding_path}")
 
@@ -193,5 +229,5 @@ if __name__ == "__main__":
     import sys
 
     jd_path = sys.argv[1] if len(sys.argv) > 1 else "data/job_description.docx"
-    artifacts_dir = sys.argv[2] if len(sys.argv) > 2 else "artifacts"
+    artifacts_dir = sys.argv[2] if len(sys.argv) > 2 else ARTIFACTS_DIR
     run(jd_path=jd_path, artifacts_dir=artifacts_dir)

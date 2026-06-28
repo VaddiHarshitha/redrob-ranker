@@ -13,6 +13,16 @@ import json
 from pathlib import Path
 from typing import Any
 
+from pre_computation.config import (
+    ARTIFACTS_DIR,
+    BEHAVIORAL_SCORES_FILE,
+    FINAL_RANKING_FILE,
+    FINAL_TOP_N,
+    LLM_EVALUATIONS_FILE,
+    RANK_CONFIG_FILE,
+    SHORTLIST_FILE,
+)
+
 # ---------------------------------------------------------------------------
 # Weights
 # ---------------------------------------------------------------------------
@@ -127,8 +137,8 @@ def assemble_records(
 # ---------------------------------------------------------------------------
 
 def run(
-    artifacts_dir: str = "artifacts",
-    top_n: int = 300,
+    artifacts_dir: str = ARTIFACTS_DIR,
+    top_n: int = FINAL_TOP_N,
     weights: dict[str, float] | None = None,
 ) -> list[dict[str, Any]]:
     """
@@ -156,19 +166,19 @@ def run(
     out_dir.mkdir(parents=True, exist_ok=True)
 
     # 1. Load llm_evaluations.json
-    evals_path = out_dir / "llm_evaluations.json"
+    evals_path = out_dir / LLM_EVALUATIONS_FILE
     print(f"[assemble_ranking] Loading LLM evaluations from {evals_path} …")
     evals: dict[str, dict[str, Any]] = json.loads(evals_path.read_text(encoding="utf-8"))
     print(f"[assemble_ranking] Loaded {len(evals)} LLM evaluations")
 
     # 2. Load behavioral_scores.json
-    beh_path = out_dir / "behavioral_scores.json"
+    beh_path = out_dir / BEHAVIORAL_SCORES_FILE
     print(f"[assemble_ranking] Loading behavioral scores from {beh_path} …")
     behavioral_scores: dict[str, float] = json.loads(beh_path.read_text(encoding="utf-8"))
     print(f"[assemble_ranking] Loaded {len(behavioral_scores)} behavioral scores")
 
     # 3. Load semantic scores from shortlist.jsonl (_semantic_score field)
-    shortlist_path = out_dir / "shortlist.jsonl"
+    shortlist_path = out_dir / SHORTLIST_FILE
     print(f"[assemble_ranking] Loading semantic scores from {shortlist_path} …")
     semantic_scores: dict[str, float] = {}
     shortlist_candidates: set[str] = set()
@@ -189,12 +199,12 @@ def run(
     top_records = all_records[:top_n]
 
     # 6. Write final_ranking.json
-    ranking_path = out_dir / "final_ranking.json"
+    ranking_path = out_dir / FINAL_RANKING_FILE
     ranking_path.write_text(json.dumps(top_records, indent=2), encoding="utf-8")
     print(f"[assemble_ranking] Wrote {len(top_records)} records → {ranking_path}")
 
     # 7. Write rank_config.json
-    config_path = out_dir / "rank_config.json"
+    config_path = out_dir / RANK_CONFIG_FILE
     config_path.write_text(json.dumps(weights, indent=2), encoding="utf-8")
     print(f"[assemble_ranking] Wrote rank config → {config_path}")
 
@@ -208,6 +218,6 @@ def run(
 if __name__ == "__main__":
     import sys
 
-    artifacts_dir = sys.argv[1] if len(sys.argv) > 1 else "artifacts"
-    top_n = int(sys.argv[2]) if len(sys.argv) > 2 else 300
+    artifacts_dir = sys.argv[1] if len(sys.argv) > 1 else ARTIFACTS_DIR
+    top_n = int(sys.argv[2]) if len(sys.argv) > 2 else FINAL_TOP_N
     run(artifacts_dir=artifacts_dir, top_n=top_n)

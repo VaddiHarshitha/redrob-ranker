@@ -25,6 +25,19 @@ from pre_computation import build_shortlist
 from pre_computation import evaluate_candidates
 from pre_computation import assemble_ranking
 
+from pre_computation.config import (
+    ARTIFACTS_DIR,
+    BEHAVIORAL_SCORES_FILE,
+    CANDIDATE_EMBEDDINGS_FILE,
+    CANDIDATE_IDS_FILE,
+    FINAL_RANKING_FILE,
+    JD_EMBEDDING_FILE,
+    JD_PROFILE_FILE,
+    LLM_EVALUATIONS_FILE,
+    RANK_CONFIG_FILE,
+    SHORTLIST_FILE,
+)
+
 
 # ---------------------------------------------------------------------------
 # Pipeline definition
@@ -35,31 +48,31 @@ PIPELINE = [
         1,
         analyze_jd.run,
         "JD analysis (Groq LLM)",
-        ["jd_profile.json", "jd_embedding.npy"],
+        [JD_PROFILE_FILE, JD_EMBEDDING_FILE],
     ),
     (
         2,
         embed_candidates.run,
         "Embed all 100K candidates",
-        ["candidate_embeddings.npy", "candidate_ids.txt"],
+        [CANDIDATE_EMBEDDINGS_FILE, CANDIDATE_IDS_FILE],
     ),
     (
         3,
         build_shortlist.run,
         "Shortlist top N candidates",
-        ["shortlist.jsonl", "behavioral_scores.json"],
+        [SHORTLIST_FILE, BEHAVIORAL_SCORES_FILE],
     ),
     (
         4,
         evaluate_candidates.run,
         "LLM evaluate shortlist",
-        ["llm_evaluations.json"],
+        [LLM_EVALUATIONS_FILE],
     ),
     (
         5,
         assemble_ranking.run,
         "Assemble final ranking",
-        ["final_ranking.json", "rank_config.json"],
+        [FINAL_RANKING_FILE, RANK_CONFIG_FILE],
     ),
 ]
 
@@ -185,7 +198,7 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    artifacts_dir = "artifacts"
+    artifacts_dir = ARTIFACTS_DIR
     total_steps = len(PIPELINE)
 
     # Determine step range

@@ -1,5 +1,21 @@
 """
-Groq LLM batch evaluation of shortlisted candidates against JD profile.
+Phase A - Step 9: LLM batch evaluation of shortlisted candidates.
+
+Public entrypoint: run(...) -> dict (results, also saved to llm_evaluations.json)
+
+Uses Groq's llama-3.3-70b-versatile via util.llm_client — same GROQ_API_KEY as
+analyze_jd.py, and the same model. The earlier choice of 8B here was a
+token-budget optimization that turned out to be the wrong trade: at only ~300
+candidates (post hard-requirement pre-filter in Step 8), token budget is not
+binding, but reasoning quality IS the dominant signal in the final CSV — and
+8B produces visibly templated output with no specific facts cited. 70B
+produces the structured, fact-specific reasoning the submission format requires.
+
+REASONING FORMAT: each candidate's `reasoning` field must follow exactly:
+  "<current_title> with <years_of_experience> yrs; <ai_core_skill_count> AI core skills; response rate <response_rate>."
+The prompt injects `current_title`, `years_of_experience`, `ai_core_skill_count`
+(pre-computed from the candidate's evidenced AI/ML skills), and `response_rate`
+(recruiter_response_rate) so the LLM fills in values rather than inventing them.
 
 Outputs
 -------
@@ -8,7 +24,6 @@ artifacts/llm_evaluations.json — {candidate_id: {"score": float, "reasoning": 
 
 from __future__ import annotations
 
-import groq
 import json
 import re
 import time
@@ -19,314 +34,269 @@ from tqdm import tqdm
 
 from util.llm_client import build_groq_llm, parse_json_response
 
+from pre_computation.config import (
+    ARTIFACTS_DIR,
+    GROQ_MODEL,
+    JD_PROFILE_FILE,
+    LLM_EVALUATIONS_FILE,
+    SHORTLIST_FILE,
+)
+
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
 
-EVAL_MODEL = "llama-3.1-8b-instant"
-DEFAULT_BATCH_SIZE = 1
-FULL_DETAIL_ROLES = 1
-MAX_TEXT_CHARS = 100
-MAX_RETRIES = 10
-BATCH_SLEEP_SECONDS = 20.0
+BATCH_SIZE = 8                    # amortizes fixed JD-context cost across more candidates
+SLEEP_BETWEEN_BATCHES = 2.0       # seconds — courtesy gap for per-minute limits
+MAX_RETRIES = 5
+LONG_WAIT_THRESHOLD_S = 90        # wait longer than this = likely daily cap, not per-minute
 
-# ---------------------------------------------------------------------------
-# Evaluation prompt
-# ---------------------------------------------------------------------------
+# career_history is the single biggest token cost in the prompt by a wide margin.
+FULL_DETAIL_ROLES = 4             # most recent N roles get full description text
+MAX_TEXT_CHARS = 400              # truncation length for descriptions/summary
 
-EVAL_PROMPT = """Evaluate candidates for this role.
-
-{RoleContext}
-
-{WhatThisRoleRequires}
-
-{DisqualifyingCareerPatterns}
-
-{EvaluationGuidance}
-
-{AdditionalContext}
-
-Scoring rubric (0.00–1.00):
-- 0.85–1.00: Clearly demonstrates requirements at product companies.
-- 0.65–0.84: Most requirements met; minor gaps.
-- 0.40–0.64: Relevant but significant gaps.
-- 0.20–0.39: Tangential only.
-- 0.00–0.19: Wrong domain or disqualifier present.
-
-For EACH candidate, write 1–2 sentences citing SPECIFIC FACTS from their career descriptions. No generic praise.
-
-## Output
-JSON array, no markdown fences:
-[{"candidate_id":"...","score":0.XX,"reasoning":"..."},...]
-"""
+# Skill names (lowercased substrings) that count as "AI/ML core skills" for the
+# reasoning format. Used to pre-compute the <N> AI core skills count shown in
+# each candidate's reasoning string.
+AI_CORE_SKILL_KEYWORDS = {
+    "machine learning", "deep learning", "neural network", "neural net",
+    "artificial intelligence", "nlp", "natural language processing",
+    "computer vision", "embedding", "retrieval", "ranking", "recommendation",
+    "recommender", "llm", "large language model", "transformer", "bert", "gpt",
+    "rag", "vector search", "vector database", "pinecone", "weaviate",
+    "elasticsearch", "faiss", "sentence-transformer", "tensorflow", "pytorch",
+    "scikit-learn", "sklearn", "huggingface", "langchain", "mlops", "mlflow",
+    "kubeflow", "feature store", "knowledge graph", "search relevance",
+    "learning to rank", "ltr", "ndcg", "mrr", "map", "semantic search",
+    "information retrieval", "ir", "text classification", "named entity",
+    "question answering", "qa system", "chatbot", "speech recognition",
+    "reinforcement learning", "rlhf", "prompt engineering",
+}
 
 
 # ---------------------------------------------------------------------------
-# Truncation helper
+# Helpers
 # ---------------------------------------------------------------------------
+
+def _count_ai_core_skills(skills: list) -> int:
+    """
+    Count the candidate's AI/ML core skills: skills from their skills list whose
+    name matches one of AI_CORE_SKILL_KEYWORDS AND that have evidence
+    (endorsements > 0 OR duration_months > 0). Same evidence filter used in
+    util.candidate_text.build_candidate_text — no zero-evidence keyword stuffing.
+    """
+    count = 0
+    for s in skills or []:
+        name = (s.get("name") or "").strip().lower()
+        if not name:
+            continue
+        endorsements = s.get("endorsements", 0) or 0
+        duration = s.get("duration_months", 0) or 0
+        if endorsements <= 0 and duration <= 0:
+            continue
+        if any(kw in name for kw in AI_CORE_SKILL_KEYWORDS):
+            count += 1
+    return count
+
 
 def _truncate(text: str, max_chars: int) -> str:
-    """
-    Truncate ``text`` to ``max_chars`` characters at a word boundary.
-
-    If the text is already within the limit, returns it unchanged.
-    Otherwise, finds the last space before or at max_chars and appends '…'.
-
-    Parameters
-    ----------
-    text
-        Input string.
-    max_chars
-        Maximum allowed characters.
-
-    Returns
-    -------
-    str
-        Truncated string ending with '…' if it was cut, otherwise unchanged.
-    """
+    """Hard truncates at a word boundary."""
+    text = (text or "").strip()
     if len(text) <= max_chars:
         return text
-    # Find last space within the limit
-    truncated = text[:max_chars]
-    last_space = truncated.rfind(" ")
-    if last_space > 0:
-        truncated = truncated[:last_space]
-    return truncated + "…"
+    return text[:max_chars].rsplit(" ", 1)[0] + "\u2026"
 
 
 # ---------------------------------------------------------------------------
 # Candidate summary builder
 # ---------------------------------------------------------------------------
 
-def build_candidate_summary(candidate: dict[str, Any]) -> dict[str, Any]:
+def build_candidate_summary(c: dict[str, Any]) -> dict[str, Any]:
     """
-    Build a compact summary dict from a full candidate record for LLM evaluation.
+    Compact candidate representation for the LLM evaluator. Pure — no I/O.
 
-    Fields: candidate_id, current_title, years_of_experience, location, headline,
-    summary (120 chars), career_history (1 recent role with desc, older roles title/company/duration only),
-    education (degree, field, institution, tier).
-
-    Parameters
-    ----------
-    candidate
-        A full candidate record dict.
-
-    Returns
-    -------
-    dict
-        Compact summary dict.
+    Token design:
+    - Full description text only for the FULL_DETAIL_ROLES most recent roles.
+      Older roles still contribute title/company/duration_months for pattern
+      detection (title-chasing, tenure) — just not full prose.
+    - recruiter_response_rate and ai_core_skill_count are included so the LLM
+      can produce the structured reasoning format. These are tiny — a few
+      tokens per candidate.
+    - No full behavioral_signals block. Those signals are already scored for
+      free and deterministically in util.behavioral.compute_behavioral_score().
     """
-    profile = candidate.get("profile", {})
-    career = candidate.get("career_history", [])
+    profile = c.get("profile", {})
+    career = c.get("career_history", [])
+    signals = c.get("redrob_signals", {}) or {}
 
-    # Only 1 recent role gets description; older roles are title/company only
-    career_history: list[dict[str, Any]] = []
-    for i, role in enumerate(career):
-        is_recent = i == 0
-        entry: dict[str, Any] = {
-            "title": role.get("title", ""),
-            "company": role.get("company", ""),
-            "duration_months": role.get("duration_months", 0),
+    career_summary = []
+    for i, job in enumerate(career):
+        entry = {
+            "title":           job.get("title", ""),
+            "company":         job.get("company", ""),
+            "duration_months": job.get("duration_months", 0),
+            "industry":        job.get("industry", ""),
         }
-        if is_recent:
-            entry["description"] = _truncate(role.get("description", ""), MAX_TEXT_CHARS)
-        career_history.append(entry)
-
-    # Compact education: degree + field only
-    education: list[dict[str, Any]] = []
-    for edu in candidate.get("education", [])[:2]:
-        education.append({
-            "d": edu.get("degree", ""),
-            "f": edu.get("field_of_study", ""),
-        })
+        if i < FULL_DETAIL_ROLES:
+            entry["description"] = _truncate(job.get("description", ""), MAX_TEXT_CHARS)
+        career_summary.append(entry)
 
     return {
-        "id": candidate.get("candidate_id", ""),
-        "title": profile.get("current_title", ""),
-        "yrs": profile.get("years_of_experience", 0),
-        "loc": profile.get("location", ""),
-        "hl": profile.get("headline", ""),
-        "sum": _truncate(profile.get("summary", ""), MAX_TEXT_CHARS),
-        "ch": career_history,
-        "ed": education,
+        "candidate_id":        c.get("candidate_id", ""),
+        "current_title":       profile.get("current_title", ""),
+        "years_of_experience": profile.get("years_of_experience", 0),
+        "location":            f"{profile.get('location', '')}, {profile.get('country', '')}",
+        "headline":            profile.get("headline", ""),
+        "summary":             _truncate(profile.get("summary", ""), MAX_TEXT_CHARS),
+        "career_history":      career_summary,
+        "education": [
+            {
+                "degree":      edu.get("degree", ""),
+                "field":       edu.get("field_of_study", ""),
+                "institution": edu.get("institution", ""),
+                "tier":        edu.get("tier", "unknown"),
+            }
+            for edu in c.get("education", [])
+        ],
+        # ── Small fields used by the structured reasoning format ──
+        "response_rate":       round(float(signals.get("recruiter_response_rate", 0.0)), 2),
+        "ai_core_skill_count": _count_ai_core_skills(c.get("skills", [])),
     }
+
+
+# ---------------------------------------------------------------------------
+# Evaluation prompt
+# ---------------------------------------------------------------------------
+
+EVAL_PROMPT = """You are a senior technical recruiter scoring candidates for a specific role.
+
+ROLE CONTEXT:
+{role_summary}
+
+WHAT THIS ROLE REQUIRES (describe DONE work, not keywords):
+{hard_requirements}
+
+NICE-TO-HAVE (these can BOOST a candidate's score only if hard requirements are already met; never rescue a candidate missing hard requirements):
+{nice_to_have}
+
+DISQUALIFYING CAREER PATTERNS (these make a candidate unsuitable):
+{disqualifier_patterns}
+
+EVALUATION GUIDANCE:
+{evaluation_guidance}
+
+ADDITIONAL CONTEXT: Location preference: {preferred_location}. Experience: {exp_min}\u2013{exp_max} years. Notice period: {notice_preference}.
+
+Scoring rubric (0.00\u20131.00):
+- 0.85\u20131.00: Career descriptions clearly demonstrate the required experience at product companies.
+- 0.65\u20130.84: Most hard requirements met; minor gaps or concerns.
+- 0.40\u20130.64: Relevant experience exists but significant gaps present in hard requirements.
+- 0.20\u20130.39: Tangential or adjacent experience only \u2014 missing core hard requirements.
+- 0.00\u20130.19: Wrong domain, or a disqualifying career pattern is present.
+
+=== REASONING FORMAT (MANDATORY \u2014 match exactly) ===
+For each candidate, write the reasoning string in EXACTLY this format:
+
+  "<current_title> with <years_of_experience> yrs; <ai_core_skill_count> AI core skills; response rate <response_rate>."
+
+Examples of CORRECT format:
+  "Senior ML Engineer with 6.5 yrs; 12 AI core skills; response rate 0.85."
+  "Data Scientist with 3.2 yrs; 4 AI core skills; response rate 0.40."
+  "HR Manager with 6.1 yrs; 0 AI core skills; response rate 0.76."
+
+Rules:
+- Use the EXACT values from the candidate data (current_title, years_of_experience, ai_core_skill_count, response_rate).
+- Keep all four components in the same order, separated by '; ' and ending with '.'.
+- Do NOT write free-form prose like "Strong match" or "Extensive experience with...".
+- Do NOT include explanations, caveats, or additional sentences.
+- One line per candidate, period at the end.
+
+Return ONLY a JSON array. No other text:
+[
+  {{
+    "candidate_id": "CAND_XXXXXXX",
+    "score": <float 0.0 to 1.0>,
+    "reasoning": "<current_title> with <X.X> yrs; <N> AI core skills; response rate <R.RR>."
+  }},
+  ...
+]
+
+Candidates to evaluate:
+{candidates_json}"""
 
 
 # ---------------------------------------------------------------------------
 # Prompt builder
 # ---------------------------------------------------------------------------
 
-def build_eval_prompt(batch: list[dict], jd_profile: dict[str, Any]) -> str:
+def build_eval_prompt(batch: list[dict[str, Any]], jd_profile: dict[str, Any]) -> str:
     """
     Format the evaluation prompt for a batch of candidate summaries.
+
+    Pure — no I/O, no API call. Reads ``nice_to_have_requirements``,
+    ``hard_requirements``, ``disqualifier_patterns`` and the standard JD
+    fields out of ``jd_profile`` and injects them into ``EVAL_PROMPT``.
 
     Parameters
     ----------
     batch
-        List of candidate summary dicts.
+        List of full candidate record dicts (will be summarized).
     jd_profile
-        The structured JD profile dict.
+        The structured JD profile dict. Expected to contain:
+        ``role_summary``, ``hard_requirements``, ``nice_to_have_requirements``,
+        ``disqualifier_patterns``, ``evaluation_guidance``,
+        ``preferred_location``, ``experience_years``, ``notice_preference``.
 
     Returns
     -------
     str
         Formatted prompt string.
     """
-    # Truncate all JD fields aggressively to control token budget
-    role_summary = _truncate(jd_profile.get("role_summary", ""), 200)
-    evaluation_guidance = _truncate(jd_profile.get("evaluation_guidance", ""), 200)
-    hard_requirements = jd_profile.get("hard_requirements", [])
-    disqualifier_patterns = jd_profile.get("disqualifier_patterns", [])
-    preferred_location = jd_profile.get("preferred_location", "Any")
-    notice_preference = jd_profile.get("notice_preference", "any")
-    exp_years = jd_profile.get("experience_years", {})
-
-    role_context = role_summary
-
-    requires_block = "## What This Role Requires\n"
-    if hard_requirements:
-        for item in hard_requirements:
-            requires_block += f"- {item}\n"
-    else:
-        requires_block += "(not specified)\n"
-
-    disqual_block = "## Disqualifying Career Patterns\n"
-    if disqualifier_patterns:
-        for item in disqualifier_patterns:
-            disqual_block += f"- {item}\n"
-    else:
-        disqual_block += "(none specified)\n"
-
-    guidance_block = f"## Evaluation Guidance\n{evaluation_guidance}"
-
-    exp_str = ""
-    if exp_years:
-        exp_min = exp_years.get("min")
-        exp_max = exp_years.get("max")
-        if exp_min is not None and exp_max is not None:
-            exp_str = f"Experience: {exp_min}–{exp_max} years"
-        elif exp_min is not None:
-            exp_str = f"Experience: {exp_min}+ years"
-        elif exp_max is not None:
-            exp_str = f"Experience: up to {exp_max} years"
-
-    additional_block = "## Additional Context\n"
-    parts = [f"Location preference: {preferred_location}"]
-    if exp_str:
-        parts.append(exp_str)
-    if notice_preference:
-        parts.append(f"Notice period: {notice_preference}")
-    additional_block += "\n".join(f"- {p}" for p in parts)
-
-    # Inject candidates as compact single-line JSON to save tokens
-    candidates_block = "## Candidates to Evaluate\n"
-    for c in batch:
-        candidates_block += json.dumps(c, separators=(",", ":")) + "\n"
-
-    # Dynamic output format based on batch size
-    n = len(batch)
-    if n == 1:
-        output_instruction = (
-            "## Output\n"
-            "Return ONE JSON object, no markdown fences:\n"
-            '{"candidate_id":"...","score":0.XX,"reasoning":"..."}'
-        )
-    else:
-        output_instruction = (
-            f"## Output\n"
-            f"Return a JSON array with {n} objects, no markdown fences:\n"
-            '[{"candidate_id":"...","score":0.XX,"reasoning":"..."},...]'
-        )
-
-    return (
-        EVAL_PROMPT
-        .replace("{RoleContext}", f"## Role Context\n{role_context}")
-        .replace("{WhatThisRoleRequires}", requires_block)
-        .replace("{DisqualifyingCareerPatterns}", disqual_block)
-        .replace("{EvaluationGuidance}", guidance_block)
-        .replace("{AdditionalContext}", additional_block)
-        + "\n" + candidates_block
-        + "\n" + output_instruction
+    summaries = [build_candidate_summary(c) for c in batch]
+    exp = jd_profile.get("experience_years", {"min": 5, "max": 9})
+    nice_to_have_items = jd_profile.get("nice_to_have_requirements", [])
+    nice_to_have_block = (
+        "\n".join(f"- {r}" for r in nice_to_have_items)
+        if nice_to_have_items else "(none specified)"
+    )
+    hard_reqs = jd_profile.get("hard_requirements", []) or []
+    hard_reqs_block = (
+        "\n".join(f"- {r}" for r in hard_reqs) if hard_reqs else "(not specified)"
+    )
+    disqual = jd_profile.get("disqualifier_patterns", []) or []
+    disqual_block = (
+        "\n".join(f"- {d}" for d in disqual) if disqual else "(none specified)"
+    )
+    return EVAL_PROMPT.format(
+        role_summary          = jd_profile.get("role_summary", ""),
+        hard_requirements     = hard_reqs_block,
+        nice_to_have          = nice_to_have_block,
+        disqualifier_patterns = disqual_block,
+        evaluation_guidance   = jd_profile.get("evaluation_guidance", ""),
+        preferred_location    = jd_profile.get("preferred_location", "India"),
+        exp_min               = exp.get("min", 5),
+        exp_max               = exp.get("max", 9),
+        notice_preference     = jd_profile.get("notice_preference", "under 30 days preferred"),
+        candidates_json       = json.dumps(summaries, indent=2),
     )
 
 
 # ---------------------------------------------------------------------------
-# Single-candidate fallback
+# Token sizing + retry-after parsing
 # ---------------------------------------------------------------------------
 
-def evaluate_one_with_fallback(
-    candidate: dict[str, Any],
-    jd_profile: dict[str, Any],
-    llm,
-    max_retries: int = MAX_RETRIES,
-) -> dict[str, Any]:
-    """
-    Evaluate a single candidate with per-candidate retry on rate-limit errors.
+def estimate_max_tokens(batch_size: int) -> int:
+    """Scales max_tokens with actual batch size. ~120 tokens per output entry + buffer."""
+    return 120 * batch_size + 250
 
-    Used when a batch evaluation fails after all retries.
 
-    Parameters
-    ----------
-    candidate
-        Candidate summary dict.
-    jd_profile
-        JD profile dict.
-    llm
-        LangChain ChatGroq instance.
-    max_retries
-        Maximum retry attempts.
+_RETRY_AFTER_RE = re.compile(r"(?:try again in|retry after)\s*([\d.]+)\s*s?", re.IGNORECASE)
 
-    Returns
-    -------
-    dict
-        {"candidate_id": str, "score": float, "reasoning": str}
-    """
-    prompt = build_eval_prompt([candidate], jd_profile)
-    attempt = 0
 
-    for attempt in range(max_retries):
-        try:
-            raw = llm.invoke(prompt)
-            data = parse_json_response(raw.content)
-            # data should be a list
-            if isinstance(data, list) and len(data) > 0:
-                return data[0]
-            elif isinstance(data, dict) and "candidate_id" in data:
-                return data
-            # If the parsed JSON is unexpected, raise to trigger retry
-            raise ValueError(f"Unexpected response shape: {type(data)}")
-        except groq.RateLimitError as e:
-            msg = str(e)
-            wait = _suggested_wait_seconds(msg)
-            wait = wait if wait else 2 ** attempt + 5
-            if wait > 90:
-                raise RuntimeError(
-                    "Rate limit retry-after suggests daily token cap (>90s). "
-                    "Aborting evaluation."
-                ) from e
-            print(f"    [evaluate_one] Rate limited, waiting {wait}s (attempt {attempt+1}/{max_retries})")
-            time.sleep(wait)
-        except Exception as exc:
-            msg = str(exc)
-            if "rate" in msg.lower() or "429" in msg or "limit" in msg.lower():
-                wait = _suggested_wait_seconds(msg)
-                wait = wait if wait else 2 ** attempt + 5
-                if wait > 90:
-                    raise RuntimeError(
-                        "Rate limit retry-after suggests daily token cap (>90s). "
-                        "Aborting evaluation."
-                    ) from exc
-                print(f"    [evaluate_one] Rate limited, waiting {wait}s (attempt {attempt+1}/{max_retries})")
-                time.sleep(wait)
-            else:
-                raise
-
-    # Should not reach here
-    return {
-        "candidate_id": candidate.get("candidate_id", "?"),
-        "score": 0.0,
-        "reasoning": f"Evaluation failed after {max_retries} retries.",
-    }
+def _suggested_wait_seconds(error_message: str) -> float | None:
+    """Pulls suggested wait time out of a Groq rate-limit error message."""
+    match = _RETRY_AFTER_RE.search(error_message)
+    return float(match.group(1)) if match else None
 
 
 # ---------------------------------------------------------------------------
@@ -334,20 +304,22 @@ def evaluate_one_with_fallback(
 # ---------------------------------------------------------------------------
 
 def evaluate_batch(
-    batch: list[dict],
+    batch: list[dict[str, Any]],
     jd_profile: dict[str, Any],
     llm,
     max_retries: int = MAX_RETRIES,
 ) -> list[dict[str, Any]]:
     """
-    Evaluate a batch of candidates with a single LLM call.
+    One LLM call for a batch, with retry/backoff on per-minute rate-limit errors.
 
-    Retries with exponential backoff on rate-limit errors.
+    Distinguishes per-minute limits (fixable by waiting) from daily caps (not
+    fixable — surfaces them immediately so you can resume later rather than
+    burning retries).
 
     Parameters
     ----------
     batch
-        List of candidate summary dicts.
+        List of full candidate record dicts.
     jd_profile
         JD profile dict.
     llm
@@ -358,82 +330,81 @@ def evaluate_batch(
     Returns
     -------
     list[dict]
-        List of {"candidate_id": str, "score": float, "reasoning": str}.
+        List of parsed LLM result dicts.
     """
     prompt = build_eval_prompt(batch, jd_profile)
+    last_err: Exception | None = None
     for attempt in range(max_retries):
         try:
-            raw = llm.invoke(prompt)
-            data = parse_json_response(raw.content)
-
-            if not isinstance(data, list):
-                raise ValueError(
-                    f"Expected a JSON array but got {type(data).__name__}: "
-                    f"{str(data)[:200]}"
-                )
-            return data
-
-        except groq.RateLimitError as e:
-            # Groq-specific rate limit
-            msg = str(e)
-            wait = _suggested_wait_seconds(msg)
-            wait = wait if wait else 2 ** attempt + 5
-            print(f"  [RateLimitError] waiting {wait:.1f}s (attempt {attempt+1}/{max_retries}):")
-            time.sleep(wait)
+            response = llm.invoke(prompt)
+            return parse_json_response(response.content)
         except Exception as e:
+            last_err = e
             msg = str(e)
-            if "rate" in msg.lower() or "429" in msg or "limit" in msg.lower():
+            if "rate" in msg.lower() or "429" in msg:
                 wait = _suggested_wait_seconds(msg)
-                wait = wait if wait else 2 ** attempt + 5
-                print(f"  [Rate limit] waiting {wait:.1f}s (attempt {attempt+1}/{max_retries})")
-                time.sleep(wait)
-            else:
-                print(f"  [Non-rate error] {type(e).__name__}: {msg[:200]}")
-                raise
+                if wait is not None and wait > LONG_WAIT_THRESHOLD_S:
+                    raise RuntimeError(
+                        f"Groq suggests waiting {wait:.0f}s — likely a daily token cap, "
+                        f"not a per-minute one. Resume later with: "
+                        f"python -m pre_computation.pipeline --from 4"
+                    ) from e
+                backoff = wait if wait is not None else 2 ** attempt
+                print(f"  Rate limited, waiting {backoff:.0f}s (attempt {attempt + 1}/{max_retries})...")
+                time.sleep(backoff)
+                continue
+            raise
+    raise last_err  # type: ignore[misc]
 
-    raise RuntimeError(f"evaluate_batch failed after {max_retries} attempts")
+
+# ---------------------------------------------------------------------------
+# Single-candidate fallback
+# ---------------------------------------------------------------------------
+
+def evaluate_one_with_fallback(
+    c: dict[str, Any],
+    jd_profile: dict[str, Any],
+    llm,
+) -> dict[str, Any]:
+    """Single-candidate retry used when a batch fails — isolates the broken candidate."""
+    try:
+        time.sleep(1)
+        result = evaluate_batch([c], jd_profile, llm)[0]
+        return {"score": float(result["score"]), "reasoning": result["reasoning"]}
+    except Exception as e:
+        print(f"  Individual eval failed for {c.get('candidate_id', '?')}: {e}")
+        return {
+            "score":     c.get("_semantic_score", 0.0),
+            "reasoning": "Automated scoring only — LLM evaluation failed for this candidate.",
+        }
 
 
-def _suggested_wait_seconds(error_message: str) -> float | None:
-    """
-    Parse a retry-after suggestion from a Groq rate-limit error message.
+# ---------------------------------------------------------------------------
+# Checkpoint helper
+# ---------------------------------------------------------------------------
 
-    Looks for patterns like "retry after 42", "try again in 3.5 seconds", "1.26s".
-
-    Parameters
-    ----------
-    error_message
-        The stringified exception message.
-
-    Returns
-    -------
-    float or None
-        Seconds to wait, or None if no retry-after could be parsed.
-    """
-    text = error_message.lower()
-    _RETRY_AFTER_RE = re.compile(r"(?:try again in|retry after)\s*([\d.]+)\s*s?", re.IGNORECASE)
-    m = _RETRY_AFTER_RE.search(text)
-    if m:
-        return float(m.group(1))
-    return None
+def _save_results(results: dict[str, Any], artifacts_dir: str) -> None:
+    """Writes the current results dict to disk. Called after every batch, not
+    just at the end — this is the actual checkpoint. A crash, Ctrl-C, or a
+    daily-token-cap RuntimeError after this point loses at most one batch's
+    worth of work, not the whole run."""
+    out_path = Path(artifacts_dir) / LLM_EVALUATIONS_FILE
+    out_path.write_text(json.dumps(results, indent=2), encoding="utf-8")
 
 
 # ---------------------------------------------------------------------------
 # Public API
 # ---------------------------------------------------------------------------
 
-def run(
-    artifacts_dir: str = "artifacts",
-    batch_size: int = DEFAULT_BATCH_SIZE,
-) -> dict[str, Any]:
+def run(artifacts_dir: str = ARTIFACTS_DIR, batch_size: int = BATCH_SIZE) -> dict[str, Any]:
     """
     Orchestrate the LLM evaluation pipeline for the shortlisted candidates.
 
-    Loads the shortlist and JD profile, batches candidates, evaluates via Groq,
-    and writes results to ``llm_evaluations.json``.
+    Loads the shortlist and JD profile, batches candidates, evaluates via Groq
+    using ``GROQ_MODEL``, and writes results to ``llm_evaluations.json``.
 
-    Supports resume: if ``llm_evaluations.json`` already exists, already-evaluated
-    candidates are skipped.
+    Supports resume: if ``llm_evaluations.json`` already exists, already-
+    evaluated candidates are skipped.
 
     Parameters
     ----------
@@ -450,93 +421,89 @@ def run(
     out_dir = Path(artifacts_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    # 1. Load artefacts
-    shortlist_path = out_dir / "shortlist.jsonl"
-    jd_profile_path = out_dir / "jd_profile.json"
-    evals_path = out_dir / "llm_evaluations.json"
+    # Dynamic max_tokens based on batch size: ~120 tokens/candidate + 250 base
+    max_tokens = estimate_max_tokens(batch_size)
+    llm = build_groq_llm(model=GROQ_MODEL, max_tokens=max_tokens, temperature=0.0)
+    print(f"[INFO] Groq LLM initialized: {GROQ_MODEL} (max_tokens={max_tokens})")
 
-    print(f"[evaluate_candidates] Loading shortlist from {shortlist_path} …")
-    shortlist: list[dict] = []
-    with open(shortlist_path, encoding="utf-8") as fh:
-        for line in fh:
-            shortlist.append(json.loads(line))
-    print(f"[evaluate_candidates] Shortlist size: {len(shortlist)}")
+    # 1. Load artefacts
+    jd_profile_path = out_dir / JD_PROFILE_FILE
+    shortlist_path = out_dir / SHORTLIST_FILE
+    evals_path = out_dir / LLM_EVALUATIONS_FILE
 
     print(f"[evaluate_candidates] Loading JD profile from {jd_profile_path} …")
     jd_profile = json.loads(jd_profile_path.read_text(encoding="utf-8"))
 
-    # 2. Load existing evals for resume support
-    existing_evals: dict[str, dict[str, Any]] = {}
+    candidates: list[dict[str, Any]] = []
+    with open(shortlist_path, encoding="utf-8") as fh:
+        for line in fh:
+            if line.strip():
+                candidates.append(json.loads(line))
+    print(f"[evaluate_candidates] Shortlist size: {len(candidates)}")
+
+    # ── Resume support: load any partial results from a prior interrupted run ──
+    # This is what makes "resume later" (the advice given when a daily-cap
+    # RuntimeError fires in evaluate_batch) actually work, instead of just
+    # being a suggestion that re-spends tokens on candidates already scored.
+    results: dict[str, dict[str, Any]] = {}
     if evals_path.exists():
-        existing_evals = json.loads(evals_path.read_text(encoding="utf-8"))
-        print(f"[evaluate_candidates] Resuming with {len(existing_evals)} existing evaluations")
+        try:
+            results = json.loads(evals_path.read_text(encoding="utf-8"))
+            if results:
+                print(f"[INFO] Resuming — {len(results)} candidates already evaluated in a prior run.")
+        except json.JSONDecodeError:
+            pass
 
-    # 3. Build candidate summaries
-    summaries = [build_candidate_summary(c) for c in shortlist]
+    remaining = [c for c in candidates if c.get("candidate_id") not in results]
+    skipped = len(candidates) - len(remaining)
+    if skipped:
+        print(f"[INFO] Skipping {skipped} already-evaluated candidates.")
 
-    # Filter to only candidates not yet evaluated
-    pending = [
-        (c, s)
-        for c, s in zip(shortlist, summaries)
-        if c.get("candidate_id") not in existing_evals
-    ]
-
-    if not pending:
+    if not remaining:
         print("[evaluate_candidates] All candidates already evaluated.")
-        return existing_evals
+        return results
 
-    print(f"[evaluate_candidates] {len(pending)} candidates pending evaluation "
-          f"({len(existing_evals)} already done)")
-
-    # 4. Build LLM client
-    # Dynamic max_tokens based on batch size: 300 tokens/candidate + 300 base
-    max_tokens = 300 * batch_size + 300
-    llm = build_groq_llm(model=EVAL_MODEL, max_tokens=max_tokens, temperature=0.0)
+    print(f"[evaluate_candidates] Evaluating {len(remaining)} candidates "
+          f"in batches of {batch_size}...")
+    print(f"[evaluate_candidates] Estimated API calls: "
+          f"{len(remaining) // batch_size + 1}")
 
     # 5. Batch evaluation loop
-    all_evals = dict(existing_evals)
-    pending_candidates = [c for c, _ in pending]
-    pending_summaries = [s for _, s in pending]
+    failed: list[str] = []
+    batches = [remaining[i:i + batch_size] for i in range(0, len(remaining), batch_size)]
 
-    for batch_start in tqdm(range(0, len(pending_summaries), batch_size), desc="Evaluating batches"):
-        batch_end = min(batch_start + batch_size, len(pending_summaries))
-        batch_cands = pending_candidates[batch_start:batch_end]
-        batch_sums = pending_summaries[batch_start:batch_end]
-
+    for batch in tqdm(batches, desc="LLM evaluation"):
         try:
-            results = evaluate_batch(batch_sums, jd_profile, llm, max_retries=MAX_RETRIES)
-        except RuntimeError as exc:
-            if "daily token cap" in str(exc):
-                raise
-            print(f"    [evaluate_candidates] Batch failed, falling back to single-candidate: {exc}")
-            results = []
-            for c, s in zip(batch_cands, batch_sums):
-                result = evaluate_one_with_fallback(s, jd_profile, llm)
-                results.append(result)
-                # Save checkpoint after each single-candidate fallback
-                cid = result.get("candidate_id", "")
-                all_evals[cid] = {"score": result.get("score", 0.0), "reasoning": result.get("reasoning", "")}
-                evals_path.write_text(json.dumps(all_evals, indent=2), encoding="utf-8")
+            batch_results = evaluate_batch(batch, jd_profile, llm)
+            for r in batch_results:
+                cid = r.get("candidate_id", "")
+                if cid:
+                    results[cid] = {
+                        "score": float(r.get("score", 0.0)),
+                        "reasoning": str(r.get("reasoning", "")),
+                    }
+        except Exception as e:
+            print(f"\nBatch failed ({e}). Retrying individually...")
+            for c in batch:
+                outcome = evaluate_one_with_fallback(c, jd_profile, llm)
+                cid = c.get("candidate_id", "")
+                if cid:
+                    results[cid] = outcome
+                if outcome["reasoning"].startswith("Automated scoring only"):
+                    failed.append(cid)
 
-        # Merge results into all_evals
-        for result in results:
-            cid = result.get("candidate_id", "")
-            if cid:
-                all_evals[cid] = {
-                    "score": float(result.get("score", 0.0)),
-                    "reasoning": str(result.get("reasoning", "")),
-                }
+        # Checkpoint after every batch — not just once at the end.
+        _save_results(results, artifacts_dir)
+        print(f"    [evaluate_candidates] Checkpoint saved ({len(results)} evals)")
+        time.sleep(SLEEP_BETWEEN_BATCHES)
 
-        # Checkpoint after EVERY batch
-        evals_path.write_text(json.dumps(all_evals, indent=2), encoding="utf-8")
-        print(f"    [evaluate_candidates] Checkpoint saved ({len(all_evals)}/{len(pending_summaries)} evals)")
-
-        # Sleep between batches
-        time.sleep(BATCH_SLEEP_SECONDS)
-
-    print(f"[evaluate_candidates] Evaluation complete. "
-          f"{len(all_evals)} total evaluations → {evals_path}")
-    return all_evals
+    print(f"[evaluate_candidates] llm_evaluations.json saved "
+          f"({len(results)} total candidates)")
+    scored_this_run = len(remaining) - len(failed)
+    print(f"  Scored this run: {scored_this_run} | Failed: {len(failed)}")
+    if failed:
+        print(f"  Failed IDs: {failed}")
+    return results
 
 
 # ---------------------------------------------------------------------------
@@ -546,6 +513,6 @@ def run(
 if __name__ == "__main__":
     import sys
 
-    artifacts_dir = sys.argv[1] if len(sys.argv) > 1 else "artifacts"
-    batch_size = int(sys.argv[2]) if len(sys.argv) > 2 else DEFAULT_BATCH_SIZE
+    artifacts_dir = sys.argv[1] if len(sys.argv) > 1 else ARTIFACTS_DIR
+    batch_size = int(sys.argv[2]) if len(sys.argv) > 2 else BATCH_SIZE
     run(artifacts_dir=artifacts_dir, batch_size=batch_size)

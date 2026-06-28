@@ -1,9 +1,9 @@
 """
-Embed all 100K candidates using ``all-MiniLM-L6-v2``.
+Embed all 100K candidates using ``all-mpnet-base-v2``.
 
 Outputs
 -------
-artifacts/candidate_embeddings.npy — float32 array, shape (100000, 384), ~153 MB
+artifacts/candidate_embeddings.npy — float32 array, shape (100000, 768), ~294 MB
 artifacts/candidate_ids.txt        — ordered list of candidate IDs (one per line)
 """
 
@@ -18,6 +18,19 @@ from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 
 from util.candidate_text import build_candidate_text
+
+from pre_computation.config import (
+    ARTIFACTS_DIR,
+    CANDIDATE_EMBEDDINGS_FILE,
+    CANDIDATE_IDS_FILE,
+    EMBEDDING_BATCH_SIZE,
+    EMBEDDING_DIM,
+    EMBEDDING_MODEL,
+)
+
+# ---------------------------------------------------------------------------
+# Module constants
+# ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
 # Public API
@@ -51,7 +64,7 @@ def load_candidate_texts(candidates_file: str) -> tuple[list[str], list[str]]:
     return candidate_ids, candidate_texts
 
 
-def embed_texts(texts: list[str], model: SentenceTransformer, batch_size: int = 128) -> np.ndarray:
+def embed_texts(texts: list[str], model: SentenceTransformer, batch_size: int = EMBEDDING_BATCH_SIZE) -> np.ndarray:
     """
     Embed a list of texts using a SentenceTransformer.
 
@@ -62,12 +75,12 @@ def embed_texts(texts: list[str], model: SentenceTransformer, batch_size: int = 
     model
         Loaded SentenceTransformer instance.
     batch_size
-        Batch size for encoding (default 128).
+        Batch size for encoding (default EMBEDDING_BATCH_SIZE = 128).
 
     Returns
     -------
     np.ndarray
-        float32 array of shape (len(texts), 384), L2-normalised.
+        float32 array of shape (len(texts), 768), L2-normalised.
     """
     embeddings = model.encode(
         texts,
@@ -81,8 +94,9 @@ def embed_texts(texts: list[str], model: SentenceTransformer, batch_size: int = 
 
 def run(
     candidates_file: str = "data/candidates.jsonl",
-    artifacts_dir: str = "artifacts",
-    batch_size: int = 128,
+    artifacts_dir: str = ARTIFACTS_DIR,
+    batch_size: int = EMBEDDING_BATCH_SIZE,
+    model_name: str = EMBEDDING_MODEL,
 ) -> None:
     """
     Orchestrate the full candidate embedding pipeline.
@@ -97,11 +111,13 @@ def run(
     artifacts_dir
         Directory where output files are written.
     batch_size
-        Batch size for SentenceTransformer encoding (default 128).
+        Batch size for SentenceTransformer encoding (default EMBEDDING_BATCH_SIZE = 128).
+    model_name
+        Name of the SentenceTransformer model to load (default EMBEDDING_MODEL).
     """
     # 1. Load model
-    print("[embed_candidates] Loading SentenceTransformer (all-MiniLM-L6-v2) …")
-    model = SentenceTransformer("all-MiniLM-L6-v2")
+    print(f"[embed_candidates] Loading SentenceTransformer ({model_name}) …")
+    model = SentenceTransformer(model_name)
 
     # 2. Read candidates
     candidate_ids, candidate_texts = load_candidate_texts(candidates_file)
@@ -111,15 +127,20 @@ def run(
     embeddings = embed_texts(candidate_texts, model, batch_size=batch_size)
     print(f"[embed_candidates] Embeddings shape: {embeddings.shape}")
 
-    # 4. Save artefacts
+    # 4. Validate embedding dimension (do not hard-code row count)
+    assert embeddings.shape[1] == EMBEDDING_DIM, (
+        f"Expected embedding dimension {EMBEDDING_DIM}, got {embeddings.shape[1]}"
+    )
+
+    # 5. Save artefacts
     out_dir = Path(artifacts_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    embeddings_path = out_dir / "candidate_embeddings.npy"
+    embeddings_path = out_dir / CANDIDATE_EMBEDDINGS_FILE
     np.save(embeddings_path, embeddings)
     print(f"[embed_candidates] Embeddings saved → {embeddings_path}")
 
-    ids_path = out_dir / "candidate_ids.txt"
+    ids_path = out_dir / CANDIDATE_IDS_FILE
     ids_path.write_text("\n".join(candidate_ids), encoding="utf-8")
     print(f"[embed_candidates] IDs saved → {ids_path}")
 
@@ -132,6 +153,6 @@ if __name__ == "__main__":
     import sys
 
     candidates_file = sys.argv[1] if len(sys.argv) > 1 else "data/candidates.jsonl"
-    artifacts_dir = sys.argv[2] if len(sys.argv) > 2 else "artifacts"
-    batch_size = int(sys.argv[3]) if len(sys.argv) > 3 else 128
+    artifacts_dir = sys.argv[2] if len(sys.argv) > 2 else ARTIFACTS_DIR
+    batch_size = int(sys.argv[3]) if len(sys.argv) > 3 else EMBEDDING_BATCH_SIZE
     run(candidates_file=candidates_file, artifacts_dir=artifacts_dir, batch_size=batch_size)
