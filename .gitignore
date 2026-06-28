@@ -6,3 +6,5 @@ __pycache__/
 artifacts/candidate_embeddings.npy
 artifacts/candidate_ids.txt
 artifacts/shortlist.jsonl
+.kimchi/ferments/ 
+.cache/
