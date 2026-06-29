@@ -21,6 +21,7 @@ from pathlib import Path
 from typing import Any
 
 import streamlit as st
+import io 
 
 from util.behavioral import compute_behavioral_score
 
@@ -31,7 +32,7 @@ from util.behavioral import compute_behavioral_score
 ARTIFACTS_DIR = Path("artifacts")
 RANKING_FILE = ARTIFACTS_DIR / "final_ranking.json"
 CONFIG_FILE = ARTIFACTS_DIR / "rank_config.json"
-MAX_CANDIDATES = 100
+MAX_CANDIDATES = 300
 
 # ---------------------------------------------------------------------------
 # Artifact loading
@@ -125,7 +126,6 @@ def rank_candidates(
             adjusted_score = beh_score * 0.3
             rec = {
                 "candidate_id": cid,
-                "title": candidate.get("title", ""),
                 "llm_score": 0.0,
                 "semantic_score": 0.0,
                 "behavioral_score": beh_score,
@@ -148,7 +148,6 @@ def build_display_rows(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         rows.append({
             "rank": rank_pos,
             "candidate_id": rec["candidate_id"],
-            "title": rec.get("title", ""),
             "score": round(rec["final_score"], 6),
             "reasoning": rec.get("reasoning", ""),
         })
@@ -158,7 +157,7 @@ def build_display_rows(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def build_csv(rows: list[dict[str, Any]]) -> str:
     """Convert display rows to CSV string."""
     output = io.StringIO()
-    writer = csv.DictWriter(output, fieldnames=["rank", "candidate_id", "title", "score", "reasoning"])
+    writer = csv.DictWriter(output, fieldnames=["rank", "candidate_id", "score", "reasoning"])
     writer.writeheader()
     writer.writerows(rows)
     return output.getvalue()
@@ -220,7 +219,6 @@ if uploaded_file is not None:
         column_config={
             "rank": st.column_config.NumberColumn("Rank", width="small"),
             "candidate_id": st.column_config.TextColumn("Candidate ID"),
-            "title": st.column_config.TextColumn("Title"),
             "score": st.column_config.NumberColumn("Score", format="%.6f"),
             "reasoning": st.column_config.TextColumn("Reasoning"),
         },
