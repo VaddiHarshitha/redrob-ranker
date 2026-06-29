@@ -1,2402 +1,2402 @@
 [
   {
-    "candidate_id": "CAND_0093912",
-    "llm_score": 0.95,
-    "semantic_score": 0.849162,
-    "behavioral_score": 0.9634,
-    "final_score": 0.931842,
-    "reasoning": "The candidate has 5.3 years of experience, and they have worked on ranking systems in production."
+    "candidate_id": "CAND_0002025",
+    "llm_score": 0.9,
+    "semantic_score": 0.85139,
+    "behavioral_score": 0.9454,
+    "final_score": 0.897088,
+    "reasoning": "Senior AI Engineer with 5.9 yrs; 12 AI core skills; response rate 0.8."
   },
   {
     "candidate_id": "CAND_0039754",
-    "llm_score": 0.95,
-    "semantic_score": 0.8486,
-    "behavioral_score": 0.9013,
-    "final_score": 0.922415,
-    "reasoning": "The candidate has 16 years of experience in building production ML systems, with a focus on search, retrieval, and ranking. They have hands-on experience with vector databases, such as Pinecone, and have built a ranking pipeline at Meta that achieved a significant improvement in NDCG@10."
-  },
-  {
-    "candidate_id": "CAND_0041610",
-    "llm_score": 0.95,
-    "semantic_score": 0.869041,
-    "behavioral_score": 0.8617,
-    "final_score": 0.920563,
-    "reasoning": "The candidate has 6.7 years of experience building ML-powered features in production, with a strong background in NLP, recommendation systems, and applied AI. They have hands-on experience with embeddings-based retrieval systems and have designed a ranking layer for an e-commerce search product."
-  },
-  {
-    "candidate_id": "CAND_0055905",
-    "llm_score": 0.95,
-    "semantic_score": 0.833562,
-    "behavioral_score": 0.8701,
-    "final_score": 0.914727,
-    "reasoning": "Strong match"
-  },
-  {
-    "candidate_id": "CAND_0079387",
-    "llm_score": 0.95,
-    "semantic_score": 0.861877,
-    "behavioral_score": 0.82501,
-    "final_score": 0.913627,
-    "reasoning": "Extensive experience with content recommendation systems, collaborative filtering, and content-based ranking, and has used item-item similarity (via sentence-transformer embeddings) for cold starts."
+    "llm_score": 0.93,
+    "semantic_score": 0.867443,
+    "behavioral_score": 0.766105,
+    "final_score": 0.892904,
+    "reasoning": "Senior Applied Scientist with 16.2 yrs; 11 AI core skills; response rate 0.81."
   },
   {
     "candidate_id": "CAND_0018499",
-    "llm_score": 0.85,
-    "semantic_score": 0.827345,
-    "behavioral_score": 0.994,
-    "final_score": 0.867069,
-    "reasoning": "The candidate has 7.2 years of experience in building production ML systems, with a focus on search, retrieval, and ranking. They have hands-on experience with embeddings-based retrieval systems, including handling embedding drift, index refresh, and retrieval-quality regression in real-world environments."
+    "llm_score": 0.92,
+    "semantic_score": 0.837895,
+    "behavioral_score": 0.8449,
+    "final_score": 0.892314,
+    "reasoning": "Senior Machine Learning Engineer with 7.2 yrs; 10 AI core skills; response rate 0.61."
   },
   {
-    "candidate_id": "CAND_0042506",
-    "llm_score": 0.85,
-    "semantic_score": 0.855063,
-    "behavioral_score": 0.9499,
-    "final_score": 0.865998,
-    "reasoning": "The candidate has 4.2 years of experience, and they have worked on search and ranking systems in production."
-  },
-  {
-    "candidate_id": "CAND_0068811",
-    "llm_score": 0.85,
-    "semantic_score": 0.859408,
-    "behavioral_score": 0.9142,
-    "final_score": 0.861512,
-    "reasoning": "8.0 years of experience, strong background in NLP and recommendation systems, and experience with vector databases."
-  },
-  {
-    "candidate_id": "CAND_0072660",
-    "llm_score": 0.85,
-    "semantic_score": 0.805417,
-    "behavioral_score": 0.9295,
-    "final_score": 0.853008,
-    "reasoning": "Strong background in NLP, recommendation systems, and applied AI, with hands-on experience with MLflow, Kubeflow, and internal feature store."
+    "candidate_id": "CAND_0055905",
+    "llm_score": 0.92,
+    "semantic_score": 0.810386,
+    "behavioral_score": 0.8701,
+    "final_score": 0.890592,
+    "reasoning": "Senior Machine Learning Engineer with 8.1 yrs; 9 AI core skills; response rate 0.87."
   },
   {
     "candidate_id": "CAND_0011687",
-    "llm_score": 0.85,
-    "semantic_score": 0.830644,
-    "behavioral_score": 0.8947,
-    "final_score": 0.852834,
-    "reasoning": "7.8 years of hands-on experience building production ML systems, with a focus on search, retrieval, and ranking."
+    "llm_score": 0.93,
+    "semantic_score": 0.856893,
+    "behavioral_score": 0.760495,
+    "final_score": 0.889953,
+    "reasoning": "Senior NLP Engineer with 7.8 yrs; 8 AI core skills; response rate 0.89."
   },
   {
-    "candidate_id": "CAND_0099806",
-    "llm_score": 0.85,
-    "semantic_score": 0.863659,
-    "behavioral_score": 0.824755,
-    "final_score": 0.848945,
-    "reasoning": "Experience with ranking models, feature engineering, and model deployment, and has owned the offline-online serving layer."
+    "candidate_id": "CAND_0081846",
+    "llm_score": 0.92,
+    "semantic_score": 0.830229,
+    "behavioral_score": 0.839035,
+    "final_score": 0.889901,
+    "reasoning": "Lead AI Engineer with 6.7 yrs; 11 AI core skills; response rate 0.73."
+  },
+  {
+    "candidate_id": "CAND_0046064",
+    "llm_score": 0.92,
+    "semantic_score": 0.846936,
+    "behavioral_score": 0.787015,
+    "final_score": 0.88544,
+    "reasoning": "Senior NLP Engineer with 8.9 yrs; 4 AI core skills; response rate 0.78."
+  },
+  {
+    "candidate_id": "CAND_0071974",
+    "llm_score": 0.92,
+    "semantic_score": 0.848578,
+    "behavioral_score": 0.735394,
+    "final_score": 0.878025,
+    "reasoning": "Senior AI Engineer with 7.8 yrs; 11 AI core skills; response rate 0.76."
+  },
+  {
+    "candidate_id": "CAND_0064326",
+    "llm_score": 0.92,
+    "semantic_score": 0.816666,
+    "behavioral_score": 0.77607,
+    "final_score": 0.877744,
+    "reasoning": "Search Engineer with 7.6 yrs; 7 AI core skills; response rate 0.94."
   },
   {
     "candidate_id": "CAND_0095619",
-    "llm_score": 0.85,
-    "semantic_score": 0.842303,
+    "llm_score": 0.92,
+    "semantic_score": 0.774318,
     "behavioral_score": 0.83113,
-    "final_score": 0.84563,
-    "reasoning": "Candidate has 15.6 years of experience, with 50 months of experience as an NLP Engineer at Nykaa, where they owned the ranking layer for an e-commerce search product."
+    "final_score": 0.877533,
+    "reasoning": "NLP Engineer with 15.6 yrs; 11 AI core skills; response rate 0.90."
+  },
+  {
+    "candidate_id": "CAND_0046525",
+    "llm_score": 0.92,
+    "semantic_score": 0.846211,
+    "behavioral_score": 0.71072,
+    "final_score": 0.87385,
+    "reasoning": "Senior Machine Learning Engineer with 6.1 yrs; 8 AI core skills; response rate 0.88."
+  },
+  {
+    "candidate_id": "CAND_0062247",
+    "llm_score": 0.92,
+    "semantic_score": 0.821947,
+    "behavioral_score": 0.74086,
+    "final_score": 0.873518,
+    "reasoning": "AI Engineer with 7.3 yrs; 10 AI core skills; response rate 0.78."
+  },
+  {
+    "candidate_id": "CAND_0086022",
+    "llm_score": 0.9,
+    "semantic_score": 0.829731,
+    "behavioral_score": 0.799255,
+    "final_score": 0.870834,
+    "reasoning": "Senior Applied Scientist with 5.3 yrs; 14 AI core skills; response rate 0.55."
+  },
+  {
+    "candidate_id": "CAND_0068811",
+    "llm_score": 0.88,
+    "semantic_score": 0.795626,
+    "behavioral_score": 0.9142,
+    "final_score": 0.868255,
+    "reasoning": "Applied ML Engineer with 8.0 yrs; 8 AI core skills; response rate 0.42."
+  },
+  {
+    "candidate_id": "CAND_0036184",
+    "llm_score": 0.85,
+    "semantic_score": 0.816367,
+    "behavioral_score": 0.9658,
+    "final_score": 0.860643,
+    "reasoning": "Recommendation Systems Engineer with 6.0 yrs; 11 AI core skills; response rate 0.9."
+  },
+  {
+    "candidate_id": "CAND_0077337",
+    "llm_score": 0.9,
+    "semantic_score": 0.831726,
+    "behavioral_score": 0.71504,
+    "final_score": 0.858601,
+    "reasoning": "Staff Machine Learning Engineer with 7.0 yrs; 7 AI core skills; response rate 0.95."
+  },
+  {
+    "candidate_id": "CAND_0078492",
+    "llm_score": 0.9,
+    "semantic_score": 0.798133,
+    "behavioral_score": 0.744175,
+    "final_score": 0.856253,
+    "reasoning": "Recommendation Systems Engineer with 5.1 yrs; 9 AI core skills; response rate 0.70."
+  },
+  {
+    "candidate_id": "CAND_0000031",
+    "llm_score": 0.88,
+    "semantic_score": 0.841188,
+    "behavioral_score": 0.76016,
+    "final_score": 0.854262,
+    "reasoning": "Recommendation Systems Engineer with 6.0 yrs; 11 AI core skills; response rate 0.91."
+  },
+  {
+    "candidate_id": "CAND_0079387",
+    "llm_score": 0.88,
+    "semantic_score": 0.792256,
+    "behavioral_score": 0.82501,
+    "final_score": 0.854203,
+    "reasoning": "AI Engineer with 6.9 yrs; 7 AI core skills; response rate 0.81."
+  },
+  {
+    "candidate_id": "CAND_0041669",
+    "llm_score": 0.92,
+    "semantic_score": 0.827034,
+    "behavioral_score": 0.6035,
+    "final_score": 0.853932,
+    "reasoning": "Recommendation Systems Engineer with 8.0 yrs; 8 AI core skills; response rate 0.77."
+  },
+  {
+    "candidate_id": "CAND_0050454",
+    "llm_score": 0.88,
+    "semantic_score": 0.805858,
+    "behavioral_score": 0.793135,
+    "final_score": 0.852142,
+    "reasoning": "AI Engineer with 6.8 yrs; 8 AI core skills; response rate 0.77."
+  },
+  {
+    "candidate_id": "CAND_0040887",
+    "llm_score": 0.83,
+    "semantic_score": 0.825072,
+    "behavioral_score": 0.9793,
+    "final_score": 0.851409,
+    "reasoning": "Machine Learning Engineer with 4.7 yrs; 7 AI core skills; response rate 0.84."
+  },
+  {
+    "candidate_id": "CAND_0068351",
+    "llm_score": 0.92,
+    "semantic_score": 0.788931,
+    "behavioral_score": 0.626981,
+    "final_score": 0.849833,
+    "reasoning": "Lead AI Engineer with 6.4 yrs; 6 AI core skills; response rate 0.86."
+  },
+  {
+    "candidate_id": "CAND_0053591",
+    "llm_score": 0.9,
+    "semantic_score": 0.773053,
+    "behavioral_score": 0.7316,
+    "final_score": 0.849351,
+    "reasoning": "AI Engineer with 5.3 yrs; 5 AI core skills; response rate 0.81."
+  },
+  {
+    "candidate_id": "CAND_0076251",
+    "llm_score": 0.9,
+    "semantic_score": 0.830075,
+    "behavioral_score": 0.65042,
+    "final_score": 0.848578,
+    "reasoning": "Search Engineer with 7.6 yrs; 8 AI core skills; response rate 0.51."
+  },
+  {
+    "candidate_id": "CAND_0052335",
+    "llm_score": 0.92,
+    "semantic_score": 0.781802,
+    "behavioral_score": 0.626756,
+    "final_score": 0.848374,
+    "reasoning": "Applied ML Engineer with 6.4 yrs; 7 AI core skills; response rate 0.79."
+  },
+  {
+    "candidate_id": "CAND_0006567",
+    "llm_score": 0.92,
+    "semantic_score": 0.805204,
+    "behavioral_score": 0.595544,
+    "final_score": 0.848372,
+    "reasoning": "Senior AI Engineer with 7.9 yrs; 6 AI core skills; response rate 0.79."
+  },
+  {
+    "candidate_id": "CAND_0028793",
+    "llm_score": 0.92,
+    "semantic_score": 0.818037,
+    "behavioral_score": 0.545704,
+    "final_score": 0.843463,
+    "reasoning": "Search Engineer with 7.2 yrs; 6 AI core skills; response rate 0.57."
+  },
+  {
+    "candidate_id": "CAND_0075249",
+    "llm_score": 0.88,
+    "semantic_score": 0.834147,
+    "behavioral_score": 0.696379,
+    "final_score": 0.843286,
+    "reasoning": "Applied ML Engineer with 6.2 yrs; 7 AI core skills; response rate 0.82."
+  },
+  {
+    "candidate_id": "CAND_0053695",
+    "llm_score": 0.88,
+    "semantic_score": 0.809206,
+    "behavioral_score": 0.725815,
+    "final_score": 0.842714,
+    "reasoning": "Recommendation Systems Engineer with 5.8 yrs; 7 AI core skills; response rate 0.60."
+  },
+  {
+    "candidate_id": "CAND_0009691",
+    "llm_score": 0.9,
+    "semantic_score": 0.807248,
+    "behavioral_score": 0.638495,
+    "final_score": 0.842224,
+    "reasoning": "Applied ML Engineer with 6.2 yrs; 11 AI core skills; response rate 0.64."
+  },
+  {
+    "candidate_id": "CAND_0042506",
+    "llm_score": 0.82,
+    "semantic_score": 0.833086,
+    "behavioral_score": 0.9499,
+    "final_score": 0.842102,
+    "reasoning": "Search Engineer with 4.2 yrs; 9 AI core skills; response rate 0.48."
+  },
+  {
+    "candidate_id": "CAND_0030827",
+    "llm_score": 0.92,
+    "semantic_score": 0.830177,
+    "behavioral_score": 0.517692,
+    "final_score": 0.841689,
+    "reasoning": "Senior Data Scientist with 5.4 yrs; 10 AI core skills; response rate 0.52."
+  },
+  {
+    "candidate_id": "CAND_0040117",
+    "llm_score": 0.9,
+    "semantic_score": 0.81278,
+    "behavioral_score": 0.61646,
+    "final_score": 0.840025,
+    "reasoning": "Recommendation Systems Engineer with 6.5 yrs; 6 AI core skills; response rate 0.66."
+  },
+  {
+    "candidate_id": "CAND_0051292",
+    "llm_score": 0.88,
+    "semantic_score": 0.794901,
+    "behavioral_score": 0.72403,
+    "final_score": 0.839585,
+    "reasoning": "Applied ML Engineer with 5.2 yrs; 7 AI core skills; response rate 0.52."
+  },
+  {
+    "candidate_id": "CAND_0069905",
+    "llm_score": 0.92,
+    "semantic_score": 0.835989,
+    "behavioral_score": 0.492167,
+    "final_score": 0.839023,
+    "reasoning": "Applied ML Engineer with 6.6 yrs; 10 AI core skills; response rate 0.78."
+  },
+  {
+    "candidate_id": "CAND_0018722",
+    "llm_score": 0.92,
+    "semantic_score": 0.83567,
+    "behavioral_score": 0.491835,
+    "final_score": 0.838909,
+    "reasoning": "Recommendation Systems Engineer with 6.6 yrs; 6 AI core skills; response rate 0.79."
+  },
+  {
+    "candidate_id": "CAND_0095528",
+    "llm_score": 0.88,
+    "semantic_score": 0.79788,
+    "behavioral_score": 0.71428,
+    "final_score": 0.838718,
+    "reasoning": "Senior Data Scientist with 5.3 yrs; 8 AI core skills; response rate 0.55."
+  },
+  {
+    "candidate_id": "CAND_0072660",
+    "llm_score": 0.83,
+    "semantic_score": 0.798703,
+    "behavioral_score": 0.9295,
+    "final_score": 0.838666,
+    "reasoning": "Machine Learning Engineer with 7.1 yrs; 6 AI core skills; response rate 0.53."
+  },
+  {
+    "candidate_id": "CAND_0017960",
+    "llm_score": 0.9,
+    "semantic_score": 0.798161,
+    "behavioral_score": 0.621044,
+    "final_score": 0.837789,
+    "reasoning": "Recommendation Systems Engineer with 7.7 yrs; 5 AI core skills; response rate 0.72."
+  },
+  {
+    "candidate_id": "CAND_0007009",
+    "llm_score": 0.9,
+    "semantic_score": 0.799671,
+    "behavioral_score": 0.61646,
+    "final_score": 0.837403,
+    "reasoning": "Recommendation Systems Engineer with 7.9 yrs; 5 AI core skills; response rate 0.62."
+  },
+  {
+    "candidate_id": "CAND_0043228",
+    "llm_score": 0.88,
+    "semantic_score": 0.780765,
+    "behavioral_score": 0.723675,
+    "final_score": 0.836704,
+    "reasoning": "Applied ML Engineer with 6.8 yrs; 8 AI core skills; response rate 0.41."
+  },
+  {
+    "candidate_id": "CAND_0030468",
+    "llm_score": 0.88,
+    "semantic_score": 0.774621,
+    "behavioral_score": 0.729886,
+    "final_score": 0.836407,
+    "reasoning": "Senior Applied Scientist with 5.4 yrs; 6 AI core skills; response rate 0.78."
+  },
+  {
+    "candidate_id": "CAND_0065195",
+    "llm_score": 0.85,
+    "semantic_score": 0.827689,
+    "behavioral_score": 0.78228,
+    "final_score": 0.83538,
+    "reasoning": "Search Engineer with 5.1 yrs; 6 AI core skills; response rate 0.8."
+  },
+  {
+    "candidate_id": "CAND_0055992",
+    "llm_score": 0.92,
+    "semantic_score": 0.841964,
+    "behavioral_score": 0.459316,
+    "final_score": 0.83529,
+    "reasoning": "AI Engineer with 16.9 yrs; 9 AI core skills; response rate 0.72."
+  },
+  {
+    "candidate_id": "CAND_0093193",
+    "llm_score": 0.88,
+    "semantic_score": 0.747532,
+    "behavioral_score": 0.748017,
+    "final_score": 0.833709,
+    "reasoning": "Senior Machine Learning Engineer with 7.9 yrs; 5 AI core skills; response rate 0.61."
   },
   {
     "candidate_id": "CAND_0052328",
     "llm_score": 0.85,
-    "semantic_score": 0.859309,
+    "semantic_score": 0.811417,
     "behavioral_score": 0.790585,
-    "final_score": 0.84295,
-    "reasoning": "Candidate has 6.5 years of experience in recommendation systems engineering and has worked with Pinecone, a vector database."
-  },
-  {
-    "candidate_id": "CAND_0066999",
-    "llm_score": 0.85,
-    "semantic_score": 0.865001,
-    "behavioral_score": 0.78166,
-    "final_score": 0.842749,
-    "reasoning": "Strong match"
-  },
-  {
-    "candidate_id": "CAND_0050454",
-    "llm_score": 0.85,
-    "semantic_score": 0.853646,
-    "behavioral_score": 0.793135,
-    "final_score": 0.842199,
-    "reasoning": "6.8 years of experience in AI engineering, with a strong background in NLP, recommendation systems, and applied AI."
-  },
-  {
-    "candidate_id": "CAND_0064326",
-    "llm_score": 0.85,
-    "semantic_score": 0.852569,
-    "behavioral_score": 0.77607,
-    "final_score": 0.839424,
-    "reasoning": "The candidate has 7.6 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a machine learning-based system."
-  },
-  {
-    "candidate_id": "CAND_0078492",
-    "llm_score": 0.85,
-    "semantic_score": 0.868739,
-    "behavioral_score": 0.744175,
-    "final_score": 0.837874,
-    "reasoning": "5.1 years of experience in AI engineering, with a strong background in NLP, recommendation systems, and applied AI."
-  },
-  {
-    "candidate_id": "CAND_0014440",
-    "llm_score": 0.85,
-    "semantic_score": 0.872048,
-    "behavioral_score": 0.72512,
-    "final_score": 0.835678,
-    "reasoning": "Strong background in NLP, recommendation systems, and applied AI, with hands-on experience with learning-to-rank models and relevance labeling pipelines."
-  },
-  {
-    "candidate_id": "CAND_0046064",
-    "llm_score": 0.85,
-    "semantic_score": 0.821321,
-    "behavioral_score": 0.787015,
-    "final_score": 0.834816,
-    "reasoning": "The candidate has 8.9 years of hands-on experience building production ML systems, including fine-tuning LLaMA-2-7B and Mistral-7B variants using LoRA and QLoRA for domain-specific candidate-JD, and has experience as a Senior ML Engineer in Search & Ranking at Amazon."
-  },
-  {
-    "candidate_id": "CAND_0037980",
-    "llm_score": 0.85,
-    "semantic_score": 0.825705,
-    "behavioral_score": 0.771715,
-    "final_score": 0.833398,
-    "reasoning": "The candidate has 9 years of experience and has spent the last several years building systems that connect users with relevant information, including designing the ranking layer for Niramai's flagship product and working as a Senior ML Engineer - Search & Ranking at Verloop.io and Salesforce."
-  },
-  {
-    "candidate_id": "CAND_0002025",
-    "llm_score": 0.8,
-    "semantic_score": 0.840945,
-    "behavioral_score": 0.9454,
-    "final_score": 0.829999,
-    "reasoning": "The candidate has 5.9 years of hands-on experience building production ML systems, with a focus on search, retrieval, and ranking. They have designed a hybrid retrieval system combining BM25 with dense vector recall, which is relevant to the role."
-  },
-  {
-    "candidate_id": "CAND_0046525",
-    "llm_score": 0.85,
-    "semantic_score": 0.8288,
-    "behavioral_score": 0.71072,
-    "final_score": 0.824868,
-    "reasoning": "With 6.1 years of hands-on experience building production ML systems, including leading the migration from keyword-based to embedding-based search across a 30M+ candidate corpus, and having worked at Genpact AI and LinkedIn, this candidate demonstrates strong production experience in embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0075574",
-    "llm_score": 0.85,
-    "semantic_score": 0.848931,
-    "behavioral_score": 0.68192,
-    "final_score": 0.824574,
-    "reasoning": "Owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a production-ready ML model, and has experience building ML-powered features in production."
-  },
-  {
-    "candidate_id": "CAND_0065878",
-    "llm_score": 0.85,
-    "semantic_score": 0.855912,
-    "behavioral_score": 0.63206,
-    "final_score": 0.818491,
-    "reasoning": "The candidate has 7.8 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust, data-driven approach."
-  },
-  {
-    "candidate_id": "CAND_0041669",
-    "llm_score": 0.85,
-    "semantic_score": 0.869285,
-    "behavioral_score": 0.6035,
-    "final_score": 0.816882,
-    "reasoning": "The candidate has 8 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a machine learning-based system."
-  },
-  {
-    "candidate_id": "CAND_0046132",
-    "llm_score": 0.65,
-    "semantic_score": 0.846577,
-    "behavioral_score": 0.9856,
-    "final_score": 0.739655,
-    "reasoning": "The candidate has 4.3 years of experience, and they have worked on recommendation-style features in production."
-  },
-  {
-    "candidate_id": "CAND_0040887",
-    "llm_score": 0.65,
-    "semantic_score": 0.841723,
-    "behavioral_score": 0.9793,
-    "final_score": 0.73774,
-    "reasoning": "4.7 years of experience, but slightly below the required 5+ years and no mention of working with vector databases or hybrid search infrastructure."
-  },
-  {
-    "candidate_id": "CAND_0036184",
-    "llm_score": 0.65,
-    "semantic_score": 0.830103,
-    "behavioral_score": 0.9658,
-    "final_score": 0.733391,
-    "reasoning": "The candidate has 6 years of experience in building ML-powered features in production, with a strong background in NLP and recommendation systems. However, their experience is mostly limited to developing semantic search features using sentence-transformers and FAISS, which is a good start but not as extensive as required for the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0053605",
-    "llm_score": 0.65,
-    "semantic_score": 0.82319,
-    "behavioral_score": 0.9619,
-    "final_score": 0.731423,
-    "reasoning": "The candidate has 6.9 years of experience in applied machine learning, with a focus on NLP and analytics. They have built recommendation-style features at Verloop.io, but their experience is mostly limited to collaborative filtering and gradient-boosted trees, which is not as extensive as required for the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0081852",
-    "llm_score": 0.65,
-    "semantic_score": 0.846947,
-    "behavioral_score": 0.88974,
-    "final_score": 0.72535,
-    "reasoning": "The candidate has 5.9 years of experience in building ML-powered features in production, with a strong background in NLP, recommendation systems, and applied AI. They have built a RAG-based customer support chatbot integrated with Pinecone, but their experience is mostly limited to building chatbots and customer support systems, which is not as extensive as required for the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0007596",
-    "llm_score": 0.65,
-    "semantic_score": 0.85019,
-    "behavioral_score": 0.86706,
-    "final_score": 0.722597,
-    "reasoning": "Some experience with recommendation-style features, but not directly related to embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0008295",
-    "llm_score": 0.65,
-    "semantic_score": 0.839249,
-    "behavioral_score": 0.8649,
-    "final_score": 0.720085,
-    "reasoning": "Meets most reqs with minor gaps"
-  },
-  {
-    "candidate_id": "CAND_0081846",
-    "llm_score": 0.65,
-    "semantic_score": 0.827205,
-    "behavioral_score": 0.839035,
-    "final_score": 0.713796,
-    "reasoning": "The candidate has 6.7 years of hands-on experience building production ML systems, but it's unclear if they have experience with embeddings-based retrieval systems specifically. They have experience building a RAG-based ranking pipeline serving 50M+ queries per month, which is relevant but not directly related to the required skills."
-  },
-  {
-    "candidate_id": "CAND_0061257",
-    "llm_score": 0.65,
-    "semantic_score": 0.829179,
-    "behavioral_score": 0.832915,
-    "final_score": 0.713273,
-    "reasoning": "The candidate has 8 years of production experience, but the specific details about their experience with embeddings-based retrieval systems and vector databases are not mentioned. They have designed a ranking layer for LinkedIn's flagship product, which suggests some experience with ranking systems."
-  },
-  {
-    "candidate_id": "CAND_0065195",
-    "llm_score": 0.65,
-    "semantic_score": 0.862648,
-    "behavioral_score": 0.78228,
-    "final_score": 0.712372,
-    "reasoning": "Candidate has 5.1 years of experience in search engineering, but lacks significant experience with embeddings-based retrieval systems and vector databases in a production environment."
-  },
-  {
-    "candidate_id": "CAND_0000031",
-    "llm_score": 0.65,
-    "semantic_score": 0.855414,
-    "behavioral_score": 0.76016,
-    "final_score": 0.707607,
-    "reasoning": "The candidate has 6 years of experience building ML-powered features in production, but there is no specific mention of experience with embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0086022",
-    "llm_score": 0.65,
-    "semantic_score": 0.824694,
-    "behavioral_score": 0.799255,
-    "final_score": 0.707327,
-    "reasoning": "The candidate has 5.3 years of hands-on experience building production ML systems, with a focus on LLMs, RAG, and vector search, but the provided information does not explicitly mention experience with embeddings-based retrieval systems or operationalizing vector databases."
-  },
-  {
-    "candidate_id": "CAND_0076163",
-    "llm_score": 0.65,
-    "semantic_score": 0.842212,
-    "behavioral_score": 0.77528,
-    "final_score": 0.707234,
-    "reasoning": "The candidate has 6.9 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product at Ola, evolving it from a hand-tuned scoring system to a more robust model. However, the candidate's experience is mostly in NLP, and there is no explicit mention of working with embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0027691",
-    "llm_score": 0.65,
-    "semantic_score": 0.792917,
-    "behavioral_score": 0.840565,
-    "final_score": 0.707168,
-    "reasoning": "The candidate has 6.5 years of experience building ML-powered features in production, but there is no specific mention of experience with embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0098846",
-    "llm_score": 0.65,
-    "semantic_score": 0.865132,
-    "behavioral_score": 0.74205,
-    "final_score": 0.706834,
-    "reasoning": "The candidate has 7.6 years of experience building ML-powered features in production, but the specific details about their experience with embeddings-based retrieval systems, vector databases, and operationalizing search infrastructure are not mentioned."
-  },
-  {
-    "candidate_id": "CAND_0051292",
-    "llm_score": 0.65,
-    "semantic_score": 0.865772,
-    "behavioral_score": 0.72403,
-    "final_score": 0.704259,
-    "reasoning": "The candidate has 5.2 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust, data-driven approach."
-  },
-  {
-    "candidate_id": "CAND_0071974",
-    "llm_score": 0.65,
-    "semantic_score": 0.852868,
-    "behavioral_score": 0.735394,
-    "final_score": 0.703383,
-    "reasoning": "The candidate has 7.8 years of hands-on experience building production ML systems, but the provided experience is mostly in recommendations-heavy consumer products, which may not directly align with the requirements of embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0044222",
-    "llm_score": 0.65,
-    "semantic_score": 0.851456,
-    "behavioral_score": 0.73112,
-    "final_score": 0.702459,
-    "reasoning": "The candidate has 7.7 years of experience, which meets the 5-9 year requirement, and has worked on a semantic search feature for an internal knowledge base of ~500K documents, indicating some experience with embeddings-based retrieval systems. However, the description does not explicitly mention experience with vector databases or hybrid search infrastructure, or strong Python skills with a focus on code quality and maintainability."
-  },
-  {
-    "candidate_id": "CAND_0043228",
-    "llm_score": 0.65,
-    "semantic_score": 0.853064,
-    "behavioral_score": 0.723675,
-    "final_score": 0.701664,
-    "reasoning": "The candidate has 6.8 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust ML-based system."
-  },
-  {
-    "candidate_id": "CAND_0024620",
-    "llm_score": 0.65,
-    "semantic_score": 0.876424,
-    "behavioral_score": 0.68215,
-    "final_score": 0.700107,
-    "reasoning": "The candidate has 5.9 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust, data-driven approach."
-  },
-  {
-    "candidate_id": "CAND_0083879",
-    "llm_score": 0.65,
-    "semantic_score": 0.820121,
-    "behavioral_score": 0.74698,
-    "final_score": 0.698571,
-    "reasoning": "The candidate has 7.1 years of experience building ML-powered features in production, but there is no specific mention of experience with embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0093193",
-    "llm_score": 0.65,
-    "semantic_score": 0.81914,
-    "behavioral_score": 0.748017,
-    "final_score": 0.698531,
-    "reasoning": "The candidate has 7.9 years of production experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. They have experience building systems that connect users with relevant information, but the specific technologies used are not mentioned."
+    "final_score": 0.833371,
+    "reasoning": "Recommendation Systems Engineer with 6.5 yrs; 8 AI core skills; response rate 0.79."
   },
   {
     "candidate_id": "CAND_0030031",
-    "llm_score": 0.65,
-    "semantic_score": 0.845545,
+    "llm_score": 0.88,
+    "semantic_score": 0.775703,
     "behavioral_score": 0.7077,
-    "final_score": 0.697764,
-    "reasoning": "Built a content recommendation system serving 10M+ users that combined collaborative filtering with embeddings-based retrieval, and has experience working at Microsoft and Google, but the description does not explicitly mention handling embedding drift, index refresh, or retrieval-quality regression in real-world environments."
+    "final_score": 0.833296,
+    "reasoning": "AI Engineer with 5.7 yrs; 7 AI core skills; response rate 0.94."
   },
   {
-    "candidate_id": "CAND_0077337",
-    "llm_score": 0.65,
-    "semantic_score": 0.839031,
-    "behavioral_score": 0.71504,
-    "final_score": 0.697562,
-    "reasoning": "The candidate has 7 years of hands-on experience building production ML systems, but there is no specific mention of experience with embeddings-based retrieval systems or vector databases."
+    "candidate_id": "CAND_0093331",
+    "llm_score": 0.9,
+    "semantic_score": 0.795235,
+    "behavioral_score": 0.594277,
+    "final_score": 0.833189,
+    "reasoning": "NLP Engineer with 16.1 yrs; 5 AI core skills; response rate 0.41."
   },
   {
-    "candidate_id": "CAND_0049538",
-    "llm_score": 0.65,
-    "semantic_score": 0.868492,
-    "behavioral_score": 0.644025,
-    "final_score": 0.692802,
-    "reasoning": "The candidate has 5.8 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust, data-driven approach. However, the candidate's experience is mostly in building ML-powered features rather than specifically working with embeddings-based retrieval systems."
+    "candidate_id": "CAND_0049896",
+    "llm_score": 0.88,
+    "semantic_score": 0.841857,
+    "behavioral_score": 0.61724,
+    "final_score": 0.832957,
+    "reasoning": "Search Engineer with 7.3 yrs; 10 AI core skills; response rate 0.43."
+  },
+  {
+    "candidate_id": "CAND_0005260",
+    "llm_score": 0.9,
+    "semantic_score": 0.856698,
+    "behavioral_score": 0.502044,
+    "final_score": 0.831646,
+    "reasoning": "Senior NLP Engineer with 5.2 yrs; 12 AI core skills; response rate 0.86."
+  },
+  {
+    "candidate_id": "CAND_0024620",
+    "llm_score": 0.88,
+    "semantic_score": 0.781785,
+    "behavioral_score": 0.68215,
+    "final_score": 0.83068,
+    "reasoning": "AI Engineer with 5.9 yrs; 5 AI core skills; response rate 0.41."
+  },
+  {
+    "candidate_id": "CAND_0078002",
+    "llm_score": 0.88,
+    "semantic_score": 0.803542,
+    "behavioral_score": 0.651032,
+    "final_score": 0.830363,
+    "reasoning": "Machine Learning Engineer with 6.3 yrs; 7 AI core skills; response rate 0.86."
+  },
+  {
+    "candidate_id": "CAND_0044222",
+    "llm_score": 0.85,
+    "semantic_score": 0.830943,
+    "behavioral_score": 0.73112,
+    "final_score": 0.828357,
+    "reasoning": "AI Engineer with 7.7 yrs; 7 AI core skills; response rate 0.6."
+  },
+  {
+    "candidate_id": "CAND_0065878",
+    "llm_score": 0.88,
+    "semantic_score": 0.803887,
+    "behavioral_score": 0.63206,
+    "final_score": 0.827586,
+    "reasoning": "Senior Data Scientist with 7.8 yrs; 9 AI core skills; response rate 0.48."
+  },
+  {
+    "candidate_id": "CAND_0006418",
+    "llm_score": 0.88,
+    "semantic_score": 0.806729,
+    "behavioral_score": 0.62594,
+    "final_score": 0.827237,
+    "reasoning": "Machine Learning Engineer with 5.7 yrs; 7 AI core skills; response rate 0.92."
   },
   {
     "candidate_id": "CAND_0018549",
-    "llm_score": 0.65,
-    "semantic_score": 0.874089,
+    "llm_score": 0.88,
+    "semantic_score": 0.813259,
     "behavioral_score": 0.6086,
-    "final_score": 0.688608,
-    "reasoning": "The candidate has 6.8 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product at Uber, evolving it from a hand-tuned scoring system to a more scalable and maintainable one. However, the provided information does not explicitly mention experience with embeddings-based retrieval systems or vector databases."
+    "final_score": 0.825942,
+    "reasoning": "Recommendation Systems Engineer with 6.8 yrs; 8 AI core skills; response rate 0.73."
   },
   {
-    "candidate_id": "CAND_0050876",
-    "llm_score": 0.65,
-    "semantic_score": 0.862852,
-    "behavioral_score": 0.61451,
-    "final_score": 0.687247,
-    "reasoning": "The candidate has 6 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust, data-driven approach. However, there is no explicit mention of experience with embeddings-based retrieval systems or vector databases."
+    "candidate_id": "CAND_0045250",
+    "llm_score": 0.88,
+    "semantic_score": 0.805791,
+    "behavioral_score": 0.617992,
+    "final_score": 0.825857,
+    "reasoning": "Applied ML Engineer with 6.6 yrs; 8 AI core skills; response rate 0.74."
+  },
+  {
+    "candidate_id": "CAND_0088025",
+    "llm_score": 0.9,
+    "semantic_score": 0.837422,
+    "behavioral_score": 0.486697,
+    "final_score": 0.825489,
+    "reasoning": "Staff Machine Learning Engineer with 8.6 yrs; 11 AI core skills; response rate 0.83."
+  },
+  {
+    "candidate_id": "CAND_0080766",
+    "llm_score": 0.88,
+    "semantic_score": 0.783274,
+    "behavioral_score": 0.6222,
+    "final_score": 0.821985,
+    "reasoning": "Staff Machine Learning Engineer with 8.8 yrs; 8 AI core skills; response rate 0.66."
+  },
+  {
+    "candidate_id": "CAND_0037980",
+    "llm_score": 0.88,
+    "semantic_score": 0.803657,
+    "behavioral_score": 0.590135,
+    "final_score": 0.821252,
+    "reasoning": "Senior Applied Scientist with 9.0 yrs; 6 AI core skills; response rate 0.63."
+  },
+  {
+    "candidate_id": "CAND_0096142",
+    "llm_score": 0.88,
+    "semantic_score": 0.805172,
+    "behavioral_score": 0.586235,
+    "final_score": 0.82097,
+    "reasoning": "Applied ML Engineer with 5.0 yrs; 6 AI core skills; response rate 0.84."
+  },
+  {
+    "candidate_id": "CAND_0093912",
+    "llm_score": 0.82,
+    "semantic_score": 0.813117,
+    "behavioral_score": 0.81889,
+    "final_score": 0.818457,
+    "reasoning": "Senior Data Scientist with 5.3 yrs; 5 AI core skills; response rate 0.66."
+  },
+  {
+    "candidate_id": "CAND_0027691",
+    "llm_score": 0.82,
+    "semantic_score": 0.789495,
+    "behavioral_score": 0.840565,
+    "final_score": 0.816984,
+    "reasoning": "NLP Engineer with 6.5 yrs; 9 AI core skills; response rate 0.68."
+  },
+  {
+    "candidate_id": "CAND_0091534",
+    "llm_score": 0.88,
+    "semantic_score": 0.806511,
+    "behavioral_score": 0.556219,
+    "final_score": 0.816735,
+    "reasoning": "AI Engineer with 16.6 yrs; 6 AI core skills; response rate 0.84."
+  },
+  {
+    "candidate_id": "CAND_0096172",
+    "llm_score": 0.88,
+    "semantic_score": 0.816703,
+    "behavioral_score": 0.540874,
+    "final_score": 0.816472,
+    "reasoning": "NLP Engineer with 5.2 yrs; 7 AI core skills; response rate 0.47."
+  },
+  {
+    "candidate_id": "CAND_0083879",
+    "llm_score": 0.83,
+    "semantic_score": 0.816807,
+    "behavioral_score": 0.74698,
+    "final_score": 0.814908,
+    "reasoning": "Machine Learning Engineer with 7.1 yrs; 7 AI core skills; response rate 0.47."
+  },
+  {
+    "candidate_id": "CAND_0037566",
+    "llm_score": 0.8,
+    "semantic_score": 0.843531,
+    "behavioral_score": 0.82603,
+    "final_score": 0.812611,
+    "reasoning": "Machine Learning Engineer with 6.9 yrs; 8 AI core skills; response rate 0.5."
+  },
+  {
+    "candidate_id": "CAND_0041610",
+    "llm_score": 0.83,
+    "semantic_score": 0.811302,
+    "behavioral_score": 0.732445,
+    "final_score": 0.811627,
+    "reasoning": "Recommendation Systems Engineer with 6.7 yrs; 7 AI core skills; response rate 0.52."
+  },
+  {
+    "candidate_id": "CAND_0042029",
+    "llm_score": 0.88,
+    "semantic_score": 0.828487,
+    "behavioral_score": 0.492851,
+    "final_score": 0.811625,
+    "reasoning": "Senior Data Scientist with 6.5 yrs; 10 AI core skills; response rate 0.67."
+  },
+  {
+    "candidate_id": "CAND_0008425",
+    "llm_score": 0.88,
+    "semantic_score": 0.833923,
+    "behavioral_score": 0.481559,
+    "final_score": 0.811018,
+    "reasoning": "Senior NLP Engineer with 7.8 yrs; 9 AI core skills; response rate 0.66."
+  },
+  {
+    "candidate_id": "CAND_0066376",
+    "llm_score": 0.88,
+    "semantic_score": 0.82681,
+    "behavioral_score": 0.490841,
+    "final_score": 0.810988,
+    "reasoning": "Applied ML Engineer with 5.7 yrs; 10 AI core skills; response rate 0.51."
+  },
+  {
+    "candidate_id": "CAND_0037000",
+    "llm_score": 0.83,
+    "semantic_score": 0.829062,
+    "behavioral_score": 0.694425,
+    "final_score": 0.809476,
+    "reasoning": "Search Engineer with 6.3 yrs; 12 AI core skills; response rate 0.61."
+  },
+  {
+    "candidate_id": "CAND_0081852",
+    "llm_score": 0.8,
+    "semantic_score": 0.779898,
+    "behavioral_score": 0.88974,
+    "final_score": 0.809441,
+    "reasoning": "Senior Data Scientist with 5.9 yrs; 6 AI core skills; response rate 0.44."
+  },
+  {
+    "candidate_id": "CAND_0099806",
+    "llm_score": 0.8,
+    "semantic_score": 0.821531,
+    "behavioral_score": 0.824755,
+    "final_score": 0.808019,
+    "reasoning": "AI Engineer with 4.6 yrs; 9 AI core skills; response rate 0.76."
+  },
+  {
+    "candidate_id": "CAND_0010770",
+    "llm_score": 0.8,
+    "semantic_score": 0.810539,
+    "behavioral_score": 0.778855,
+    "final_score": 0.798936,
+    "reasoning": "Recommendation Systems Engineer with 15.2 yrs; 6 AI core skills; response rate 0.73."
+  },
+  {
+    "candidate_id": "CAND_0054394",
+    "llm_score": 0.8,
+    "semantic_score": 0.819801,
+    "behavioral_score": 0.749785,
+    "final_score": 0.796428,
+    "reasoning": "Recommendation Systems Engineer with 4.1 yrs; 8 AI core skills; response rate 0.64."
+  },
+  {
+    "candidate_id": "CAND_0051004",
+    "llm_score": 0.8,
+    "semantic_score": 0.821882,
+    "behavioral_score": 0.73933,
+    "final_score": 0.795276,
+    "reasoning": "Senior Data Scientist with 4.7 yrs; 9 AI core skills; response rate 0.41."
+  },
+  {
+    "candidate_id": "CAND_0009024",
+    "llm_score": 0.78,
+    "semantic_score": 0.797103,
+    "behavioral_score": 0.754885,
+    "final_score": 0.779653,
+    "reasoning": "Search Engineer with 5.2 yrs; 7 AI core skills; response rate 0.46."
+  },
+  {
+    "candidate_id": "CAND_0066999",
+    "llm_score": 0.78,
+    "semantic_score": 0.774154,
+    "behavioral_score": 0.78166,
+    "final_score": 0.77908,
+    "reasoning": "Recommendation Systems Engineer with 5.9 yrs; 6 AI core skills; response rate 0.63."
+  },
+  {
+    "candidate_id": "CAND_0061655",
+    "llm_score": 0.78,
+    "semantic_score": 0.799323,
+    "behavioral_score": 0.744825,
+    "final_score": 0.778588,
+    "reasoning": "Machine Learning Engineer with 4.6 yrs; 8 AI core skills; response rate 0.88."
+  },
+  {
+    "candidate_id": "CAND_0075574",
+    "llm_score": 0.78,
+    "semantic_score": 0.797074,
+    "behavioral_score": 0.68192,
+    "final_score": 0.768703,
+    "reasoning": "Machine Learning Engineer with 5.7 yrs; 7 AI core skills; response rate 0.58."
+  },
+  {
+    "candidate_id": "CAND_0049538",
+    "llm_score": 0.78,
+    "semantic_score": 0.812341,
+    "behavioral_score": 0.644025,
+    "final_score": 0.766072,
+    "reasoning": "Applied ML Engineer with 5.8 yrs; 10 AI core skills; response rate 0.72."
+  },
+  {
+    "candidate_id": "CAND_0014440",
+    "llm_score": 0.78,
+    "semantic_score": 0.821874,
+    "behavioral_score": 0.616352,
+    "final_score": 0.763828,
+    "reasoning": "Recommendation Systems Engineer with 6.4 yrs; 6 AI core skills; response rate 0.64."
+  },
+  {
+    "candidate_id": "CAND_0079284",
+    "llm_score": 0.78,
+    "semantic_score": 0.807117,
+    "behavioral_score": 0.609769,
+    "final_score": 0.759889,
+    "reasoning": "Machine Learning Engineer with 4.9 yrs; 6 AI core skills; response rate 0.79."
   },
   {
     "candidate_id": "CAND_0024466",
-    "llm_score": 0.65,
-    "semantic_score": 0.868507,
+    "llm_score": 0.78,
+    "semantic_score": 0.811255,
     "behavioral_score": 0.59696,
-    "final_score": 0.685745,
-    "reasoning": "The candidate has 5.2 years of experience building ML-powered features in production and owned the ranking layer for an e-commerce search product, evolving it from a hand-tuned scoring system to a more robust ML-based system. However, there is no explicit mention of experience with embeddings-based retrieval systems or vector databases."
+    "final_score": 0.758795,
+    "reasoning": "Search Engineer with 5.2 yrs; 10 AI core skills; response rate 0.47."
+  },
+  {
+    "candidate_id": "CAND_0037944",
+    "llm_score": 0.78,
+    "semantic_score": 0.809097,
+    "behavioral_score": 0.597935,
+    "final_score": 0.75851,
+    "reasoning": "Senior Data Scientist with 4.9 yrs; 6 AI core skills; response rate 0.42."
+  },
+  {
+    "candidate_id": "CAND_0050876",
+    "llm_score": 0.78,
+    "semantic_score": 0.792802,
+    "behavioral_score": 0.61451,
+    "final_score": 0.757737,
+    "reasoning": "Applied ML Engineer with 6.0 yrs; 8 AI core skills; response rate 0.67."
+  },
+  {
+    "candidate_id": "CAND_0030348",
+    "llm_score": 0.78,
+    "semantic_score": 0.830172,
+    "behavioral_score": 0.562712,
+    "final_score": 0.757441,
+    "reasoning": "Machine Learning Engineer with 4.5 yrs; 6 AI core skills; response rate 0.54."
+  },
+  {
+    "candidate_id": "CAND_0061257",
+    "llm_score": 0.72,
+    "semantic_score": 0.758949,
+    "behavioral_score": 0.832915,
+    "final_score": 0.744727,
+    "reasoning": "Staff Machine Learning Engineer with 8.0 yrs; 2 AI core skills; response rate 0.87."
+  },
+  {
+    "candidate_id": "CAND_0098846",
+    "llm_score": 0.71,
+    "semantic_score": 0.782519,
+    "behavioral_score": 0.74205,
+    "final_score": 0.729311,
+    "reasoning": "AI Engineer with 7.6 yrs; 7 AI core skills; response rate 0.62."
+  },
+  {
+    "candidate_id": "CAND_0074225",
+    "llm_score": 0.72,
+    "semantic_score": 0.814291,
+    "behavioral_score": 0.5993,
+    "final_score": 0.720753,
+    "reasoning": "Machine Learning Engineer with 4.3 yrs; 7 AI core skills; response rate 0.91."
+  },
+  {
+    "candidate_id": "CAND_0068932",
+    "llm_score": 0.64,
+    "semantic_score": 0.781674,
+    "behavioral_score": 0.9859,
+    "final_score": 0.72022,
+    "reasoning": "ML Engineer with 5.2 yrs; 5 AI core skills; response rate 0.82."
+  },
+  {
+    "candidate_id": "CAND_0036437",
+    "llm_score": 0.71,
+    "semantic_score": 0.817706,
+    "behavioral_score": 0.625834,
+    "final_score": 0.718916,
+    "reasoning": "Search Engineer with 4.8 yrs; 6 AI core skills; response rate 0.87."
+  },
+  {
+    "candidate_id": "CAND_0020708",
+    "llm_score": 0.71,
+    "semantic_score": 0.815017,
+    "behavioral_score": 0.62933,
+    "final_score": 0.718903,
+    "reasoning": "Search Engineer with 4.2 yrs; 11 AI core skills; response rate 0.84."
+  },
+  {
+    "candidate_id": "CAND_0080534",
+    "llm_score": 0.64,
+    "semantic_score": 0.770767,
+    "behavioral_score": 0.9871,
+    "final_score": 0.718218,
+    "reasoning": "ML Engineer with 3.8 yrs; 8 AI core skills; response rate 0.91."
   },
   {
     "candidate_id": "CAND_0033179",
-    "llm_score": 0.4,
-    "semantic_score": 0.854086,
+    "llm_score": 0.64,
+    "semantic_score": 0.771459,
     "behavioral_score": 0.9766,
-    "final_score": 0.577307,
-    "reasoning": "The candidate has 6.9 years of experience, but most of their experience is in research environments without production deployment experience."
+    "final_score": 0.716782,
+    "reasoning": "AI Research Engineer with 6.9 yrs; 9 AI core skills; response rate 0.84."
   },
   {
-    "candidate_id": "CAND_0074024",
-    "llm_score": 0.4,
-    "semantic_score": 0.846478,
-    "behavioral_score": 0.961,
-    "final_score": 0.573446,
-    "reasoning": "3.9 years of experience, but below the required 5+ years and no mention of working with embeddings-based retrieval systems or vector databases."
+    "candidate_id": "CAND_0046132",
+    "llm_score": 0.64,
+    "semantic_score": 0.748122,
+    "behavioral_score": 0.9856,
+    "final_score": 0.713464,
+    "reasoning": "AI Research Engineer with 4.3 yrs; 6 AI core skills; response rate 0.94."
   },
   {
-    "candidate_id": "CAND_0064256",
-    "llm_score": 0.4,
-    "semantic_score": 0.810715,
-    "behavioral_score": 0.997,
-    "final_score": 0.571693,
-    "reasoning": "Lack of experience in embeddings-based retrieval systems and vector databases."
+    "candidate_id": "CAND_0016659",
+    "llm_score": 0.64,
+    "semantic_score": 0.797791,
+    "behavioral_score": 0.89541,
+    "final_score": 0.70987,
+    "reasoning": "ML Engineer with 4.4 yrs; 7 AI core skills; response rate 0.89."
   },
   {
-    "candidate_id": "CAND_0015967",
+    "candidate_id": "CAND_0093547",
+    "llm_score": 0.72,
+    "semantic_score": 0.866688,
+    "behavioral_score": 0.452778,
+    "final_score": 0.709254,
+    "reasoning": "Senior Machine Learning Engineer with 2.9 yrs; 12 AI core skills; response rate 0.75."
+  },
+  {
+    "candidate_id": "CAND_0084819",
+    "llm_score": 0.71,
+    "semantic_score": 0.82523,
+    "behavioral_score": 0.544544,
+    "final_score": 0.708228,
+    "reasoning": "Search Engineer with 4.5 yrs; 11 AI core skills; response rate 0.74."
+  },
+  {
+    "candidate_id": "CAND_0070525",
+    "llm_score": 0.64,
+    "semantic_score": 0.776792,
+    "behavioral_score": 0.88812,
+    "final_score": 0.704576,
+    "reasoning": "Senior Software Engineer (ML) with 5.4 yrs; 5 AI core skills; response rate 0.93."
+  },
+  {
+    "candidate_id": "CAND_0001610",
+    "llm_score": 0.7,
+    "semantic_score": 0.81381,
+    "behavioral_score": 0.549185,
+    "final_score": 0.70014,
+    "reasoning": "Machine Learning Engineer with 3.0 yrs; 13 AI core skills; response rate 0.57."
+  },
+  {
+    "candidate_id": "CAND_0061339",
+    "llm_score": 0.66,
+    "semantic_score": 0.823916,
+    "behavioral_score": 0.523991,
+    "final_score": 0.672382,
+    "reasoning": "Search Engineer with 4.2 yrs; 6 AI core skills; response rate 0.90."
+  },
+  {
+    "candidate_id": "CAND_0007460",
+    "llm_score": 0.55,
+    "semantic_score": 0.779321,
+    "behavioral_score": 0.645515,
+    "final_score": 0.610191,
+    "reasoning": "AI Engineer with 4.7 yrs; 10 AI core skills; response rate 0.48."
+  },
+  {
+    "candidate_id": "CAND_0078042",
+    "llm_score": 0.55,
+    "semantic_score": 0.79607,
+    "behavioral_score": 0.622965,
+    "final_score": 0.610159,
+    "reasoning": "Applied ML Engineer with 4.7 yrs; 5 AI core skills; response rate 0.91."
+  },
+  {
+    "candidate_id": "CAND_0075439",
+    "llm_score": 0.55,
+    "semantic_score": 0.796898,
+    "behavioral_score": 0.609195,
+    "final_score": 0.608259,
+    "reasoning": "Machine Learning Engineer with 4.3 yrs; 7 AI core skills; response rate 0.56."
+  },
+  {
+    "candidate_id": "CAND_0087364",
+    "llm_score": 0.55,
+    "semantic_score": 0.811828,
+    "behavioral_score": 0.561382,
+    "final_score": 0.604073,
+    "reasoning": "Recommendation Systems Engineer with 4.9 yrs; 6 AI core skills; response rate 0.48."
+  },
+  {
+    "candidate_id": "CAND_0075481",
+    "llm_score": 0.41,
+    "semantic_score": 0.729621,
+    "behavioral_score": 0.9985,
+    "final_score": 0.562199,
+    "reasoning": "AI Research Engineer with 3.9 yrs; 7 AI core skills; response rate 0.88."
+  },
+  {
+    "candidate_id": "CAND_0043860",
     "llm_score": 0.4,
-    "semantic_score": 0.859184,
-    "behavioral_score": 0.8968,
-    "final_score": 0.566357,
-    "reasoning": "The candidate has 5.4 years of experience in applied machine learning, but their experience is mostly focused on recommendation-style features and predictive modeling."
+    "semantic_score": 0.759032,
+    "behavioral_score": 0.9838,
+    "final_score": 0.559376,
+    "reasoning": "Junior ML Engineer with 6.1 yrs; 5 AI core skills; response rate 0.81."
   },
   {
     "candidate_id": "CAND_0026942",
     "llm_score": 0.4,
-    "semantic_score": 0.790839,
+    "semantic_score": 0.748767,
     "behavioral_score": 0.9778,
-    "final_score": 0.564838,
-    "reasoning": "Limited experience with embeddings-based retrieval systems and vector databases."
+    "final_score": 0.556423,
+    "reasoning": "Junior ML Engineer with 6.0 yrs; 9 AI core skills; response rate 0.84."
+  },
+  {
+    "candidate_id": "CAND_0051936",
+    "llm_score": 0.39,
+    "semantic_score": 0.763158,
+    "behavioral_score": 0.9955,
+    "final_score": 0.555457,
+    "reasoning": "AI Research Engineer with 3.9 yrs; 3 AI core skills; response rate 0.81."
   },
   {
     "candidate_id": "CAND_0048558",
     "llm_score": 0.4,
-    "semantic_score": 0.796642,
+    "semantic_score": 0.748744,
     "behavioral_score": 0.97,
-    "final_score": 0.564828,
-    "reasoning": "Candidate has 6.7 years of experience, but most of their experience is in predictive modeling and NLP, which is not directly relevant to the role."
+    "final_score": 0.555249,
+    "reasoning": "Data Scientist with 6.7 yrs; 3 AI core skills; response rate 0.8."
   },
   {
-    "candidate_id": "CAND_0067866",
+    "candidate_id": "CAND_0053605",
     "llm_score": 0.4,
-    "semantic_score": 0.8355,
-    "behavioral_score": 0.8919,
-    "final_score": 0.560885,
-    "reasoning": "Recent work has been on predictive modeling, which is not directly related to embeddings-based retrieval systems."
+    "semantic_score": 0.747556,
+    "behavioral_score": 0.9619,
+    "final_score": 0.553796,
+    "reasoning": "Senior Software Engineer (ML) with 6.9 yrs; 4 AI core skills; response rate 0.88."
   },
   {
-    "candidate_id": "CAND_0065786",
-    "llm_score": 0.4,
-    "semantic_score": 0.843337,
-    "behavioral_score": 0.87921,
-    "final_score": 0.560549,
-    "reasoning": "Lack of experience in embeddings-based retrieval systems and vector databases."
+    "candidate_id": "CAND_0043637",
+    "llm_score": 0.41,
+    "semantic_score": 0.75528,
+    "behavioral_score": 0.89325,
+    "final_score": 0.551543,
+    "reasoning": "Junior ML Engineer with 5.5 yrs; 3 AI core skills; response rate 0.92."
   },
   {
-    "candidate_id": "CAND_0024549",
+    "candidate_id": "CAND_0050553",
     "llm_score": 0.4,
-    "semantic_score": 0.840845,
-    "behavioral_score": 0.86787,
-    "final_score": 0.55835,
-    "reasoning": "Recent work has been on recommendation-style features, which is lighter than ranking systems."
+    "semantic_score": 0.732151,
+    "behavioral_score": 0.9616,
+    "final_score": 0.55067,
+    "reasoning": "ML Engineer with 3.6 yrs; 3 AI core skills; response rate 0.95."
   },
   {
-    "candidate_id": "CAND_0072688",
+    "candidate_id": "CAND_0031842",
+    "llm_score": 0.39,
+    "semantic_score": 0.751066,
+    "behavioral_score": 0.9772,
+    "final_score": 0.550293,
+    "reasoning": "AI Specialist with 3.5 yrs; 6 AI core skills; response rate 0.82."
+  },
+  {
+    "candidate_id": "CAND_0008295",
+    "llm_score": 0.41,
+    "semantic_score": 0.769948,
+    "behavioral_score": 0.8649,
+    "final_score": 0.550225,
+    "reasoning": "AI Research Engineer with 6.5 yrs; 4 AI core skills; response rate 0.89."
+  },
+  {
+    "candidate_id": "CAND_0005509",
     "llm_score": 0.4,
-    "semantic_score": 0.81267,
-    "behavioral_score": 0.8892,
-    "final_score": 0.555914,
-    "reasoning": "The candidate has 6.9 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in analytics and ML, with a focus on NLP pipelines for sentiment analysis and document classification."
+    "semantic_score": 0.742393,
+    "behavioral_score": 0.9421,
+    "final_score": 0.549794,
+    "reasoning": "Data Scientist with 6.0 yrs; 2 AI core skills; response rate 0.40."
+  },
+  {
+    "candidate_id": "CAND_0003575",
+    "llm_score": 0.4,
+    "semantic_score": 0.784055,
+    "behavioral_score": 0.85194,
+    "final_score": 0.544602,
+    "reasoning": "Data Scientist with 3.7 yrs; 8 AI core skills; response rate 0.67."
   },
   {
     "candidate_id": "CAND_0026362",
     "llm_score": 0.4,
-    "semantic_score": 0.847946,
+    "semantic_score": 0.77782,
     "behavioral_score": 0.83169,
-    "final_score": 0.554343,
-    "reasoning": "Relevant exp but significant gaps"
+    "final_score": 0.540317,
+    "reasoning": "Data Scientist with 5.0 yrs; 3 AI core skills; response rate 0.4."
   },
   {
-    "candidate_id": "CAND_0070525",
-    "llm_score": 0.4,
-    "semantic_score": 0.803118,
-    "behavioral_score": 0.88812,
-    "final_score": 0.553842,
-    "reasoning": "The candidate has 5.4 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building NLP pipelines for sentiment analysis and document classification."
+    "candidate_id": "CAND_0072688",
+    "llm_score": 0.39,
+    "semantic_score": 0.759136,
+    "behavioral_score": 0.8892,
+    "final_score": 0.538707,
+    "reasoning": "Data Scientist with 6.9 yrs; 6 AI core skills; response rate 0.87."
   },
   {
-    "candidate_id": "CAND_0076587",
-    "llm_score": 0.4,
-    "semantic_score": 0.849232,
-    "behavioral_score": 0.81328,
-    "final_score": 0.551838,
-    "reasoning": "Candidate has 4.9 years of experience in AI and ML engineering, but lacks significant experience with embeddings-based retrieval systems and vector databases in a production environment."
+    "candidate_id": "CAND_0063622",
+    "llm_score": 0.32,
+    "semantic_score": 0.730567,
+    "behavioral_score": 0.961,
+    "final_score": 0.498263,
+    "reasoning": "Computer Vision Engineer with 5.2 yrs; 9 AI core skills; response rate 0.92."
   },
   {
-    "candidate_id": "CAND_0037566",
-    "llm_score": 0.4,
-    "semantic_score": 0.837113,
-    "behavioral_score": 0.82603,
-    "final_score": 0.551327,
-    "reasoning": "The candidate has 6.9 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
+    "candidate_id": "CAND_0032887",
+    "llm_score": 0.32,
+    "semantic_score": 0.727226,
+    "behavioral_score": 0.87651,
+    "final_score": 0.484922,
+    "reasoning": "ML Engineer with 6.1 yrs; 5 AI core skills; response rate 0.81."
   },
   {
-    "candidate_id": "CAND_0020350",
-    "llm_score": 0.4,
-    "semantic_score": 0.823253,
-    "behavioral_score": 0.836485,
-    "final_score": 0.550123,
-    "reasoning": "The candidate has 5.8 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
-  },
-  {
-    "candidate_id": "CAND_0052682",
-    "llm_score": 0.4,
-    "semantic_score": 0.836621,
-    "behavioral_score": 0.81277,
-    "final_score": 0.54924,
-    "reasoning": "The candidate has 6.6 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
-  },
-  {
-    "candidate_id": "CAND_0004402",
-    "llm_score": 0.4,
-    "semantic_score": 0.850095,
-    "behavioral_score": 0.78416,
-    "final_score": 0.547643,
-    "reasoning": "The candidate has 6 years of experience in applied machine learning, but there is no mention of production experience with embeddings-based retrieval systems or working with vector databases. Their experience is mostly in research and development roles."
-  },
-  {
-    "candidate_id": "CAND_0017093",
-    "llm_score": 0.4,
-    "semantic_score": 0.792431,
-    "behavioral_score": 0.8488,
-    "final_score": 0.545806,
-    "reasoning": "The candidate has 5.9 years of experience, but there is no mention of production experience with embeddings-based retrieval systems, and their work experience is mostly in time-series forecasting and AI research, which does not align with the requirements of the role."
-  },
-  {
-    "candidate_id": "CAND_0009024",
-    "llm_score": 0.4,
-    "semantic_score": 0.860134,
-    "behavioral_score": 0.754885,
-    "final_score": 0.54526,
-    "reasoning": "The candidate has 5.2 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
-  },
-  {
-    "candidate_id": "CAND_0037160",
-    "llm_score": 0.4,
-    "semantic_score": 0.858515,
-    "behavioral_score": 0.752845,
-    "final_score": 0.54463,
-    "reasoning": "The candidate has 6 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. They have worked on recommendation-style features, which is lighter weight than ranking systems, but it's not a direct match for the requirements."
-  },
-  {
-    "candidate_id": "CAND_0011327",
-    "llm_score": 0.4,
-    "semantic_score": 0.840216,
-    "behavioral_score": 0.77624,
-    "final_score": 0.544479,
-    "reasoning": "The candidate has 6.3 years of experience, but it's unclear if they have production experience with embeddings-based retrieval systems, and their experience is primarily in AI research environments."
-  },
-  {
-    "candidate_id": "CAND_0036437",
-    "llm_score": 0.4,
-    "semantic_score": 0.863646,
-    "behavioral_score": 0.736275,
-    "final_score": 0.54317,
-    "reasoning": "The candidate has 4.8 years of experience, which is below the required 5+ years, and their experience is mostly in building ML-powered features, not specifically in embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0062247",
-    "llm_score": 0.4,
-    "semantic_score": 0.854179,
-    "behavioral_score": 0.74086,
-    "final_score": 0.541965,
-    "reasoning": "The candidate has 7.3 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
-  },
-  {
-    "candidate_id": "CAND_0097176",
-    "llm_score": 0.4,
-    "semantic_score": 0.816412,
-    "behavioral_score": 0.78421,
-    "final_score": 0.540914,
-    "reasoning": "The candidate has 5.9 years of experience, but it's unclear if they have production experience with embeddings-based retrieval systems. Their experience is mostly in NLP pipelines and sentiment analysis, which is relevant but not directly applicable to the role."
-  },
-  {
-    "candidate_id": "CAND_0019880",
-    "llm_score": 0.4,
-    "semantic_score": 0.796228,
-    "behavioral_score": 0.801295,
-    "final_score": 0.53944,
-    "reasoning": "The candidate has 5.7 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their work experience is mostly in data science and predictive modeling, which is tangential to the requirements of the role."
-  },
-  {
-    "candidate_id": "CAND_0098454",
-    "llm_score": 0.4,
-    "semantic_score": 0.8166,
-    "behavioral_score": 0.77168,
-    "final_score": 0.539072,
-    "reasoning": "The candidate has 6.6 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in data science and ML engineering, with no specific mention of production experience in real-world environments."
-  },
-  {
-    "candidate_id": "CAND_0053695",
-    "llm_score": 0.4,
-    "semantic_score": 0.842749,
-    "behavioral_score": 0.725815,
-    "final_score": 0.537422,
-    "reasoning": "The candidate has 5.8 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of working with ranking, retrieval, or matching systems."
-  },
-  {
-    "candidate_id": "CAND_0095528",
-    "llm_score": 0.4,
-    "semantic_score": 0.849214,
-    "behavioral_score": 0.71428,
-    "final_score": 0.536985,
-    "reasoning": "The candidate has 5.3 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
-  },
-  {
-    "candidate_id": "CAND_0075249",
-    "llm_score": 0.4,
-    "semantic_score": 0.862428,
-    "behavioral_score": 0.696379,
-    "final_score": 0.536943,
-    "reasoning": "The candidate has 6.2 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift, index refresh, or retrieval-quality regression."
+    "candidate_id": "CAND_0066690",
+    "llm_score": 0.3,
+    "semantic_score": 0.723137,
+    "behavioral_score": 0.964,
+    "final_score": 0.484227,
+    "reasoning": "ML Engineer with 4.8 yrs; 8 AI core skills; response rate 0.88."
   },
   {
     "candidate_id": "CAND_0024878",
-    "llm_score": 0.39,
-    "semantic_score": 0.827898,
+    "llm_score": 0.32,
+    "semantic_score": 0.788642,
     "behavioral_score": 0.78464,
-    "final_score": 0.536776,
-    "reasoning": "The candidate has 5.7 years of experience in applied machine learning, but there is no mention of production experience with embeddings-based retrieval systems or experience with vector databases. Their work experience is also limited to two roles, with no clear indication of handling embedding drift, index refresh, or retrieval-quality regression in real-world environments."
+    "final_score": 0.483424,
+    "reasoning": "AI Specialist with 5.7 yrs; 6 AI core skills; response rate 0.84."
   },
   {
-    "candidate_id": "CAND_0061655",
-    "llm_score": 0.39,
-    "semantic_score": 0.855868,
-    "behavioral_score": 0.744825,
-    "final_score": 0.536397,
-    "reasoning": "The candidate has 4.6 years of experience, which is below the required 5+ years, and their experience is mostly in building ML-powered features in production, but there is no specific mention of working with embeddings-based retrieval systems or vector databases."
+    "candidate_id": "CAND_0064888",
+    "llm_score": 0.3,
+    "semantic_score": 0.713972,
+    "behavioral_score": 0.9592,
+    "final_score": 0.481674,
+    "reasoning": "ML Engineer with 5.8 yrs; 8 AI core skills; response rate 0.92."
   },
   {
-    "candidate_id": "CAND_0029439",
-    "llm_score": 0.39,
-    "semantic_score": 0.820678,
-    "behavioral_score": 0.78488,
-    "final_score": 0.535368,
-    "reasoning": "The candidate has 6.4 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their work experience is mostly in time-series forecasting and supply-chain demand prediction, which is not directly related to the role requirements."
+    "candidate_id": "CAND_0031829",
+    "llm_score": 0.3,
+    "semantic_score": 0.716552,
+    "behavioral_score": 0.955,
+    "final_score": 0.48156,
+    "reasoning": "Senior Software Engineer with 6.5 yrs; 2 AI core skills; response rate 0.73."
+  },
+  {
+    "candidate_id": "CAND_0067866",
+    "llm_score": 0.3,
+    "semantic_score": 0.751917,
+    "behavioral_score": 0.8919,
+    "final_score": 0.479168,
+    "reasoning": "Senior Software Engineer (ML) with 6.4 yrs; 3 AI core skills; response rate 0.79."
+  },
+  {
+    "candidate_id": "CAND_0063736",
+    "llm_score": 0.3,
+    "semantic_score": 0.75514,
+    "behavioral_score": 0.87813,
+    "final_score": 0.477748,
+    "reasoning": "Data Scientist with 3.7 yrs; 8 AI core skills; response rate 0.83."
+  },
+  {
+    "candidate_id": "CAND_0004402",
+    "llm_score": 0.32,
+    "semantic_score": 0.759592,
+    "behavioral_score": 0.78416,
+    "final_score": 0.477542,
+    "reasoning": "AI Research Engineer with 6.0 yrs; 7 AI core skills; response rate 0.83."
+  },
+  {
+    "candidate_id": "CAND_0007596",
+    "llm_score": 0.3,
+    "semantic_score": 0.761901,
+    "behavioral_score": 0.86706,
+    "final_score": 0.477439,
+    "reasoning": "Junior ML Engineer with 4.4 yrs; 6 AI core skills; response rate 0.86."
+  },
+  {
+    "candidate_id": "CAND_0067535",
+    "llm_score": 0.3,
+    "semantic_score": 0.744988,
+    "behavioral_score": 0.88812,
+    "final_score": 0.477216,
+    "reasoning": "Junior ML Engineer with 6.8 yrs; 6 AI core skills; response rate 0.81."
+  },
+  {
+    "candidate_id": "CAND_0063118",
+    "llm_score": 0.3,
+    "semantic_score": 0.711974,
+    "behavioral_score": 0.9313,
+    "final_score": 0.47709,
+    "reasoning": "Analytics Engineer with 4.6 yrs; 5 AI core skills; response rate 0.81."
+  },
+  {
+    "candidate_id": "CAND_0097036",
+    "llm_score": 0.3,
+    "semantic_score": 0.714861,
+    "behavioral_score": 0.9145,
+    "final_score": 0.475147,
+    "reasoning": "Backend Engineer with 4.6 yrs; 3 AI core skills; response rate 0.52."
+  },
+  {
+    "candidate_id": "CAND_0065786",
+    "llm_score": 0.3,
+    "semantic_score": 0.740647,
+    "behavioral_score": 0.87921,
+    "final_score": 0.475011,
+    "reasoning": "AI Specialist with 4.9 yrs; 5 AI core skills; response rate 0.89."
+  },
+  {
+    "candidate_id": "CAND_0056176",
+    "llm_score": 0.3,
+    "semantic_score": 0.721201,
+    "behavioral_score": 0.9013,
+    "final_score": 0.474435,
+    "reasoning": "Senior Data Engineer with 7.0 yrs; 4 AI core skills; response rate 0.75."
+  },
+  {
+    "candidate_id": "CAND_0017171",
+    "llm_score": 0.3,
+    "semantic_score": 0.699466,
+    "behavioral_score": 0.9268,
+    "final_score": 0.473913,
+    "reasoning": "Analytics Engineer with 6.7 yrs; 6 AI core skills; response rate 0.75."
+  },
+  {
+    "candidate_id": "CAND_0020350",
+    "llm_score": 0.3,
+    "semantic_score": 0.766567,
+    "behavioral_score": 0.836485,
+    "final_score": 0.473786,
+    "reasoning": "AI Engineer with 5.8 yrs; 7 AI core skills; response rate 0.58."
+  },
+  {
+    "candidate_id": "CAND_0044213",
+    "llm_score": 0.3,
+    "semantic_score": 0.723369,
+    "behavioral_score": 0.89379,
+    "final_score": 0.473742,
+    "reasoning": "AI Specialist with 3.7 yrs; 7 AI core skills; response rate 0.89."
+  },
+  {
+    "candidate_id": "CAND_0024549",
+    "llm_score": 0.3,
+    "semantic_score": 0.736661,
+    "behavioral_score": 0.86787,
+    "final_score": 0.472513,
+    "reasoning": "AI Specialist with 5.2 yrs; 5 AI core skills; response rate 0.85."
+  },
+  {
+    "candidate_id": "CAND_0087744",
+    "llm_score": 0.3,
+    "semantic_score": 0.755673,
+    "behavioral_score": 0.829855,
+    "final_score": 0.470613,
+    "reasoning": "Senior Software Engineer (ML) with 3.9 yrs; 10 AI core skills; response rate 0.88."
+  },
+  {
+    "candidate_id": "CAND_0002120",
+    "llm_score": 0.3,
+    "semantic_score": 0.784403,
+    "behavioral_score": 0.78876,
+    "final_score": 0.470195,
+    "reasoning": "ML Engineer with 6.5 yrs; 6 AI core skills; response rate 0.72."
+  },
+  {
+    "candidate_id": "CAND_0011327",
+    "llm_score": 0.3,
+    "semantic_score": 0.787697,
+    "behavioral_score": 0.77624,
+    "final_score": 0.468975,
+    "reasoning": "AI Research Engineer with 6.3 yrs; 4 AI core skills; response rate 0.79."
+  },
+  {
+    "candidate_id": "CAND_0064609",
+    "llm_score": 0.3,
+    "semantic_score": 0.723526,
+    "behavioral_score": 0.8602,
+    "final_score": 0.468735,
+    "reasoning": "Senior Software Engineer with 7.4 yrs; 5 AI core skills; response rate 0.45."
+  },
+  {
+    "candidate_id": "CAND_0074024",
+    "llm_score": 0.3,
+    "semantic_score": 0.752351,
+    "behavioral_score": 0.81685,
+    "final_score": 0.467998,
+    "reasoning": "AI Specialist with 3.9 yrs; 5 AI core skills; response rate 0.50."
+  },
+  {
+    "candidate_id": "CAND_0054318",
+    "llm_score": 0.3,
+    "semantic_score": 0.771725,
+    "behavioral_score": 0.78416,
+    "final_score": 0.466969,
+    "reasoning": "AI Research Engineer with 3.5 yrs; 7 AI core skills; response rate 0.87."
+  },
+  {
+    "candidate_id": "CAND_0094916",
+    "llm_score": 0.3,
+    "semantic_score": 0.716545,
+    "behavioral_score": 0.8572,
+    "final_score": 0.466889,
+    "reasoning": "Junior ML Engineer with 3.7 yrs; 7 AI core skills; response rate 0.66."
+  },
+  {
+    "candidate_id": "CAND_0039587",
+    "llm_score": 0.3,
+    "semantic_score": 0.708138,
+    "behavioral_score": 0.8674,
+    "final_score": 0.466738,
+    "reasoning": "Data Engineer with 6.2 yrs; 3 AI core skills; response rate 0.70."
+  },
+  {
+    "candidate_id": "CAND_0084545",
+    "llm_score": 0.3,
+    "semantic_score": 0.755651,
+    "behavioral_score": 0.80359,
+    "final_score": 0.466669,
+    "reasoning": "Senior Data Engineer with 4.0 yrs; 4 AI core skills; response rate 0.68."
+  },
+  {
+    "candidate_id": "CAND_0017093",
+    "llm_score": 0.3,
+    "semantic_score": 0.718194,
+    "behavioral_score": 0.8488,
+    "final_score": 0.465959,
+    "reasoning": "ML Engineer with 5.9 yrs; 4 AI core skills; response rate 0.58."
+  },
+  {
+    "candidate_id": "CAND_0098454",
+    "llm_score": 0.3,
+    "semantic_score": 0.774033,
+    "behavioral_score": 0.77168,
+    "final_score": 0.465559,
+    "reasoning": "AI Specialist with 6.6 yrs; 6 AI core skills; response rate 0.87."
+  },
+  {
+    "candidate_id": "CAND_0052195",
+    "llm_score": 0.3,
+    "semantic_score": 0.732541,
+    "behavioral_score": 0.82297,
+    "final_score": 0.464954,
+    "reasoning": "Computer Vision Engineer with 6.3 yrs; 6 AI core skills; response rate 0.69."
+  },
+  {
+    "candidate_id": "CAND_0054100",
+    "llm_score": 0.3,
+    "semantic_score": 0.754067,
+    "behavioral_score": 0.79424,
+    "final_score": 0.464949,
+    "reasoning": "Junior ML Engineer with 6.0 yrs; 9 AI core skills; response rate 0.79."
+  },
+  {
+    "candidate_id": "CAND_0007008",
+    "llm_score": 0.3,
+    "semantic_score": 0.763076,
+    "behavioral_score": 0.782,
+    "final_score": 0.464915,
+    "reasoning": "Senior Software Engineer (ML) with 3.7 yrs; 7 AI core skills; response rate 0.66."
+  },
+  {
+    "candidate_id": "CAND_0021410",
+    "llm_score": 0.3,
+    "semantic_score": 0.771743,
+    "behavioral_score": 0.76904,
+    "final_score": 0.464705,
+    "reasoning": "Junior ML Engineer with 4.0 yrs; 4 AI core skills; response rate 0.80."
   },
   {
     "candidate_id": "CAND_0013665",
-    "llm_score": 0.4,
-    "semantic_score": 0.828803,
+    "llm_score": 0.3,
+    "semantic_score": 0.799902,
     "behavioral_score": 0.7293,
-    "final_score": 0.535156,
-    "reasoning": "The candidate has 5.2 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in applied machine learning and fraud-detection product development."
+    "final_score": 0.464375,
+    "reasoning": "Senior Software Engineer (ML) with 5.2 yrs; 4 AI core skills; response rate 0.73."
   },
   {
-    "candidate_id": "CAND_0047542",
-    "llm_score": 0.4,
-    "semantic_score": 0.827638,
-    "behavioral_score": 0.715887,
-    "final_score": 0.532911,
-    "reasoning": "The candidate has 5 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. They have worked on computer vision models, which is a different domain from NLP/IR."
+    "candidate_id": "CAND_0060340",
+    "llm_score": 0.3,
+    "semantic_score": 0.771664,
+    "behavioral_score": 0.76473,
+    "final_score": 0.464042,
+    "reasoning": "Computer Vision Engineer with 6.1 yrs; 4 AI core skills; response rate 0.54."
   },
   {
-    "candidate_id": "CAND_0053591",
-    "llm_score": 0.39,
-    "semantic_score": 0.84552,
-    "behavioral_score": 0.7316,
-    "final_score": 0.532344,
-    "reasoning": "The candidate has 5.3 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their experience is primarily in building ML-powered features in production, but there's no mention of handling embedding drift or index refresh."
+    "candidate_id": "CAND_0068513",
+    "llm_score": 0.3,
+    "semantic_score": 0.757834,
+    "behavioral_score": 0.7808,
+    "final_score": 0.463687,
+    "reasoning": "Computer Vision Engineer with 4.0 yrs; 6 AI core skills; response rate 0.80."
   },
   {
-    "candidate_id": "CAND_0006538",
-    "llm_score": 0.4,
-    "semantic_score": 0.864108,
-    "behavioral_score": 0.650828,
-    "final_score": 0.530446,
-    "reasoning": "The candidate has 5.7 years of experience in applied machine learning, but there is no mention of production experience with embeddings-based retrieval systems or experience with vector databases or hybrid search infrastructure."
+    "candidate_id": "CAND_0019880",
+    "llm_score": 0.3,
+    "semantic_score": 0.742375,
+    "behavioral_score": 0.801295,
+    "final_score": 0.463669,
+    "reasoning": "AI Specialist with 5.7 yrs; 7 AI core skills; response rate 0.68."
   },
   {
-    "candidate_id": "CAND_0007460",
-    "llm_score": 0.39,
-    "semantic_score": 0.871726,
-    "behavioral_score": 0.645515,
-    "final_score": 0.524673,
-    "reasoning": "The candidate has 4.7 years of experience, which is below the required 5+ years, and their experience is mostly in building ML-powered features in production, but there is no specific mention of working with embeddings-based retrieval systems or vector databases."
+    "candidate_id": "CAND_0084283",
+    "llm_score": 0.3,
+    "semantic_score": 0.751079,
+    "behavioral_score": 0.785995,
+    "final_score": 0.463115,
+    "reasoning": "Junior ML Engineer with 3.6 yrs; 7 AI core skills; response rate 0.86."
+  },
+  {
+    "candidate_id": "CAND_0077498",
+    "llm_score": 0.3,
+    "semantic_score": 0.753934,
+    "behavioral_score": 0.77864,
+    "final_score": 0.462583,
+    "reasoning": "Senior Software Engineer (ML) with 5.4 yrs; 5 AI core skills; response rate 0.89."
+  },
+  {
+    "candidate_id": "CAND_0097176",
+    "llm_score": 0.3,
+    "semantic_score": 0.749747,
+    "behavioral_score": 0.78421,
+    "final_score": 0.462581,
+    "reasoning": "ML Engineer with 5.9 yrs; 4 AI core skills; response rate 0.76."
+  },
+  {
+    "candidate_id": "CAND_0071432",
+    "llm_score": 0.3,
+    "semantic_score": 0.758909,
+    "behavioral_score": 0.770185,
+    "final_score": 0.46231,
+    "reasoning": "Data Scientist with 4.1 yrs; 6 AI core skills; response rate 0.47."
+  },
+  {
+    "candidate_id": "CAND_0024990",
+    "llm_score": 0.3,
+    "semantic_score": 0.750558,
+    "behavioral_score": 0.7796,
+    "final_score": 0.462052,
+    "reasoning": "Junior ML Engineer with 5.2 yrs; 7 AI core skills; response rate 0.83."
+  },
+  {
+    "candidate_id": "CAND_0049540",
+    "llm_score": 0.3,
+    "semantic_score": 0.739236,
+    "behavioral_score": 0.7916,
+    "final_score": 0.461587,
+    "reasoning": "ML Engineer with 6.8 yrs; 4 AI core skills; response rate 0.86."
+  },
+  {
+    "candidate_id": "CAND_0069638",
+    "llm_score": 0.3,
+    "semantic_score": 0.75709,
+    "behavioral_score": 0.767635,
+    "final_score": 0.461563,
+    "reasoning": "Computer Vision Engineer with 6.2 yrs; 5 AI core skills; response rate 0.64."
+  },
+  {
+    "candidate_id": "CAND_0012840",
+    "llm_score": 0.3,
+    "semantic_score": 0.734107,
+    "behavioral_score": 0.7976,
+    "final_score": 0.461461,
+    "reasoning": "Junior ML Engineer with 3.7 yrs; 7 AI core skills; response rate 0.90."
+  },
+  {
+    "candidate_id": "CAND_0015967",
+    "llm_score": 0.3,
+    "semantic_score": 0.759958,
+    "behavioral_score": 0.76228,
+    "final_score": 0.461334,
+    "reasoning": "Senior Software Engineer (ML) with 5.4 yrs; 7 AI core skills; response rate 0.45."
+  },
+  {
+    "candidate_id": "CAND_0023215",
+    "llm_score": 0.3,
+    "semantic_score": 0.761719,
+    "behavioral_score": 0.758,
+    "final_score": 0.461044,
+    "reasoning": "Junior ML Engineer with 4.4 yrs; 7 AI core skills; response rate 0.43."
+  },
+  {
+    "candidate_id": "CAND_0029439",
+    "llm_score": 0.3,
+    "semantic_score": 0.741438,
+    "behavioral_score": 0.78488,
+    "final_score": 0.46102,
+    "reasoning": "AI Specialist with 6.4 yrs; 7 AI core skills; response rate 0.60."
+  },
+  {
+    "candidate_id": "CAND_0045828",
+    "llm_score": 0.3,
+    "semantic_score": 0.729657,
+    "behavioral_score": 0.80053,
+    "final_score": 0.461011,
+    "reasoning": "Senior Data Engineer with 3.1 yrs; 4 AI core skills; response rate 0.80."
   },
   {
     "candidate_id": "CAND_0092706",
-    "llm_score": 0.39,
-    "semantic_score": 0.85878,
+    "llm_score": 0.32,
+    "semantic_score": 0.774669,
     "behavioral_score": 0.648245,
-    "final_score": 0.522493,
-    "reasoning": "The candidate has 5.8 years of experience in applied machine learning, but there is no mention of production experience with embeddings-based retrieval systems or experience with vector databases. Their work experience is mostly in research environments, which is a disqualifying career pattern."
+    "final_score": 0.460171,
+    "reasoning": "AI Research Engineer with 5.8 yrs; 5 AI core skills; response rate 0.78."
   },
   {
-    "candidate_id": "CAND_0080534",
-    "llm_score": 0.2,
-    "semantic_score": 0.846956,
-    "behavioral_score": 0.9871,
-    "final_score": 0.447456,
-    "reasoning": "The candidate has 3.8 years of experience, but most of their experience is in research environments without production deployment experience."
+    "candidate_id": "CAND_0079550",
+    "llm_score": 0.3,
+    "semantic_score": 0.728846,
+    "behavioral_score": 0.79592,
+    "final_score": 0.460157,
+    "reasoning": "AI Specialist with 3.9 yrs; 5 AI core skills; response rate 0.88."
   },
   {
-    "candidate_id": "CAND_0068932",
-    "llm_score": 0.2,
-    "semantic_score": 0.835872,
-    "behavioral_score": 0.9859,
-    "final_score": 0.445059,
-    "reasoning": "5.2 years of experience, but most of their experience is in computer vision and time-series forecasting."
+    "candidate_id": "CAND_0099675",
+    "llm_score": 0.3,
+    "semantic_score": 0.750531,
+    "behavioral_score": 0.76496,
+    "final_score": 0.45985,
+    "reasoning": "Junior ML Engineer with 3.9 yrs; 6 AI core skills; response rate 0.78."
   },
   {
-    "candidate_id": "CAND_0043860",
-    "llm_score": 0.2,
-    "semantic_score": 0.831549,
-    "behavioral_score": 0.9838,
-    "final_score": 0.44388,
-    "reasoning": "6.1 years of experience, but most of their experience is in computer vision and predictive modeling."
+    "candidate_id": "CAND_0009184",
+    "llm_score": 0.3,
+    "semantic_score": 0.725164,
+    "behavioral_score": 0.795175,
+    "final_score": 0.459309,
+    "reasoning": "Backend Engineer with 6.5 yrs; 2 AI core skills; response rate 0.50."
   },
   {
-    "candidate_id": "CAND_0075481",
-    "llm_score": 0.2,
-    "semantic_score": 0.811879,
-    "behavioral_score": 0.9985,
-    "final_score": 0.442151,
-    "reasoning": "The candidate has 3.9 years of experience in applied machine learning, but their experience is mostly limited to building lightweight deployment workflows and predictive modeling. They do not have any experience with embeddings-based retrieval systems or vector databases, which are key requirements for the Senior AI Engineer role."
+    "candidate_id": "CAND_0015543",
+    "llm_score": 0.3,
+    "semantic_score": 0.737381,
+    "behavioral_score": 0.77648,
+    "final_score": 0.458948,
+    "reasoning": "ML Engineer with 3.1 yrs; 10 AI core skills; response rate 0.58."
   },
   {
-    "candidate_id": "CAND_0005509",
-    "llm_score": 0.2,
-    "semantic_score": 0.842575,
-    "behavioral_score": 0.9421,
-    "final_score": 0.43983,
-    "reasoning": "The candidate has 6.0 years of experience in applied machine learning, but their experience is mostly focused on NLP-based classification and recommendation-style features."
+    "candidate_id": "CAND_0046459",
+    "llm_score": 0.3,
+    "semantic_score": 0.738306,
+    "behavioral_score": 0.77503,
+    "final_score": 0.458916,
+    "reasoning": "AI Research Engineer with 4.5 yrs; 5 AI core skills; response rate 0.84."
   },
   {
-    "candidate_id": "CAND_0051936",
-    "llm_score": 0.2,
-    "semantic_score": 0.796065,
-    "behavioral_score": 0.9955,
-    "final_score": 0.438538,
-    "reasoning": "Tangential only"
+    "candidate_id": "CAND_0099347",
+    "llm_score": 0.3,
+    "semantic_score": 0.74928,
+    "behavioral_score": 0.7569,
+    "final_score": 0.458391,
+    "reasoning": "Computer Vision Engineer with 3.5 yrs; 8 AI core skills; response rate 0.86."
   },
   {
-    "candidate_id": "CAND_0031842",
+    "candidate_id": "CAND_0002692",
+    "llm_score": 0.3,
+    "semantic_score": 0.737267,
+    "behavioral_score": 0.772225,
+    "final_score": 0.458287,
+    "reasoning": "Data Engineer with 2.0 yrs; 6 AI core skills; response rate 0.70."
+  },
+  {
+    "candidate_id": "CAND_0031982",
+    "llm_score": 0.3,
+    "semantic_score": 0.736661,
+    "behavioral_score": 0.7724,
+    "final_score": 0.458192,
+    "reasoning": "Computer Vision Engineer with 3.7 yrs; 5 AI core skills; response rate 0.79."
+  },
+  {
+    "candidate_id": "CAND_0074342",
+    "llm_score": 0.3,
+    "semantic_score": 0.760184,
+    "behavioral_score": 0.740605,
+    "final_score": 0.458127,
+    "reasoning": "Data Scientist with 5.7 yrs; 5 AI core skills; response rate 0.76."
+  },
+  {
+    "candidate_id": "CAND_0096801",
+    "llm_score": 0.3,
+    "semantic_score": 0.738723,
+    "behavioral_score": 0.76228,
+    "final_score": 0.457087,
+    "reasoning": "AI Research Engineer with 4.2 yrs; 10 AI core skills; response rate 0.57."
+  },
+  {
+    "candidate_id": "CAND_0087841",
+    "llm_score": 0.3,
+    "semantic_score": 0.74098,
+    "behavioral_score": 0.758,
+    "final_score": 0.456896,
+    "reasoning": "Senior Software Engineer (ML) with 3.7 yrs; 7 AI core skills; response rate 0.52."
+  },
+  {
+    "candidate_id": "CAND_0083250",
+    "llm_score": 0.3,
+    "semantic_score": 0.740458,
+    "behavioral_score": 0.75584,
+    "final_score": 0.456468,
+    "reasoning": "Data Engineer with 5.6 yrs; 5 AI core skills; response rate 0.60."
+  },
+  {
+    "candidate_id": "CAND_0047542",
+    "llm_score": 0.3,
+    "semantic_score": 0.765087,
+    "behavioral_score": 0.715887,
+    "final_score": 0.4554,
+    "reasoning": "Senior Software Engineer (ML) with 5.0 yrs; 5 AI core skills; response rate 0.75."
+  },
+  {
+    "candidate_id": "CAND_0025640",
+    "llm_score": 0.3,
+    "semantic_score": 0.766575,
+    "behavioral_score": 0.71281,
+    "final_score": 0.455236,
+    "reasoning": "AI Research Engineer with 5.6 yrs; 7 AI core skills; response rate 0.87."
+  },
+  {
+    "candidate_id": "CAND_0014715",
+    "llm_score": 0.3,
+    "semantic_score": 0.775639,
+    "behavioral_score": 0.698184,
+    "final_score": 0.454855,
+    "reasoning": "AI Specialist with 4.2 yrs; 6 AI core skills; response rate 0.27."
+  },
+  {
+    "candidate_id": "CAND_0022023",
+    "llm_score": 0.3,
+    "semantic_score": 0.761802,
+    "behavioral_score": 0.7124,
+    "final_score": 0.45422,
+    "reasoning": "AI Research Engineer with 4.6 yrs; 4 AI core skills; response rate 0.47."
+  },
+  {
+    "candidate_id": "CAND_0045141",
+    "llm_score": 0.3,
+    "semantic_score": 0.75617,
+    "behavioral_score": 0.71128,
+    "final_score": 0.452926,
+    "reasoning": "Data Scientist with 5.3 yrs; 8 AI core skills; response rate 0.44."
+  },
+  {
+    "candidate_id": "CAND_0049831",
+    "llm_score": 0.3,
+    "semantic_score": 0.755639,
+    "behavioral_score": 0.711756,
+    "final_score": 0.452891,
+    "reasoning": "Computer Vision Engineer with 5.4 yrs; 5 AI core skills; response rate 0.43."
+  },
+  {
+    "candidate_id": "CAND_0019480",
+    "llm_score": 0.32,
+    "semantic_score": 0.83629,
+    "behavioral_score": 0.517029,
+    "final_score": 0.452812,
+    "reasoning": "NLP Engineer with 2.8 yrs; 4 AI core skills; response rate 0.87."
+  },
+  {
+    "candidate_id": "CAND_0092181",
+    "llm_score": 0.3,
+    "semantic_score": 0.753313,
+    "behavioral_score": 0.711297,
+    "final_score": 0.452357,
+    "reasoning": "Data Scientist with 4.6 yrs; 9 AI core skills; response rate 0.54."
+  },
+  {
+    "candidate_id": "CAND_0014063",
+    "llm_score": 0.3,
+    "semantic_score": 0.76359,
+    "behavioral_score": 0.696838,
+    "final_score": 0.452244,
+    "reasoning": "AI Specialist with 5.4 yrs; 7 AI core skills; response rate 0.69."
+  },
+  {
+    "candidate_id": "CAND_0058426",
+    "llm_score": 0.3,
+    "semantic_score": 0.775812,
+    "behavioral_score": 0.678937,
+    "final_score": 0.452003,
+    "reasoning": "Data Scientist with 6.5 yrs; 4 AI core skills; response rate 0.42."
+  },
+  {
+    "candidate_id": "CAND_0019845",
+    "llm_score": 0.3,
+    "semantic_score": 0.759815,
+    "behavioral_score": 0.69825,
+    "final_score": 0.4517,
+    "reasoning": "AI Specialist with 3.4 yrs; 5 AI core skills; response rate 0.78."
+  },
+  {
+    "candidate_id": "CAND_0076587",
+    "llm_score": 0.27,
+    "semantic_score": 0.768901,
+    "behavioral_score": 0.81328,
+    "final_score": 0.451272,
+    "reasoning": "AI Specialist with 4.9 yrs; 6 AI core skills; response rate 0.46."
+  },
+  {
+    "candidate_id": "CAND_0086893",
+    "llm_score": 0.3,
+    "semantic_score": 0.793997,
+    "behavioral_score": 0.645905,
+    "final_score": 0.450685,
+    "reasoning": "ML Engineer with 3.9 yrs; 5 AI core skills; response rate 0.90."
+  },
+  {
+    "candidate_id": "CAND_0010603",
+    "llm_score": 0.3,
+    "semantic_score": 0.801385,
+    "behavioral_score": 0.63596,
+    "final_score": 0.450671,
+    "reasoning": "ML Engineer with 5.3 yrs; 4 AI core skills; response rate 0.94."
+  },
+  {
+    "candidate_id": "CAND_0043450",
+    "llm_score": 0.3,
+    "semantic_score": 0.763838,
+    "behavioral_score": 0.68504,
+    "final_score": 0.450524,
+    "reasoning": "AI Research Engineer with 3.3 yrs; 4 AI core skills; response rate 0.50."
+  },
+  {
+    "candidate_id": "CAND_0065430",
+    "llm_score": 0.3,
+    "semantic_score": 0.761998,
+    "behavioral_score": 0.686511,
+    "final_score": 0.450376,
+    "reasoning": "ML Engineer with 4.4 yrs; 6 AI core skills; response rate 0.71."
+  },
+  {
+    "candidate_id": "CAND_0043381",
+    "llm_score": 0.3,
+    "semantic_score": 0.795948,
+    "behavioral_score": 0.639004,
+    "final_score": 0.45004,
+    "reasoning": "AI Research Engineer with 3.6 yrs; 4 AI core skills; response rate 0.78."
+  },
+  {
+    "candidate_id": "CAND_0040521",
+    "llm_score": 0.25,
+    "semantic_score": 0.721256,
+    "behavioral_score": 0.9535,
+    "final_score": 0.449776,
+    "reasoning": "Software Engineer with 7.9 yrs; 4 AI core skills; response rate 0.44."
+  },
+  {
+    "candidate_id": "CAND_0090300",
+    "llm_score": 0.3,
+    "semantic_score": 0.785239,
+    "behavioral_score": 0.648245,
+    "final_score": 0.449285,
+    "reasoning": "AI Research Engineer with 5.3 yrs; 6 AI core skills; response rate 0.94."
+  },
+  {
+    "candidate_id": "CAND_0023587",
+    "llm_score": 0.3,
+    "semantic_score": 0.783809,
+    "behavioral_score": 0.646295,
+    "final_score": 0.448706,
+    "reasoning": "ML Engineer with 3.2 yrs; 6 AI core skills; response rate 0.90."
+  },
+  {
+    "candidate_id": "CAND_0043829",
+    "llm_score": 0.3,
+    "semantic_score": 0.782764,
+    "behavioral_score": 0.64727,
+    "final_score": 0.448643,
+    "reasoning": "AI Research Engineer with 4.8 yrs; 5 AI core skills; response rate 0.78."
+  },
+  {
+    "candidate_id": "CAND_0006538",
+    "llm_score": 0.3,
+    "semantic_score": 0.775047,
+    "behavioral_score": 0.650828,
+    "final_score": 0.447634,
+    "reasoning": "AI Specialist with 5.7 yrs; 7 AI core skills; response rate 0.86."
+  },
+  {
+    "candidate_id": "CAND_0020991",
+    "llm_score": 0.3,
+    "semantic_score": 0.780931,
+    "behavioral_score": 0.638495,
+    "final_score": 0.44696,
+    "reasoning": "Junior ML Engineer with 4.9 yrs; 5 AI core skills; response rate 0.88."
+  },
+  {
+    "candidate_id": "CAND_0083852",
+    "llm_score": 0.3,
+    "semantic_score": 0.784317,
+    "behavioral_score": 0.633425,
+    "final_score": 0.446877,
+    "reasoning": "Data Scientist with 6.0 yrs; 8 AI core skills; response rate 0.85."
+  },
+  {
+    "candidate_id": "CAND_0028527",
+    "llm_score": 0.3,
+    "semantic_score": 0.784829,
+    "behavioral_score": 0.63128,
+    "final_score": 0.446658,
+    "reasoning": "AI Specialist with 5.4 yrs; 6 AI core skills; response rate 0.90."
+  },
+  {
+    "candidate_id": "CAND_0002426",
+    "llm_score": 0.3,
+    "semantic_score": 0.779744,
+    "behavioral_score": 0.637976,
+    "final_score": 0.446645,
+    "reasoning": "Data Scientist with 3.3 yrs; 4 AI core skills; response rate 0.80."
+  },
+  {
+    "candidate_id": "CAND_0070589",
+    "llm_score": 0.3,
+    "semantic_score": 0.800572,
+    "behavioral_score": 0.607376,
+    "final_score": 0.446221,
+    "reasoning": "ML Engineer with 3.5 yrs; 5 AI core skills; response rate 0.74."
+  },
+  {
+    "candidate_id": "CAND_0017918",
+    "llm_score": 0.3,
+    "semantic_score": 0.782472,
+    "behavioral_score": 0.628388,
+    "final_score": 0.445753,
+    "reasoning": "ML Engineer with 3.2 yrs; 6 AI core skills; response rate 0.67."
+  },
+  {
+    "candidate_id": "CAND_0092210",
+    "llm_score": 0.25,
+    "semantic_score": 0.709451,
+    "behavioral_score": 0.9424,
+    "final_score": 0.44575,
+    "reasoning": "Full Stack Developer with 5.6 yrs; 2 AI core skills; response rate 0.63."
+  },
+  {
+    "candidate_id": "CAND_0038206",
+    "llm_score": 0.3,
+    "semantic_score": 0.786903,
+    "behavioral_score": 0.62153,
+    "final_score": 0.44561,
+    "reasoning": "Data Scientist with 3.5 yrs; 8 AI core skills; response rate 0.81."
+  },
+  {
+    "candidate_id": "CAND_0072091",
+    "llm_score": 0.3,
+    "semantic_score": 0.79189,
+    "behavioral_score": 0.60843,
+    "final_score": 0.444643,
+    "reasoning": "ML Engineer with 4.6 yrs; 7 AI core skills; response rate 0.60."
+  },
+  {
+    "candidate_id": "CAND_0030499",
+    "llm_score": 0.25,
+    "semantic_score": 0.68989,
+    "behavioral_score": 0.9589,
+    "final_score": 0.444313,
+    "reasoning": "Java Developer with 8.8 yrs; 1 AI core skills; response rate 0.46."
+  },
+  {
+    "candidate_id": "CAND_0071816",
+    "llm_score": 0.25,
+    "semantic_score": 0.675801,
+    "behavioral_score": 0.9622,
+    "final_score": 0.44199,
+    "reasoning": "Mobile Developer with 8.1 yrs; 1 AI core skills; response rate 0.71."
+  },
+  {
+    "candidate_id": "CAND_0060814",
+    "llm_score": 0.27,
+    "semantic_score": 0.768892,
+    "behavioral_score": 0.73784,
+    "final_score": 0.439954,
+    "reasoning": "Data Scientist with 3.9 yrs; 7 AI core skills; response rate 0.30."
+  },
+  {
+    "candidate_id": "CAND_0024591",
+    "llm_score": 0.25,
+    "semantic_score": 0.710966,
+    "behavioral_score": 0.8998,
+    "final_score": 0.439663,
+    "reasoning": "Software Engineer with 5.6 yrs; 3 AI core skills; response rate 0.76."
+  },
+  {
+    "candidate_id": "CAND_0036655",
+    "llm_score": 0.25,
+    "semantic_score": 0.711391,
+    "behavioral_score": 0.8623,
+    "final_score": 0.434123,
+    "reasoning": "Data Analyst with 6.6 yrs; 3 AI core skills; response rate 0.49."
+  },
+  {
+    "candidate_id": "CAND_0033445",
+    "llm_score": 0.22,
+    "semantic_score": 0.722574,
+    "behavioral_score": 0.9685,
+    "final_score": 0.43279,
+    "reasoning": "ML Engineer with 6.8 yrs; 6 AI core skills; response rate 0.94."
+  },
+  {
+    "candidate_id": "CAND_0046650",
+    "llm_score": 0.22,
+    "semantic_score": 0.718594,
+    "behavioral_score": 0.9688,
+    "final_score": 0.432039,
+    "reasoning": "Senior Software Engineer with 4.2 yrs; 1 AI core skills; response rate 0.77."
+  },
+  {
+    "candidate_id": "CAND_0007046",
+    "llm_score": 0.25,
+    "semantic_score": 0.722971,
+    "behavioral_score": 0.818125,
+    "final_score": 0.429813,
+    "reasoning": "Analytics Engineer with 5.3 yrs; 7 AI core skills; response rate 0.77."
+  },
+  {
+    "candidate_id": "CAND_0038716",
+    "llm_score": 0.25,
+    "semantic_score": 0.743739,
+    "behavioral_score": 0.779365,
+    "final_score": 0.428153,
+    "reasoning": "Data Engineer with 3.9 yrs; 2 AI core skills; response rate 0.65."
+  },
+  {
+    "candidate_id": "CAND_0064256",
     "llm_score": 0.2,
-    "semantic_score": 0.781332,
-    "behavioral_score": 0.9772,
-    "final_score": 0.432846,
-    "reasoning": "The candidate has only 3.5 years of experience, which is below the required 5 years, and their experience is primarily in computer vision, not NLP/IR."
+    "semantic_score": 0.740786,
+    "behavioral_score": 0.997,
+    "final_score": 0.427707,
+    "reasoning": "Junior ML Engineer with 6.4 yrs; 4 AI core skills; response rate 0.86."
+  },
+  {
+    "candidate_id": "CAND_0043384",
+    "llm_score": 0.25,
+    "semantic_score": 0.728765,
+    "behavioral_score": 0.794,
+    "final_score": 0.427353,
+    "reasoning": "Computer Vision Engineer with 5.2 yrs; 6 AI core skills; response rate 0.83."
+  },
+  {
+    "candidate_id": "CAND_0058783",
+    "llm_score": 0.2,
+    "semantic_score": 0.73747,
+    "behavioral_score": 0.9943,
+    "final_score": 0.426639,
+    "reasoning": "Computer Vision Engineer with 3.2 yrs; 3 AI core skills; response rate 0.92."
   },
   {
     "candidate_id": "CAND_0045887",
     "llm_score": 0.2,
-    "semantic_score": 0.774567,
+    "semantic_score": 0.742813,
     "behavioral_score": 0.9841,
-    "final_score": 0.432528,
-    "reasoning": "The candidate has only 3 years of experience, which is below the required 5 years, and their experience is in computer vision, not embeddings-based retrieval systems."
+    "final_score": 0.426178,
+    "reasoning": "Data Scientist with 3.0 yrs; 8 AI core skills; response rate 0.86."
   },
   {
-    "candidate_id": "CAND_0033445",
-    "llm_score": 0.2,
-    "semantic_score": 0.786262,
-    "behavioral_score": 0.9685,
-    "final_score": 0.432527,
-    "reasoning": "The candidate has 6.8 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their work experience is mostly in computer vision, which is not a primary requirement for this role."
+    "candidate_id": "CAND_0077037",
+    "llm_score": 0.22,
+    "semantic_score": 0.718449,
+    "behavioral_score": 0.9268,
+    "final_score": 0.42571,
+    "reasoning": "Analytics Engineer with 3.1 yrs; 3 AI core skills; response rate 0.49."
   },
   {
-    "candidate_id": "CAND_0066690",
+    "candidate_id": "CAND_0015522",
     "llm_score": 0.2,
-    "semantic_score": 0.78728,
-    "behavioral_score": 0.964,
-    "final_score": 0.432056,
-    "reasoning": "The candidate has only 4.8 years of experience, which is below the required 5+ years, and their experience is primarily in analytics & ML, with no specific mention of embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0003871",
-    "llm_score": 0.2,
-    "semantic_score": 0.813492,
-    "behavioral_score": 0.9253,
-    "final_score": 0.431493,
-    "reasoning": "Candidate lacks significant experience with ML and AI, and their background is not relevant to the required skills and experience for the role."
-  },
-  {
-    "candidate_id": "CAND_0050553",
-    "llm_score": 0.2,
-    "semantic_score": 0.783547,
-    "behavioral_score": 0.9616,
-    "final_score": 0.430949,
-    "reasoning": "The candidate has only 3.6 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0031829",
-    "llm_score": 0.2,
-    "semantic_score": 0.779784,
-    "behavioral_score": 0.955,
-    "final_score": 0.429207,
-    "reasoning": "The candidate has 6.5 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their background is in chemical engineering and computer science, which doesn't align with the requirements."
-  },
-  {
-    "candidate_id": "CAND_0064888",
-    "llm_score": 0.2,
-    "semantic_score": 0.771201,
-    "behavioral_score": 0.9592,
-    "final_score": 0.42812,
-    "reasoning": "The candidate has 5.8 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their work experience is mostly in computer vision, not NLP/IR."
-  },
-  {
-    "candidate_id": "CAND_0046650",
-    "llm_score": 0.2,
-    "semantic_score": 0.761136,
-    "behavioral_score": 0.9688,
-    "final_score": 0.427547,
-    "reasoning": "The candidate has 4.2 years of experience, which is below the required 5+ years, and their experience is primarily in backend development with Python, but there is no mention of experience with embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0040521",
-    "llm_score": 0.2,
-    "semantic_score": 0.769872,
-    "behavioral_score": 0.9535,
-    "final_score": 0.426999,
-    "reasoning": "The candidate has 7.9 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their experience is mostly in backend development and data engineering, which doesn't directly align with the requirements of the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0014292",
-    "llm_score": 0.2,
-    "semantic_score": 0.775974,
-    "behavioral_score": 0.9382,
-    "final_score": 0.425925,
-    "reasoning": "The candidate has only 3.5 years of experience, which is below the required 5 years, and their experience is primarily in data pipelines and backend systems, not embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0044213",
-    "llm_score": 0.2,
-    "semantic_score": 0.803102,
-    "behavioral_score": 0.89379,
-    "final_score": 0.424689,
-    "reasoning": "The candidate has only 3.7 years of experience, which is below the required 5 years, and their experience is primarily in time-series forecasting models, which is not relevant to embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0063622",
-    "llm_score": 0.2,
-    "semantic_score": 0.751913,
-    "behavioral_score": 0.961,
-    "final_score": 0.424533,
-    "reasoning": "The candidate has 5.2 years of experience, but it's in computer vision, not NLP/IR, and they've worked exclusively on closed-source proprietary systems for 15 months at Niramai and 25 months at Zoho."
+    "semantic_score": 0.741127,
+    "behavioral_score": 0.9508,
+    "final_score": 0.420845,
+    "reasoning": "Backend Engineer with 2.3 yrs; 1 AI core skills; response rate 0.81."
   },
   {
     "candidate_id": "CAND_0077296",
     "llm_score": 0.2,
-    "semantic_score": 0.805899,
+    "semantic_score": 0.780614,
     "behavioral_score": 0.88326,
-    "final_score": 0.423669,
-    "reasoning": "The candidate has 5.8 years of experience, but it's in computer vision, not NLP/IR, and they have no experience with embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0003717",
-    "llm_score": 0.2,
-    "semantic_score": 0.76806,
-    "behavioral_score": 0.9292,
-    "final_score": 0.422992,
-    "reasoning": "The candidate has 7.9 years of experience, but it's unclear if they have any experience with embeddings-based retrieval systems or vector databases, and their education is in Information Technology, not a relevant field like Computer Science or AI."
-  },
-  {
-    "candidate_id": "CAND_0003575",
-    "llm_score": 0.2,
-    "semantic_score": 0.818979,
-    "behavioral_score": 0.85194,
-    "final_score": 0.421587,
-    "reasoning": "The candidate has only 3.7 years of experience, which is below the required 5 years, and their experience is primarily as a data scientist, not a senior AI engineer."
-  },
-  {
-    "candidate_id": "CAND_0087744",
-    "llm_score": 0.2,
-    "semantic_score": 0.835024,
-    "behavioral_score": 0.829855,
-    "final_score": 0.421483,
-    "reasoning": "The candidate has only 3.9 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0017171",
-    "llm_score": 0.2,
-    "semantic_score": 0.76083,
-    "behavioral_score": 0.9268,
-    "final_score": 0.421186,
-    "reasoning": "The candidate has 6.7 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases, and their job titles are not directly related to AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0032887",
-    "llm_score": 0.2,
-    "semantic_score": 0.79834,
-    "behavioral_score": 0.87651,
-    "final_score": 0.421144,
-    "reasoning": "The candidate has 6.1 years of experience, but it's not clear if they have experience with embeddings-based retrieval systems, and their background is in applied machine learning rather than NLP/IR."
-  },
-  {
-    "candidate_id": "CAND_0016659",
-    "llm_score": 0.2,
-    "semantic_score": 0.783872,
-    "behavioral_score": 0.89541,
-    "final_score": 0.421086,
-    "reasoning": "The candidate has only 4.4 years of experience, which is below the required 5+ years, and their experience is primarily in building NLP pipelines for sentiment analysis and document classification, which does not demonstrate production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0077037",
-    "llm_score": 0.2,
-    "semantic_score": 0.759819,
-    "behavioral_score": 0.9268,
-    "final_score": 0.420984,
-    "reasoning": "The candidate has only 3.1 years of experience, which is below the required 5 years, and their background is in analytics engineering, not AI or NLP/IR."
-  },
-  {
-    "candidate_id": "CAND_0035987",
-    "llm_score": 0.2,
-    "semantic_score": 0.756588,
-    "behavioral_score": 0.9259,
-    "final_score": 0.420203,
-    "reasoning": "The candidate has 5.8 years of experience, but it's in data engineering, not AI engineering, and there's no mention of experience with embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0070152",
-    "llm_score": 0.2,
-    "semantic_score": 0.760575,
-    "behavioral_score": 0.9202,
-    "final_score": 0.420145,
-    "reasoning": "The candidate has 8.6 years of experience, but it's unclear if they have any experience with embeddings-based retrieval systems or vector databases, and their education is in Physics, not a relevant field for this role."
-  },
-  {
-    "candidate_id": "CAND_0097036",
-    "llm_score": 0.2,
-    "semantic_score": 0.761492,
-    "behavioral_score": 0.9145,
-    "final_score": 0.419473,
-    "reasoning": "The candidate has 4.6 years of experience, which is below the required 5+ years, and their background is in data engineering rather than AI or NLP."
-  },
-  {
-    "candidate_id": "CAND_0043637",
-    "llm_score": 0.2,
-    "semantic_score": 0.776717,
-    "behavioral_score": 0.89325,
-    "final_score": 0.419331,
-    "reasoning": "The candidate has 5.5 years of experience, but it's described as 'Junior ML Engineer', indicating a lack of seniority, and their experience is primarily in 'applied machine learning' without specific mention of embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0024591",
-    "llm_score": 0.2,
-    "semantic_score": 0.765241,
-    "behavioral_score": 0.8998,
-    "final_score": 0.418018,
-    "reasoning": "The candidate has 5.6 years of experience, but it's unclear if they have any experience with embeddings-based retrieval systems or vector databases, and their education is in Data Science, not a relevant field for this role."
-  },
-  {
-    "candidate_id": "CAND_0063736",
-    "llm_score": 0.2,
-    "semantic_score": 0.77884,
-    "behavioral_score": 0.87813,
-    "final_score": 0.417487,
-    "reasoning": "The candidate has only 3.7 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0023215",
-    "llm_score": 0.2,
-    "semantic_score": 0.866377,
-    "behavioral_score": 0.758,
-    "final_score": 0.416975,
-    "reasoning": "Candidate has 4.4 years of experience, but most of their experience is in predictive modeling and NLP, which is not directly relevant to the role."
-  },
-  {
-    "candidate_id": "CAND_0040407",
-    "llm_score": 0.2,
-    "semantic_score": 0.790234,
-    "behavioral_score": 0.8533,
-    "final_score": 0.416042,
-    "reasoning": "The candidate has 5.5 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases, and their background is in data engineering rather than AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0021410",
-    "llm_score": 0.2,
-    "semantic_score": 0.852103,
-    "behavioral_score": 0.76904,
-    "final_score": 0.415777,
-    "reasoning": "The candidate has only 4 years of experience, which is below the required 5 years, and their experience is in analytics and ML, but not specifically in embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0012840",
-    "llm_score": 0.2,
-    "semantic_score": 0.830627,
-    "behavioral_score": 0.7976,
-    "final_score": 0.415765,
-    "reasoning": "The candidate has only 3.7 years of experience, which is below the required 5 years, and their experience is in analytics & ML, not specifically in embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0060340",
-    "llm_score": 0.2,
-    "semantic_score": 0.852185,
-    "behavioral_score": 0.76473,
-    "final_score": 0.415147,
-    "reasoning": "The candidate has 6.1 years of experience, but it's in computer vision, not NLP/IR, and they've worked on recommendation-style features, which is lighter weight than ranking systems."
-  },
-  {
-    "candidate_id": "CAND_0010770",
-    "llm_score": 0.2,
-    "semantic_score": 0.841476,
-    "behavioral_score": 0.778855,
-    "final_score": 0.415123,
-    "reasoning": "The candidate has 15.2 years of experience, which exceeds the 5-9 years required, and their experience is primarily in recommendation systems, not embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0064609",
-    "llm_score": 0.2,
-    "semantic_score": 0.7771,
-    "behavioral_score": 0.8602,
-    "final_score": 0.41445,
-    "reasoning": "The candidate has 7.4 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their experience is mostly in data pipelines and analytics."
-  },
-  {
-    "candidate_id": "CAND_0002120",
-    "llm_score": 0.2,
-    "semantic_score": 0.827763,
-    "behavioral_score": 0.78876,
-    "final_score": 0.413867,
-    "reasoning": "The candidate has 6.5 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their background is in analytics & ML rather than NLP/IR."
-  },
-  {
-    "candidate_id": "CAND_0084283",
-    "llm_score": 0.2,
-    "semantic_score": 0.825908,
-    "behavioral_score": 0.785995,
-    "final_score": 0.413081,
-    "reasoning": "The candidate has only 3.6 years of experience, which is below the required 5 years, and their experience is in analytics & ML, not specifically in embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0077552",
-    "llm_score": 0.2,
-    "semantic_score": 0.837574,
-    "behavioral_score": 0.769675,
-    "final_score": 0.412966,
-    "reasoning": "The candidate has only 3.4 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0094685",
-    "llm_score": 0.2,
-    "semantic_score": 0.855045,
-    "behavioral_score": 0.745263,
-    "final_score": 0.412799,
-    "reasoning": "The candidate has only 3.5 years of experience, which is below the required 5 years, and their experience is primarily in AI research environments without production deployment experience."
-  },
-  {
-    "candidate_id": "CAND_0054318",
-    "llm_score": 0.2,
-    "semantic_score": 0.822366,
-    "behavioral_score": 0.78416,
-    "final_score": 0.412097,
-    "reasoning": "The candidate has only 3.5 years of experience, which is below the required 5 years, and their experience is primarily in AI research environments without production deployment experience."
-  },
-  {
-    "candidate_id": "CAND_0054394",
-    "llm_score": 0.2,
-    "semantic_score": 0.845235,
-    "behavioral_score": 0.749785,
-    "final_score": 0.411515,
-    "reasoning": "The candidate has only 4.1 years of experience, which is below the required 5 years, and their experience is primarily in building ML-powered features, not specifically in embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0052195",
-    "llm_score": 0.2,
-    "semantic_score": 0.790209,
-    "behavioral_score": 0.82297,
-    "final_score": 0.411487,
-    "reasoning": "The candidate has 6.3 years of experience, but it's in computer vision, not NLP/IR, and there's no mention of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0051004",
-    "llm_score": 0.2,
-    "semantic_score": 0.850382,
-    "behavioral_score": 0.73933,
-    "final_score": 0.410976,
-    "reasoning": "The candidate has 4.7 years of experience, which is below the required 5+ years, and their experience is primarily as a Senior Data Scientist, not specifically in AI engineering or production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0045141",
-    "llm_score": 0.2,
-    "semantic_score": 0.869454,
-    "behavioral_score": 0.71128,
-    "final_score": 0.410583,
-    "reasoning": "The candidate has 5.3 years of experience, but it's in data science and ML, not specifically in embeddings-based retrieval systems or vector databases. Their experience is also in analytics and ML, not in production deployment of AI systems."
-  },
-  {
-    "candidate_id": "CAND_0079550",
-    "llm_score": 0.2,
-    "semantic_score": 0.800151,
-    "behavioral_score": 0.79592,
-    "final_score": 0.409418,
-    "reasoning": "The candidate has only 3.9 years of experience, which is below the required 5 years, and their experience is mostly in time-series forecasting models, which is not relevant to the role's focus on embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0069638",
-    "llm_score": 0.2,
-    "semantic_score": 0.820537,
-    "behavioral_score": 0.767635,
-    "final_score": 0.409253,
-    "reasoning": "The candidate has 6.2 years of experience, but it's in computer vision, not NLP/IR, and they've worked primarily in recommendation-style features, not embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0070544",
-    "llm_score": 0.2,
-    "semantic_score": 0.831513,
-    "behavioral_score": 0.75272,
-    "final_score": 0.409211,
-    "reasoning": "The candidate has 4.9 years of experience, which is below the required 5 years, and their experience is primarily in AI research environments without production deployment experience."
-  },
-  {
-    "candidate_id": "CAND_0030348",
-    "llm_score": 0.2,
-    "semantic_score": 0.842514,
-    "behavioral_score": 0.735854,
-    "final_score": 0.408881,
-    "reasoning": "The candidate has 4.5 years of experience, which is below the required 5 years, and their experience is primarily in building ML-powered features, not specifically in embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0007008",
-    "llm_score": 0.2,
-    "semantic_score": 0.806897,
-    "behavioral_score": 0.782,
-    "final_score": 0.408679,
-    "reasoning": "The candidate has only 3.7 years of experience, which is below the required 5 years, and their experience is primarily in computer vision, not embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0071131",
-    "llm_score": 0.2,
-    "semantic_score": 0.801498,
-    "behavioral_score": 0.78608,
-    "final_score": 0.408212,
-    "reasoning": "The candidate has only 4.1 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0017918",
-    "llm_score": 0.2,
-    "semantic_score": 0.834488,
-    "behavioral_score": 0.73928,
-    "final_score": 0.40779,
-    "reasoning": "The candidate has only 3.2 years of experience, which is below the required 5 years, and their experience is primarily in sentiment analysis and document classification, which is not directly related to embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0070514",
-    "llm_score": 0.2,
-    "semantic_score": 0.821093,
-    "behavioral_score": 0.75032,
-    "final_score": 0.406767,
-    "reasoning": "The candidate has 5.5 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their work experience is mostly in time-series forecasting and supply-chain demand prediction, which is not directly related to the role."
-  },
-  {
-    "candidate_id": "CAND_0074342",
-    "llm_score": 0.2,
-    "semantic_score": 0.825093,
-    "behavioral_score": 0.740605,
-    "final_score": 0.406109,
-    "reasoning": "The candidate has 5.7 years of experience, but it's in data science and ML, not specifically in embeddings-based retrieval systems or vector databases. Their experience is also in analytics and ML, not in production deployment of AI systems."
-  },
-  {
-    "candidate_id": "CAND_0070333",
-    "llm_score": 0.2,
-    "semantic_score": 0.85391,
-    "behavioral_score": 0.69056,
-    "final_score": 0.404366,
-    "reasoning": "The candidate has 4.7 years of experience, which is below the required 5+ years, and their experience is primarily in AI research environments without production deployment experience."
-  },
-  {
-    "candidate_id": "CAND_0019845",
-    "llm_score": 0.2,
-    "semantic_score": 0.848062,
-    "behavioral_score": 0.69825,
-    "final_score": 0.40435,
-    "reasoning": "The candidate has only 3.4 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0037000",
-    "llm_score": 0.2,
-    "semantic_score": 0.850514,
-    "behavioral_score": 0.694425,
-    "final_score": 0.404267,
-    "reasoning": "The candidate has only 2.7 years of experience, which is below the required 5 years, and their experience is mostly in building ML-powered features, not specifically in embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0025640",
-    "llm_score": 0.2,
-    "semantic_score": 0.832487,
-    "behavioral_score": 0.71281,
-    "final_score": 0.403419,
-    "reasoning": "The candidate has 5.6 years of experience, but it's in AI research, not production deployment, and their work experience is focused on building recommendation-style features, which is lighter than ranking systems."
-  },
-  {
-    "candidate_id": "CAND_0000273",
-    "llm_score": 0.2,
-    "semantic_score": 0.865036,
-    "behavioral_score": 0.651236,
-    "final_score": 0.400693,
-    "reasoning": "The candidate has 5.8 years of experience in applied machine learning, but there is no mention of production experience with embeddings-based retrieval systems or experience with vector databases."
-  },
-  {
-    "candidate_id": "CAND_0046278",
-    "llm_score": 0.2,
-    "semantic_score": 0.863181,
-    "behavioral_score": 0.645116,
-    "final_score": 0.399404,
-    "reasoning": "The candidate has 4.6 years of experience, which is below the required 5+ years, and their experience is primarily in analytics & ML, with no specific mention of embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0086893",
-    "llm_score": 0.2,
-    "semantic_score": 0.86005,
-    "behavioral_score": 0.645905,
-    "final_score": 0.398896,
-    "reasoning": "The candidate has only 3.9 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0043381",
-    "llm_score": 0.2,
-    "semantic_score": 0.865134,
-    "behavioral_score": 0.639004,
-    "final_score": 0.398878,
-    "reasoning": "The candidate has only 3.6 years of experience, which is below the required 5 years, and their experience is primarily in AI research environments without production deployment experience."
-  },
-  {
-    "candidate_id": "CAND_0008239",
-    "llm_score": 0.2,
-    "semantic_score": 0.859092,
-    "behavioral_score": 0.64298,
-    "final_score": 0.398265,
-    "reasoning": "The candidate has only 4 years of experience, which is below the required 5 years, and their experience is mostly in building ML-powered features, not specifically in embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0066035",
-    "llm_score": 0.2,
-    "semantic_score": 0.84549,
-    "behavioral_score": 0.659088,
-    "final_score": 0.397961,
-    "reasoning": "The candidate has 6.7 years of experience, but it's not clear if they have experience with embeddings-based retrieval systems, and their work experience is mostly in building ML-powered solutions rather than production deployment of ranking systems."
-  },
-  {
-    "candidate_id": "CAND_0021706",
-    "llm_score": 0.2,
-    "semantic_score": 0.855275,
-    "behavioral_score": 0.639463,
-    "final_score": 0.396975,
-    "reasoning": "The candidate has 6.2 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems, and their education is in Computer Engineering, which may not be directly relevant to the role."
-  },
-  {
-    "candidate_id": "CAND_0023587",
-    "llm_score": 0.2,
-    "semantic_score": 0.849523,
-    "behavioral_score": 0.646295,
-    "final_score": 0.396849,
-    "reasoning": "The candidate has only 3.2 years of experience, which is below the required 5 years, and their experience is primarily in analytics and ML, with no specific mention of embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0035879",
-    "llm_score": 0.2,
-    "semantic_score": 0.862614,
-    "behavioral_score": 0.628355,
-    "final_score": 0.396776,
-    "reasoning": "The candidate has 4.5 years of experience, which is below the required 5 years, and their experience is primarily in AI research environments without production deployment experience."
+    "final_score": 0.418612,
+    "reasoning": "Computer Vision Engineer with 5.8 yrs; 6 AI core skills; response rate 0.5."
   },
   {
     "candidate_id": "CAND_0096209",
-    "llm_score": 0.2,
-    "semantic_score": 0.855264,
+    "llm_score": 0.25,
+    "semantic_score": 0.781674,
     "behavioral_score": 0.63518,
-    "final_score": 0.39633,
-    "reasoning": "The candidate has only 4.2 years of experience, which is below the required 5 years, and their experience is primarily in computer vision, not NLP/IR."
+    "final_score": 0.414112,
+    "reasoning": "ML Engineer with 4.2 yrs; 4 AI core skills; response rate 0.90."
   },
   {
-    "candidate_id": "CAND_0049615",
+    "candidate_id": "CAND_0077673",
+    "llm_score": 0.22,
+    "semantic_score": 0.733093,
+    "behavioral_score": 0.82195,
+    "final_score": 0.412911,
+    "reasoning": "Software Engineer with 4.8 yrs; 3 AI core skills; response rate 0.73."
+  },
+  {
+    "candidate_id": "CAND_0077552",
+    "llm_score": 0.22,
+    "semantic_score": 0.767746,
+    "behavioral_score": 0.769675,
+    "final_score": 0.412,
+    "reasoning": "Senior Software Engineer (ML) with 3.4 yrs; 4 AI core skills; response rate 0.54."
+  },
+  {
+    "candidate_id": "CAND_0004831",
+    "llm_score": 0.22,
+    "semantic_score": 0.730772,
+    "behavioral_score": 0.803845,
+    "final_score": 0.409731,
+    "reasoning": "Software Engineer with 3.6 yrs; 1 AI core skills; response rate 0.71."
+  },
+  {
+    "candidate_id": "CAND_0062621",
     "llm_score": 0.2,
-    "semantic_score": 0.876453,
-    "behavioral_score": 0.590848,
-    "final_score": 0.393918,
-    "reasoning": "The candidate has 5.1 years of experience, but it's unclear if they have experience with embeddings-based retrieval systems or vector databases. Their work experience is also focused on building ML-powered solutions, which doesn't directly align with the requirements of the Senior AI Engineer role."
+    "semantic_score": 0.697547,
+    "behavioral_score": 0.9277,
+    "final_score": 0.408664,
+    "reasoning": "Backend Engineer with 2.7 yrs; 6 AI core skills; response rate 0.54."
   },
   {
-    "candidate_id": "CAND_0055992",
-    "llm_score": 0.19,
-    "semantic_score": 0.866526,
-    "behavioral_score": 0.600644,
-    "final_score": 0.386902,
-    "reasoning": "The candidate has 16.9 years of experience, which is significantly more than the required 5 years, and their experience is mostly in AI Engineer roles, but there is no mention of production experience with embeddings-based retrieval systems or working with vector databases."
+    "candidate_id": "CAND_0086787",
+    "llm_score": 0.22,
+    "semantic_score": 0.738814,
+    "behavioral_score": 0.75824,
+    "final_score": 0.404499,
+    "reasoning": "Software Engineer with 3.9 yrs; 7 AI core skills; response rate 0.30."
   },
   {
-    "candidate_id": "CAND_0057191",
-    "llm_score": 0.0,
-    "semantic_score": 0.817517,
-    "behavioral_score": 0.9397,
-    "final_score": 0.304458,
-    "reasoning": "No relevant experience in machine learning or AI engineering."
+    "candidate_id": "CAND_0008318",
+    "llm_score": 0.2,
+    "semantic_score": 0.721293,
+    "behavioral_score": 0.8515,
+    "final_score": 0.401984,
+    "reasoning": "Software Engineer with 4.4 yrs; 1 AI core skills; response rate 0.69."
   },
   {
-    "candidate_id": "CAND_0091417",
-    "llm_score": 0.0,
-    "semantic_score": 0.813041,
-    "behavioral_score": 0.9451,
-    "final_score": 0.304373,
-    "reasoning": "No relevant experience in machine learning or AI engineering."
+    "candidate_id": "CAND_0081420",
+    "llm_score": 0.2,
+    "semantic_score": 0.716703,
+    "behavioral_score": 0.8356,
+    "final_score": 0.398681,
+    "reasoning": "Analytics Engineer with 2.2 yrs; 2 AI core skills; response rate 0.42."
   },
   {
-    "candidate_id": "CAND_0058783",
-    "llm_score": 0.0,
-    "semantic_score": 0.770056,
-    "behavioral_score": 0.9943,
-    "final_score": 0.303156,
-    "reasoning": "The candidate has only 3.2 years of experience, which is below the required 5 years, and their background is heavily focused on computer vision, which does not match the required NLP/IR exposure."
+    "candidate_id": "CAND_0014292",
+    "llm_score": 0.2,
+    "semantic_score": 0.724959,
+    "behavioral_score": 0.79747,
+    "final_score": 0.394612,
+    "reasoning": "Software Engineer with 3.5 yrs; 6 AI core skills; response rate 0.75."
+  },
+  {
+    "candidate_id": "CAND_0083637",
+    "llm_score": 0.22,
+    "semantic_score": 0.790088,
+    "behavioral_score": 0.620636,
+    "final_score": 0.394113,
+    "reasoning": "ML Engineer with 3.4 yrs; 5 AI core skills; response rate 0.45."
+  },
+  {
+    "candidate_id": "CAND_0048266",
+    "llm_score": 0.2,
+    "semantic_score": 0.744663,
+    "behavioral_score": 0.754375,
+    "final_score": 0.392089,
+    "reasoning": "Senior Software Engineer with 3.1 yrs; 2 AI core skills; response rate 0.51."
+  },
+  {
+    "candidate_id": "CAND_0098754",
+    "llm_score": 0.18,
+    "semantic_score": 0.729457,
+    "behavioral_score": 0.81838,
+    "final_score": 0.385648,
+    "reasoning": "Analytics Engineer with 2.7 yrs; 2 AI core skills; response rate 0.75."
+  },
+  {
+    "candidate_id": "CAND_0057390",
+    "llm_score": 0.15,
+    "semantic_score": 0.717121,
+    "behavioral_score": 0.952,
+    "final_score": 0.383724,
+    "reasoning": "QA Engineer with 4.4 yrs; 1 AI core skills; response rate 0.69."
+  },
+  {
+    "candidate_id": "CAND_0026109",
+    "llm_score": 0.15,
+    "semantic_score": 0.718985,
+    "behavioral_score": 0.946,
+    "final_score": 0.383197,
+    "reasoning": "Java Developer with 3.4 yrs; 4 AI core skills; response rate 0.65."
+  },
+  {
+    "candidate_id": "CAND_0083480",
+    "llm_score": 0.15,
+    "semantic_score": 0.695922,
+    "behavioral_score": 0.9031,
+    "final_score": 0.372149,
+    "reasoning": "Frontend Engineer with 4.9 yrs; 1 AI core skills; response rate 0.55."
+  },
+  {
+    "candidate_id": "CAND_0098520",
+    "llm_score": 0.15,
+    "semantic_score": 0.724962,
+    "behavioral_score": 0.803335,
+    "final_score": 0.362993,
+    "reasoning": "Cloud Engineer with 4.1 yrs; 1 AI core skills; response rate 0.84."
+  },
+  {
+    "candidate_id": "CAND_0043516",
+    "llm_score": 0.12,
+    "semantic_score": 0.717822,
+    "behavioral_score": 0.9355,
+    "final_score": 0.361889,
+    "reasoning": "Java Developer with 5.0 yrs; 4 AI core skills; response rate 0.80."
+  },
+  {
+    "candidate_id": "CAND_0012399",
+    "llm_score": 0.12,
+    "semantic_score": 0.734598,
+    "behavioral_score": 0.88434,
+    "final_score": 0.357571,
+    "reasoning": "Computer Vision Engineer with 4.6 yrs; 5 AI core skills; response rate 0.94."
+  },
+  {
+    "candidate_id": "CAND_0034683",
+    "llm_score": 0.12,
+    "semantic_score": 0.675025,
+    "behavioral_score": 0.9625,
+    "final_score": 0.35738,
+    "reasoning": "Mobile Developer with 9.1 yrs; 2 AI core skills; response rate 0.70."
+  },
+  {
+    "candidate_id": "CAND_0009031",
+    "llm_score": 0.12,
+    "semantic_score": 0.707143,
+    "behavioral_score": 0.9124,
+    "final_score": 0.356289,
+    "reasoning": ".NET Developer with 2.8 yrs; 1 AI core skills; response rate 0.43."
+  },
+  {
+    "candidate_id": "CAND_0019680",
+    "llm_score": 0.1,
+    "semantic_score": 0.729909,
+    "behavioral_score": 0.9481,
+    "final_score": 0.353197,
+    "reasoning": "Frontend Engineer with 2.0 yrs; 1 AI core skills; response rate 0.66."
+  },
+  {
+    "candidate_id": "CAND_0059035",
+    "llm_score": 0.12,
+    "semantic_score": 0.717711,
+    "behavioral_score": 0.8749,
+    "final_score": 0.352777,
+    "reasoning": "Software Engineer with 2.9 yrs; 1 AI core skills; response rate 0.48."
+  },
+  {
+    "candidate_id": "CAND_0043382",
+    "llm_score": 0.12,
+    "semantic_score": 0.690291,
+    "behavioral_score": 0.9091,
+    "final_score": 0.352423,
+    "reasoning": "Cloud Engineer with 7.5 yrs; 1 AI core skills; response rate 0.46."
   },
   {
     "candidate_id": "CAND_0020311",
-    "llm_score": 0.0,
-    "semantic_score": 0.79324,
+    "llm_score": 0.1,
+    "semantic_score": 0.714454,
     "behavioral_score": 0.9547,
-    "final_score": 0.301853,
-    "reasoning": "The candidate has 1.6 years of experience in customer support, which is far below the required 5+ years of production experience with embeddings-based retrieval systems."
+    "final_score": 0.351096,
+    "reasoning": "Customer Support with 1.6 yrs; 9 AI core skills; response rate 0.49."
+  },
+  {
+    "candidate_id": "CAND_0014938",
+    "llm_score": 0.1,
+    "semantic_score": 0.708397,
+    "behavioral_score": 0.9532,
+    "final_score": 0.349659,
+    "reasoning": "Mechanical Engineer with 4.0 yrs; 1 AI core skills; response rate 0.44."
+  },
+  {
+    "candidate_id": "CAND_0091428",
+    "llm_score": 0.12,
+    "semantic_score": 0.715932,
+    "behavioral_score": 0.8506,
+    "final_score": 0.348776,
+    "reasoning": "Data Engineer with 2.5 yrs; 5 AI core skills; response rate 0.80."
+  },
+  {
+    "candidate_id": "CAND_0022019",
+    "llm_score": 0.1,
+    "semantic_score": 0.694953,
+    "behavioral_score": 0.961,
+    "final_score": 0.348141,
+    "reasoning": "Frontend Engineer with 3.5 yrs; 0 AI core skills; response rate 0.82."
+  },
+  {
+    "candidate_id": "CAND_0038806",
+    "llm_score": 0.1,
+    "semantic_score": 0.694052,
+    "behavioral_score": 0.9613,
+    "final_score": 0.348005,
+    "reasoning": "DevOps Engineer with 10.0 yrs; 1 AI core skills; response rate 0.78."
+  },
+  {
+    "candidate_id": "CAND_0007692",
+    "llm_score": 0.12,
+    "semantic_score": 0.720017,
+    "behavioral_score": 0.8335,
+    "final_score": 0.347028,
+    "reasoning": "Frontend Engineer with 1.5 yrs; 1 AI core skills; response rate 0.77."
+  },
+  {
+    "candidate_id": "CAND_0064858",
+    "llm_score": 0.1,
+    "semantic_score": 0.681993,
+    "behavioral_score": 0.9616,
+    "final_score": 0.345639,
+    "reasoning": "Mobile Developer with 4.4 yrs; 1 AI core skills; response rate 0.64."
+  },
+  {
+    "candidate_id": "CAND_0040473",
+    "llm_score": 0.1,
+    "semantic_score": 0.693184,
+    "behavioral_score": 0.9418,
+    "final_score": 0.344907,
+    "reasoning": "QA Engineer with 9.4 yrs; 1 AI core skills; response rate 0.75."
+  },
+  {
+    "candidate_id": "CAND_0020257",
+    "llm_score": 0.1,
+    "semantic_score": 0.714965,
+    "behavioral_score": 0.9103,
+    "final_score": 0.344538,
+    "reasoning": ".NET Developer with 2.2 yrs; 1 AI core skills; response rate 0.52."
+  },
+  {
+    "candidate_id": "CAND_0065299",
+    "llm_score": 0.12,
+    "semantic_score": 0.72249,
+    "behavioral_score": 0.806395,
+    "final_score": 0.343457,
+    "reasoning": "Software Engineer with 2.3 yrs; 4 AI core skills; response rate 0.69."
+  },
+  {
+    "candidate_id": "CAND_0004907",
+    "llm_score": 0.1,
+    "semantic_score": 0.698167,
+    "behavioral_score": 0.9214,
+    "final_score": 0.342843,
+    "reasoning": "Sales Executive with 8.6 yrs; 0 AI core skills; response rate 0.70."
+  },
+  {
+    "candidate_id": "CAND_0046785",
+    "llm_score": 0.1,
+    "semantic_score": 0.68768,
+    "behavioral_score": 0.9295,
+    "final_score": 0.341961,
+    "reasoning": "Graphic Designer with 1.5 yrs; 0 AI core skills; response rate 0.62."
+  },
+  {
+    "candidate_id": "CAND_0059029",
+    "llm_score": 0.1,
+    "semantic_score": 0.67978,
+    "behavioral_score": 0.9322,
+    "final_score": 0.340786,
+    "reasoning": "Operations Manager with 12.4 yrs; 1 AI core skills; response rate 0.75."
+  },
+  {
+    "candidate_id": "CAND_0082030",
+    "llm_score": 0.1,
+    "semantic_score": 0.712071,
+    "behavioral_score": 0.8704,
+    "final_score": 0.337974,
+    "reasoning": "Software Engineer with 4.3 yrs; 0 AI core skills; response rate 0.70."
+  },
+  {
+    "candidate_id": "CAND_0002559",
+    "llm_score": 0.1,
+    "semantic_score": 0.721855,
+    "behavioral_score": 0.8347,
+    "final_score": 0.334576,
+    "reasoning": "Senior Software Engineer with 7.9 yrs; 0 AI core skills; response rate 0.56."
+  },
+  {
+    "candidate_id": "CAND_0070158",
+    "llm_score": 0.1,
+    "semantic_score": 0.724101,
+    "behavioral_score": 0.80767,
+    "final_score": 0.330971,
+    "reasoning": "Graphic Designer with 2.0 yrs; 0 AI core skills; response rate 0.44."
+  },
+  {
+    "candidate_id": "CAND_0067339",
+    "llm_score": 0.1,
+    "semantic_score": 0.726016,
+    "behavioral_score": 0.80359,
+    "final_score": 0.330742,
+    "reasoning": "Customer Support with 3.3 yrs; 0 AI core skills; response rate 0.41."
+  },
+  {
+    "candidate_id": "CAND_0015372",
+    "llm_score": 0.05,
+    "semantic_score": 0.703953,
+    "behavioral_score": 0.9493,
+    "final_score": 0.315686,
+    "reasoning": "Civil Engineer with 8.2 yrs; 0 AI core skills; response rate 0.59."
+  },
+  {
+    "candidate_id": "CAND_0022484",
+    "llm_score": 0.05,
+    "semantic_score": 0.725185,
+    "behavioral_score": 0.9133,
+    "final_score": 0.314532,
+    "reasoning": "Mechanical Engineer with 4.1 yrs; 12 AI core skills; response rate 0.56."
+  },
+  {
+    "candidate_id": "CAND_0040852",
+    "llm_score": 0.05,
+    "semantic_score": 0.691547,
+    "behavioral_score": 0.9532,
+    "final_score": 0.313789,
+    "reasoning": "HR Manager with 11.1 yrs; 1 AI core skills; response rate 0.62."
+  },
+  {
+    "candidate_id": "CAND_0003871",
+    "llm_score": 0.05,
+    "semantic_score": 0.712287,
+    "behavioral_score": 0.9253,
+    "final_score": 0.313752,
+    "reasoning": "Customer Support with 7.7 yrs; 8 AI core skills; response rate 0.41."
+  },
+  {
+    "candidate_id": "CAND_0088240",
+    "llm_score": 0.05,
+    "semantic_score": 0.708109,
+    "behavioral_score": 0.9292,
+    "final_score": 0.313502,
+    "reasoning": "Content Writer with 7.7 yrs; 10 AI core skills; response rate 0.48."
+  },
+  {
+    "candidate_id": "CAND_0077396",
+    "llm_score": 0.05,
+    "semantic_score": 0.697967,
+    "behavioral_score": 0.9427,
+    "final_score": 0.313498,
+    "reasoning": "QA Engineer with 3.8 yrs; 0 AI core skills; response rate 0.55."
+  },
+  {
+    "candidate_id": "CAND_0016769",
+    "llm_score": 0.05,
+    "semantic_score": 0.709991,
+    "behavioral_score": 0.9256,
+    "final_score": 0.313338,
+    "reasoning": "Marketing Manager with 5.6 yrs; 0 AI core skills; response rate 0.40."
+  },
+  {
+    "candidate_id": "CAND_0057191",
+    "llm_score": 0.05,
+    "semantic_score": 0.695641,
+    "behavioral_score": 0.9397,
+    "final_score": 0.312583,
+    "reasoning": "Business Analyst with 5.5 yrs; 1 AI core skills; response rate 0.40."
+  },
+  {
+    "candidate_id": "CAND_0091883",
+    "llm_score": 0.05,
+    "semantic_score": 0.699956,
+    "behavioral_score": 0.9325,
+    "final_score": 0.312366,
+    "reasoning": "Project Manager with 2.8 yrs; 0 AI core skills; response rate 0.63."
+  },
+  {
+    "candidate_id": "CAND_0043774",
+    "llm_score": 0.05,
+    "semantic_score": 0.696976,
+    "behavioral_score": 0.9334,
+    "final_score": 0.311905,
+    "reasoning": "Sales Executive with 2.3 yrs; 9 AI core skills; response rate 0.42."
+  },
+  {
+    "candidate_id": "CAND_0091417",
+    "llm_score": 0.05,
+    "semantic_score": 0.687511,
+    "behavioral_score": 0.9451,
+    "final_score": 0.311767,
+    "reasoning": "Marketing Manager with 10.7 yrs; 0 AI core skills; response rate 0.43."
+  },
+  {
+    "candidate_id": "CAND_0003717",
+    "llm_score": 0.05,
+    "semantic_score": 0.699318,
+    "behavioral_score": 0.9292,
+    "final_score": 0.311744,
+    "reasoning": "Software Engineer with 7.9 yrs; 0 AI core skills; response rate 0.84."
+  },
+  {
+    "candidate_id": "CAND_0083758",
+    "llm_score": 0.05,
+    "semantic_score": 0.705246,
+    "behavioral_score": 0.9121,
+    "final_score": 0.310364,
+    "reasoning": "Graphic Designer with 1.3 yrs; 0 AI core skills; response rate 0.54."
+  },
+  {
+    "candidate_id": "CAND_0065799",
+    "llm_score": 0.05,
+    "semantic_score": 0.698413,
+    "behavioral_score": 0.9211,
+    "final_score": 0.310348,
+    "reasoning": ".NET Developer with 1.6 yrs; 1 AI core skills; response rate 0.57."
+  },
+  {
+    "candidate_id": "CAND_0065742",
+    "llm_score": 0.05,
+    "semantic_score": 0.697702,
+    "behavioral_score": 0.922,
+    "final_score": 0.31034,
+    "reasoning": "QA Engineer with 4.5 yrs; 0 AI core skills; response rate 0.44."
+  },
+  {
+    "candidate_id": "CAND_0090919",
+    "llm_score": 0.05,
+    "semantic_score": 0.71884,
+    "behavioral_score": 0.8923,
+    "final_score": 0.310113,
+    "reasoning": "Project Manager with 3.8 yrs; 0 AI core skills; response rate 0.65."
+  },
+  {
+    "candidate_id": "CAND_0091513",
+    "llm_score": 0.05,
+    "semantic_score": 0.707615,
+    "behavioral_score": 0.8983,
+    "final_score": 0.308768,
+    "reasoning": "Sales Executive with 2.1 yrs; 0 AI core skills; response rate 0.48."
+  },
+  {
+    "candidate_id": "CAND_0057931",
+    "llm_score": 0.05,
+    "semantic_score": 0.698536,
+    "behavioral_score": 0.9022,
+    "final_score": 0.307537,
+    "reasoning": "Content Writer with 8.2 yrs; 0 AI core skills; response rate 0.68."
+  },
+  {
+    "candidate_id": "CAND_0076840",
+    "llm_score": 0.05,
+    "semantic_score": 0.688926,
+    "behavioral_score": 0.9103,
+    "final_score": 0.30683,
+    "reasoning": "Content Writer with 10.9 yrs; 0 AI core skills; response rate 0.48."
+  },
+  {
+    "candidate_id": "CAND_0070849",
+    "llm_score": 0.05,
+    "semantic_score": 0.696788,
+    "behavioral_score": 0.8959,
+    "final_score": 0.306243,
+    "reasoning": "Civil Engineer with 14.9 yrs; 0 AI core skills; response rate 0.76."
+  },
+  {
+    "candidate_id": "CAND_0037377",
+    "llm_score": 0.05,
+    "semantic_score": 0.707594,
+    "behavioral_score": 0.8758,
+    "final_score": 0.305389,
+    "reasoning": "Mechanical Engineer with 10.7 yrs; 1 AI core skills; response rate 0.49."
+  },
+  {
+    "candidate_id": "CAND_0091385",
+    "llm_score": 0.05,
+    "semantic_score": 0.698498,
+    "behavioral_score": 0.8866,
+    "final_score": 0.30519,
+    "reasoning": "Project Manager with 6.2 yrs; 1 AI core skills; response rate 0.51."
+  },
+  {
+    "candidate_id": "CAND_0082918",
+    "llm_score": 0.05,
+    "semantic_score": 0.700356,
+    "behavioral_score": 0.8716,
+    "final_score": 0.303311,
+    "reasoning": "Graphic Designer with 5.4 yrs; 0 AI core skills; response rate 0.77."
+  },
+  {
+    "candidate_id": "CAND_0042688",
+    "llm_score": 0.05,
+    "semantic_score": 0.725289,
+    "behavioral_score": 0.8263,
+    "final_score": 0.301503,
+    "reasoning": "Mechanical Engineer with 6.8 yrs; 0 AI core skills; response rate 0.51."
+  },
+  {
+    "candidate_id": "CAND_0063647",
+    "llm_score": 0.05,
+    "semantic_score": 0.729847,
+    "behavioral_score": 0.79849,
+    "final_score": 0.298243,
+    "reasoning": "HR Manager with 2.9 yrs; 0 AI core skills; response rate 0.75."
+  },
+  {
+    "candidate_id": "CAND_0069756",
+    "llm_score": 0.05,
+    "semantic_score": 0.730381,
+    "behavioral_score": 0.797725,
+    "final_score": 0.298235,
+    "reasoning": "Marketing Manager with 4.1 yrs; 0 AI core skills; response rate 0.49."
   },
   {
     "candidate_id": "CAND_0028677",
     "llm_score": 0.0,
-    "semantic_score": 0.798263,
+    "semantic_score": 0.707328,
     "behavioral_score": 0.9469,
-    "final_score": 0.301688,
-    "reasoning": "No relevant technical experience, mostly in marketing and sales roles."
-  },
-  {
-    "candidate_id": "CAND_0043774",
-    "llm_score": 0.0,
-    "semantic_score": 0.805774,
-    "behavioral_score": 0.9334,
-    "final_score": 0.301165,
-    "reasoning": "No relevant experience in AI or machine learning, and background is in sales and marketing."
-  },
-  {
-    "candidate_id": "CAND_0014938",
-    "llm_score": 0.0,
-    "semantic_score": 0.789467,
-    "behavioral_score": 0.9532,
-    "final_score": 0.300873,
-    "reasoning": "The candidate has no experience in AI engineering, and their background is in mechanical engineering, which is unrelated to the role requirements."
-  },
-  {
-    "candidate_id": "CAND_0013415",
-    "llm_score": 0.0,
-    "semantic_score": 0.81265,
-    "behavioral_score": 0.9211,
-    "final_score": 0.300695,
-    "reasoning": "Candidate has 14.5 years of experience, but it is mostly in marketing and business analyst roles, with no experience in AI or ML."
-  },
-  {
-    "candidate_id": "CAND_0083758",
-    "llm_score": 0.0,
-    "semantic_score": 0.813084,
-    "behavioral_score": 0.9121,
-    "final_score": 0.299432,
-    "reasoning": "No relevant experience in AI or machine learning, and background is in graphic design and customer support."
-  },
-  {
-    "candidate_id": "CAND_0076840",
-    "llm_score": 0.0,
-    "semantic_score": 0.811638,
-    "behavioral_score": 0.9103,
-    "final_score": 0.298873,
-    "reasoning": "No relevant technical experience, mostly in marketing and sales roles."
-  },
-  {
-    "candidate_id": "CAND_0057390",
-    "llm_score": 0.0,
-    "semantic_score": 0.77992,
-    "behavioral_score": 0.952,
-    "final_score": 0.298784,
-    "reasoning": "The candidate has 4.4 years of experience, which is below the required 5+ years, and their background is in QA engineering and full-stack development, not AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0015372",
-    "llm_score": 0.0,
-    "semantic_score": 0.781515,
-    "behavioral_score": 0.9493,
-    "final_score": 0.298698,
-    "reasoning": "The candidate has no experience in AI, embeddings-based retrieval systems, or vector databases, and their background is in civil engineering."
-  },
-  {
-    "candidate_id": "CAND_0091883",
-    "llm_score": 0.0,
-    "semantic_score": 0.793712,
-    "behavioral_score": 0.9325,
-    "final_score": 0.298617,
-    "reasoning": "The candidate has 2.8 years of experience, which is below the required 5 years, and their background is in marketing manager roles, not AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0079339",
-    "llm_score": 0.0,
-    "semantic_score": 0.822272,
-    "behavioral_score": 0.8944,
-    "final_score": 0.298614,
-    "reasoning": "Candidate lacks significant experience with ML and AI, and their background is not relevant to the required skills and experience for the role."
-  },
-  {
-    "candidate_id": "CAND_0091513",
-    "llm_score": 0.0,
-    "semantic_score": 0.819144,
-    "behavioral_score": 0.8983,
-    "final_score": 0.298574,
-    "reasoning": "Candidate has 2.1 years of experience, but it is mostly in sales and marketing roles, with no experience in AI or ML."
-  },
-  {
-    "candidate_id": "CAND_0042867",
-    "llm_score": 0.0,
-    "semantic_score": 0.78733,
-    "behavioral_score": 0.94,
-    "final_score": 0.298466,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0083629",
-    "llm_score": 0.0,
-    "semantic_score": 0.794593,
-    "behavioral_score": 0.9229,
-    "final_score": 0.297354,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills, making them a wrong domain candidate."
-  },
-  {
-    "candidate_id": "CAND_0044695",
-    "llm_score": 0.0,
-    "semantic_score": 0.824127,
-    "behavioral_score": 0.8833,
-    "final_score": 0.29732,
-    "reasoning": "No relevant experience in AI or machine learning, and background is in marketing and customer support."
-  },
-  {
-    "candidate_id": "CAND_0004907",
-    "llm_score": 0.0,
-    "semantic_score": 0.793992,
-    "behavioral_score": 0.9214,
-    "final_score": 0.297008,
-    "reasoning": "The candidate has no experience in AI engineering, marketing manager roles, and civil engineering do not match the requirements of the Senior AI Engineer position."
-  },
-  {
-    "candidate_id": "CAND_0059029",
-    "llm_score": 0.0,
-    "semantic_score": 0.781799,
-    "behavioral_score": 0.9322,
-    "final_score": 0.29619,
-    "reasoning": "The candidate has 12.4+ years of experience, but none of it is in AI engineering or related fields, and their education is in Data Science, not a relevant field for this role."
-  },
-  {
-    "candidate_id": "CAND_0077640",
-    "llm_score": 0.0,
-    "semantic_score": 0.782098,
-    "behavioral_score": 0.9316,
-    "final_score": 0.29616,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python, vector databases, or hybrid search infrastructure."
-  },
-  {
-    "candidate_id": "CAND_0038806",
-    "llm_score": 0.0,
-    "semantic_score": 0.758936,
-    "behavioral_score": 0.9613,
-    "final_score": 0.295982,
-    "reasoning": "The candidate has 10 years of experience, but none of it is in AI engineering, and their background is in Electrical Engineering, not relevant to the role."
-  },
-  {
-    "candidate_id": "CAND_0072301",
-    "llm_score": 0.0,
-    "semantic_score": 0.770761,
-    "behavioral_score": 0.9445,
-    "final_score": 0.295827,
-    "reasoning": "The candidate has no experience in AI engineering, embeddings-based retrieval systems, or vector databases, and their background is in data analysis and software engineering."
-  },
-  {
-    "candidate_id": "CAND_0022484",
-    "llm_score": 0.0,
-    "semantic_score": 0.792844,
-    "behavioral_score": 0.9133,
-    "final_score": 0.295564,
-    "reasoning": "The candidate has 4.1 years of experience as a Mechanical Engineer, which is below the required 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0026109",
-    "llm_score": 0.0,
-    "semantic_score": 0.765718,
-    "behavioral_score": 0.946,
-    "final_score": 0.295044,
-    "reasoning": "The candidate has only 3.4 years of experience, which is below the required 5 years, and their background is in Java development, not AI or NLP."
-  },
-  {
-    "candidate_id": "CAND_0062621",
-    "llm_score": 0.0,
-    "semantic_score": 0.779447,
-    "behavioral_score": 0.9277,
-    "final_score": 0.295044,
-    "reasoning": "The candidate has only 2.7 years of experience, which is below the required 5+ years, and their background is in data engineering rather than AI or NLP."
-  },
-  {
-    "candidate_id": "CAND_0022019",
-    "llm_score": 0.0,
-    "semantic_score": 0.753787,
-    "behavioral_score": 0.961,
-    "final_score": 0.294907,
-    "reasoning": "The candidate has only 3.5 years of experience and has no experience in AI or production deployment, which is a disqualifying career pattern."
-  },
-  {
-    "candidate_id": "CAND_0051596",
-    "llm_score": 0.0,
-    "semantic_score": 0.757143,
-    "behavioral_score": 0.9553,
-    "final_score": 0.294724,
-    "reasoning": "The candidate has only 2.4 years of experience, which is below the required 5 years, and their experience is in .NET development, not AI or embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0013627",
-    "llm_score": 0.0,
-    "semantic_score": 0.783849,
-    "behavioral_score": 0.9175,
-    "final_score": 0.294395,
-    "reasoning": "The candidate has no experience in AI engineering, and their background is in graphic design, accounting, content writing, civil engineering, mechanical engineering, and marketing management, which does not align with the requirements of the Senior AI Engineer role."
+    "final_score": 0.283501,
+    "reasoning": "Customer Support with 4.3 yrs; 0 AI core skills; response rate 0.69."
   },
   {
     "candidate_id": "CAND_0008561",
     "llm_score": 0.0,
-    "semantic_score": 0.782342,
+    "semantic_score": 0.694709,
     "behavioral_score": 0.9175,
-    "final_score": 0.294093,
-    "reasoning": "The candidate has 11.3+ years of experience in marketing manager roles, but there is no mention of experience with embeddings-based retrieval systems, vector databases, or Python skills."
-  },
-  {
-    "candidate_id": "CAND_0019680",
-    "llm_score": 0.0,
-    "semantic_score": 0.759109,
-    "behavioral_score": 0.9481,
-    "final_score": 0.294037,
-    "reasoning": "The candidate has 2 years of experience, which is below the required 5 years, and their background is in frontend engineering, not AI or NLP."
-  },
-  {
-    "candidate_id": "CAND_0046785",
-    "llm_score": 0.0,
-    "semantic_score": 0.772813,
-    "behavioral_score": 0.9295,
-    "final_score": 0.293988,
-    "reasoning": "The candidate has 1.5 years of experience as a Graphic Designer, which is significantly less than the required 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0015522",
-    "llm_score": 0.0,
-    "semantic_score": 0.75467,
-    "behavioral_score": 0.9508,
-    "final_score": 0.293554,
-    "reasoning": "The candidate has only 2.3 years of experience, which is below the required 5+ years, and their background is in Backend Engineering, not AI or NLP/IR."
-  },
-  {
-    "candidate_id": "CAND_0094999",
-    "llm_score": 0.0,
-    "semantic_score": 0.754121,
-    "behavioral_score": 0.9511,
-    "final_score": 0.293489,
-    "reasoning": "The candidate has only 3.9 years of experience and their background is in data analysis, not AI engineering, and they have no experience with embeddings-based retrieval systems or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0014248",
-    "llm_score": 0.0,
-    "semantic_score": 0.820806,
-    "behavioral_score": 0.8608,
-    "final_score": 0.293281,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python and vector databases."
-  },
-  {
-    "candidate_id": "CAND_0088240",
-    "llm_score": 0.0,
-    "semantic_score": 0.76935,
-    "behavioral_score": 0.9292,
-    "final_score": 0.29325,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0010929",
-    "llm_score": 0.0,
-    "semantic_score": 0.823989,
-    "behavioral_score": 0.856,
-    "final_score": 0.293198,
-    "reasoning": "The candidate has only 1.3 years of experience and no relevant technical skills, making them a poor fit for the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0043516",
-    "llm_score": 0.0,
-    "semantic_score": 0.764091,
-    "behavioral_score": 0.9355,
-    "final_score": 0.293143,
-    "reasoning": "The candidate has no experience with embeddings-based retrieval systems, vector databases, or hybrid search infrastructure, and their background is in Java development rather than AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0009335",
-    "llm_score": 0.0,
-    "semantic_score": 0.77259,
-    "behavioral_score": 0.9217,
-    "final_score": 0.292773,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills, and their background is in marketing manager roles."
-  },
-  {
-    "candidate_id": "CAND_0010839",
-    "llm_score": 0.0,
-    "semantic_score": 0.771376,
-    "behavioral_score": 0.9229,
-    "final_score": 0.29271,
-    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in accounting and marketing management."
-  },
-  {
-    "candidate_id": "CAND_0065742",
-    "llm_score": 0.0,
-    "semantic_score": 0.771517,
-    "behavioral_score": 0.922,
-    "final_score": 0.292603,
-    "reasoning": "The candidate has 4.5 years of experience, which is below the required 5+ years, and their background is in QA engineering and full-stack development, not AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0083857",
-    "llm_score": 0.0,
-    "semantic_score": 0.769951,
-    "behavioral_score": 0.9232,
-    "final_score": 0.29247,
-    "reasoning": "The candidate has 2.8 years of experience as a Graphic Designer, which does not meet the 5+ years of production experience with embeddings-based retrieval systems required for the role."
-  },
-  {
-    "candidate_id": "CAND_0004212",
-    "llm_score": 0.0,
-    "semantic_score": 0.812627,
-    "behavioral_score": 0.865,
-    "final_score": 0.292275,
-    "reasoning": "The candidate has no experience in AI or related fields, and their background is in marketing, sales, and graphic design."
-  },
-  {
-    "candidate_id": "CAND_0091385",
-    "llm_score": 0.0,
-    "semantic_score": 0.795435,
-    "behavioral_score": 0.8866,
-    "final_score": 0.292077,
-    "reasoning": "The candidate has no experience in AI engineering, project management, or relevant technical fields, and their background is in marketing and HR."
-  },
-  {
-    "candidate_id": "CAND_0040473",
-    "llm_score": 0.0,
-    "semantic_score": 0.753541,
-    "behavioral_score": 0.9418,
-    "final_score": 0.291978,
-    "reasoning": "The candidate has no experience in AI engineering, embeddings-based retrieval systems, or vector databases, and their background is in QA engineering and backend systems."
-  },
-  {
-    "candidate_id": "CAND_0082918",
-    "llm_score": 0.0,
-    "semantic_score": 0.805759,
-    "behavioral_score": 0.8716,
-    "final_score": 0.291892,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0050730",
-    "llm_score": 0.0,
-    "semantic_score": 0.823974,
-    "behavioral_score": 0.8455,
-    "final_score": 0.29162,
-    "reasoning": "The candidate has only 1.6 years of experience, which is below the required 5 years, and their background is in marketing and customer support, not AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0075927",
-    "llm_score": 0.0,
-    "semantic_score": 0.797097,
-    "behavioral_score": 0.8806,
-    "final_score": 0.291509,
-    "reasoning": "The candidate has 12.1+ years of experience as a Graphic Designer, Marketing Manager, Sales Executive, Content Writer, and Mechanical Engineer, but none of these roles match the requirements of the Senior AI Engineer position."
-  },
-  {
-    "candidate_id": "CAND_0016769",
-    "llm_score": 0.0,
-    "semantic_score": 0.762354,
-    "behavioral_score": 0.9256,
-    "final_score": 0.291311,
-    "reasoning": "The candidate has no experience in AI engineering, marketing management, and has a background in chemical engineering, which is unrelated to the role."
-  },
-  {
-    "candidate_id": "CAND_0058746",
-    "llm_score": 0.0,
-    "semantic_score": 0.765049,
-    "behavioral_score": 0.922,
-    "final_score": 0.29131,
-    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in accounting, marketing, and engineering, which does not align with the requirements of the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0051444",
-    "llm_score": 0.0,
-    "semantic_score": 0.828929,
-    "behavioral_score": 0.835,
-    "final_score": 0.291036,
-    "reasoning": "The candidate has 12.8+ years of experience, but none of it is in AI engineering, and their background is in customer support, marketing, and accounting."
-  },
-  {
-    "candidate_id": "CAND_0006335",
-    "llm_score": 0.0,
-    "semantic_score": 0.750477,
-    "behavioral_score": 0.9388,
-    "final_score": 0.290915,
-    "reasoning": "The candidate has 9.2 years of experience as a Java Developer, but there is no mention of experience with embeddings-based retrieval systems, vector databases, or Python skills, which are essential requirements for the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0028900",
-    "llm_score": 0.0,
-    "semantic_score": 0.794276,
-    "behavioral_score": 0.8782,
-    "final_score": 0.290585,
-    "reasoning": "The candidate has only 1.4 years of experience and their background is in mechanical engineering design, not AI or NLP."
-  },
-  {
-    "candidate_id": "CAND_0009031",
-    "llm_score": 0.0,
-    "semantic_score": 0.767767,
-    "behavioral_score": 0.9124,
-    "final_score": 0.290413,
-    "reasoning": "The candidate has only 2.8 years of experience, which is below the required 5 years, and their experience is in .NET development, not AI or embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0070849",
-    "llm_score": 0.0,
-    "semantic_score": 0.777789,
-    "behavioral_score": 0.8959,
-    "final_score": 0.289943,
-    "reasoning": "The candidate has 14.9+ years of experience, but it's in marketing manager roles and civil engineering, not AI engineering or production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0085347",
-    "llm_score": 0.0,
-    "semantic_score": 0.816534,
-    "behavioral_score": 0.8422,
-    "final_score": 0.289637,
-    "reasoning": "The candidate has 13.2+ years of experience, but none of it is in AI engineering, and their background is in marketing, project management, and civil engineering."
-  },
-  {
-    "candidate_id": "CAND_0037377",
-    "llm_score": 0.0,
-    "semantic_score": 0.790382,
-    "behavioral_score": 0.8758,
-    "final_score": 0.289446,
-    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in mechanical engineering, accounting, operations management, and content writing."
-  },
-  {
-    "candidate_id": "CAND_0062999",
-    "llm_score": 0.0,
-    "semantic_score": 0.804209,
-    "behavioral_score": 0.8572,
-    "final_score": 0.289422,
-    "reasoning": "The candidate has 14.1+ years of experience, but it's all in marketing manager roles, which doesn't match the required 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0025151",
-    "llm_score": 0.0,
-    "semantic_score": 0.783002,
-    "behavioral_score": 0.8791,
-    "final_score": 0.288465,
-    "reasoning": "The candidate has no experience in AI engineering, and their background is in graphic design and accounting."
-  },
-  {
-    "candidate_id": "CAND_0039464",
-    "llm_score": 0.0,
-    "semantic_score": 0.790079,
-    "behavioral_score": 0.8668,
-    "final_score": 0.288036,
-    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in marketing, graphic design, mechanical engineering, accounting, and civil engineering."
-  },
-  {
-    "candidate_id": "CAND_0090919",
-    "llm_score": 0.0,
-    "semantic_score": 0.768849,
-    "behavioral_score": 0.8923,
-    "final_score": 0.287615,
-    "reasoning": "The candidate has only 3.8 years of experience, which is below the required 5 years, and their background is in marketing management, not AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0055172",
-    "llm_score": 0.0,
-    "semantic_score": 0.795996,
-    "behavioral_score": 0.8557,
-    "final_score": 0.287554,
-    "reasoning": "The candidate has no experience in AI engineering, and their background is in HR management, not relevant to the role."
-  },
-  {
-    "candidate_id": "CAND_0087426",
-    "llm_score": 0.0,
-    "semantic_score": 0.793391,
-    "behavioral_score": 0.8545,
-    "final_score": 0.286853,
-    "reasoning": "The candidate's background is in marketing and operations management, with no experience in AI engineering or production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0009276",
-    "llm_score": 0.0,
-    "semantic_score": 0.828855,
-    "behavioral_score": 0.804355,
-    "final_score": 0.286424,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills, and their background is in business analysis and accounting."
-  },
-  {
-    "candidate_id": "CAND_0042221",
-    "llm_score": 0.0,
-    "semantic_score": 0.799201,
-    "behavioral_score": 0.8437,
-    "final_score": 0.286395,
-    "reasoning": "The candidate has no experience in AI or software engineering, and their background is in accounting and marketing management."
-  },
-  {
-    "candidate_id": "CAND_0085492",
-    "llm_score": 0.0,
-    "semantic_score": 0.787247,
-    "behavioral_score": 0.859,
-    "final_score": 0.286299,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0086668",
-    "llm_score": 0.0,
-    "semantic_score": 0.803934,
-    "behavioral_score": 0.8359,
-    "final_score": 0.286172,
-    "reasoning": "The candidate has no experience in AI engineering, and their background is in marketing and customer support, which does not align with the requirements of the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0000098",
-    "llm_score": 0.0,
-    "semantic_score": 0.825437,
-    "behavioral_score": 0.806905,
-    "final_score": 0.286123,
-    "reasoning": "The candidate has only 1.7 years of experience and has spent their career in marketing manager roles, which does not align with the requirements of 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0039237",
-    "llm_score": 0.0,
-    "semantic_score": 0.787445,
-    "behavioral_score": 0.8554,
-    "final_score": 0.285799,
-    "reasoning": "The candidate has no experience in AI engineering, marketing management, and has a background in machine learning, but no production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0065114",
-    "llm_score": 0.0,
-    "semantic_score": 0.811763,
-    "behavioral_score": 0.8221,
-    "final_score": 0.285668,
-    "reasoning": "The candidate has 2 years of experience as a Mechanical Engineer, which is significantly less than the required 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0093391",
-    "llm_score": 0.0,
-    "semantic_score": 0.772528,
-    "behavioral_score": 0.8737,
-    "final_score": 0.285561,
-    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in marketing, graphic design, civil engineering, project management, and customer support."
-  },
-  {
-    "candidate_id": "CAND_0010251",
-    "llm_score": 0.0,
-    "semantic_score": 0.81577,
-    "behavioral_score": 0.8155,
-    "final_score": 0.285479,
-    "reasoning": "The candidate has no experience in AI engineering, marketing manager roles are unrelated to the required experience, and there is no mention of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0000499",
-    "llm_score": 0.0,
-    "semantic_score": 0.792863,
-    "behavioral_score": 0.8449,
-    "final_score": 0.285308,
-    "reasoning": "The candidate has 11+ years of experience, but none of it is in AI engineering or related fields, and their education is in Machine Learning, not a relevant field for this role."
-  },
-  {
-    "candidate_id": "CAND_0076080",
-    "llm_score": 0.0,
-    "semantic_score": 0.818564,
-    "behavioral_score": 0.80869,
-    "final_score": 0.285016,
-    "reasoning": "The candidate has no experience in AI or related fields, and their background is in mechanical engineering and accounting."
-  },
-  {
-    "candidate_id": "CAND_0042688",
-    "llm_score": 0.0,
-    "semantic_score": 0.80516,
-    "behavioral_score": 0.8263,
-    "final_score": 0.284977,
-    "reasoning": "The candidate has no experience in AI engineering, embeddings-based retrieval systems, or vector databases, and their background is in mechanical engineering."
-  },
-  {
-    "candidate_id": "CAND_0016141",
-    "llm_score": 0.0,
-    "semantic_score": 0.803057,
-    "behavioral_score": 0.829,
-    "final_score": 0.284961,
-    "reasoning": "The candidate has 2.8 years of experience in marketing manager roles, which does not meet the 5+ years of production experience with embeddings-based retrieval systems required for the role."
-  },
-  {
-    "candidate_id": "CAND_0012640",
-    "llm_score": 0.0,
-    "semantic_score": 0.787884,
-    "behavioral_score": 0.8437,
-    "final_score": 0.284132,
-    "reasoning": "The candidate has no experience in AI or related fields, and their background is in accounting and HR management."
-  },
-  {
-    "candidate_id": "CAND_0089095",
-    "llm_score": 0.0,
-    "semantic_score": 0.788962,
-    "behavioral_score": 0.8422,
-    "final_score": 0.284122,
-    "reasoning": "The candidate's background is in marketing and operations management, with no experience in AI engineering or production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0088315",
-    "llm_score": 0.0,
-    "semantic_score": 0.825542,
-    "behavioral_score": 0.7888,
-    "final_score": 0.283428,
-    "reasoning": "The candidate has no experience in AI, embeddings-based retrieval systems, or vector databases, and their background is in mechanical engineering, marketing management, and accounting."
-  },
-  {
-    "candidate_id": "CAND_0078474",
-    "llm_score": 0.0,
-    "semantic_score": 0.812946,
-    "behavioral_score": 0.805375,
-    "final_score": 0.283395,
-    "reasoning": "The candidate's background is in marketing and HR management, with no experience in AI engineering or production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0014802",
-    "llm_score": 0.0,
-    "semantic_score": 0.808798,
-    "behavioral_score": 0.809455,
-    "final_score": 0.283178,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python, vector databases, or hybrid search infrastructure."
-  },
-  {
-    "candidate_id": "CAND_0038436",
-    "llm_score": 0.0,
-    "semantic_score": 0.789928,
-    "behavioral_score": 0.8341,
-    "final_score": 0.283101,
-    "reasoning": "The candidate has 1.3 years of experience, which is below the required 5+ years, and their background is in marketing manager roles, not AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0023841",
-    "llm_score": 0.0,
-    "semantic_score": 0.792789,
-    "behavioral_score": 0.8299,
-    "final_score": 0.283043,
-    "reasoning": "The candidate's background is in customer support and marketing management, with no experience in AI engineering or production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0012621",
-    "llm_score": 0.0,
-    "semantic_score": 0.814629,
-    "behavioral_score": 0.799,
-    "final_score": 0.282776,
-    "reasoning": "The candidate has only 2.3 years of experience and their background is in marketing, which does not match the requirements of 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0067424",
-    "llm_score": 0.0,
-    "semantic_score": 0.832229,
-    "behavioral_score": 0.775285,
-    "final_score": 0.282738,
-    "reasoning": "The candidate has no experience in AI engineering, customer support experience is not relevant to the role, and their educational background is in electronics and mechanical engineering, which does not match the requirements."
-  },
-  {
-    "candidate_id": "CAND_0041257",
-    "llm_score": 0.0,
-    "semantic_score": 0.812795,
-    "behavioral_score": 0.799,
-    "final_score": 0.282409,
-    "reasoning": "The candidate has 13+ years of experience, but none of it is in AI engineering or related fields, and their education is in Data Science, not a relevant field for this role."
-  },
-  {
-    "candidate_id": "CAND_0003483",
-    "llm_score": 0.0,
-    "semantic_score": 0.814139,
-    "behavioral_score": 0.796705,
-    "final_score": 0.282334,
-    "reasoning": "The candidate has 2.8 years of experience, which is below the required 5 years, and their background is in HR management, not AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0048756",
-    "llm_score": 0.0,
-    "semantic_score": 0.814632,
-    "behavioral_score": 0.7939,
-    "final_score": 0.282011,
-    "reasoning": "The candidate has no experience in AI engineering, and their background is in business analysis and marketing management."
-  },
-  {
-    "candidate_id": "CAND_0002247",
-    "llm_score": 0.0,
-    "semantic_score": 0.803747,
-    "behavioral_score": 0.8074,
-    "final_score": 0.281859,
-    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in marketing, accounting, HR, and sales."
-  },
-  {
-    "candidate_id": "CAND_0063972",
-    "llm_score": 0.0,
-    "semantic_score": 0.809987,
-    "behavioral_score": 0.79849,
-    "final_score": 0.281771,
-    "reasoning": "The candidate has 12.1+ years of experience, but none of it is in AI engineering, and their background is in mechanical engineering, marketing, HR, graphic design, operations, customer support, and project management."
-  },
-  {
-    "candidate_id": "CAND_0025246",
-    "llm_score": 0.0,
-    "semantic_score": 0.820883,
-    "behavioral_score": 0.7837,
-    "final_score": 0.281732,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python, vector databases, or hybrid search infrastructure."
-  },
-  {
-    "candidate_id": "CAND_0053673",
-    "llm_score": 0.0,
-    "semantic_score": 0.791961,
-    "behavioral_score": 0.8215,
-    "final_score": 0.281617,
-    "reasoning": "The candidate has no experience in AI engineering, machine learning, or related fields, and their background is heavily focused on customer support, marketing, and graphic design."
-  },
-  {
-    "candidate_id": "CAND_0028676",
-    "llm_score": 0.0,
-    "semantic_score": 0.799966,
-    "behavioral_score": 0.809455,
-    "final_score": 0.281411,
-    "reasoning": "The candidate has 13.4+ years of experience, but it's all in marketing manager roles, and there's no mention of AI, machine learning, or production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0018723",
-    "llm_score": 0.0,
-    "semantic_score": 0.83826,
-    "behavioral_score": 0.75769,
-    "final_score": 0.281306,
-    "reasoning": "The candidate has no experience in AI engineering, embeddings-based retrieval systems, or vector databases, and their background is in business analysis and accounting."
-  },
-  {
-    "candidate_id": "CAND_0055308",
-    "llm_score": 0.0,
-    "semantic_score": 0.811527,
-    "behavioral_score": 0.790075,
-    "final_score": 0.280817,
-    "reasoning": "The candidate has only 1.9 years of experience, which is below the required 5 years, and their background is in marketing management, not AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0064414",
-    "llm_score": 0.0,
-    "semantic_score": 0.813948,
-    "behavioral_score": 0.784975,
-    "final_score": 0.280536,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0063647",
-    "llm_score": 0.0,
-    "semantic_score": 0.803765,
-    "behavioral_score": 0.79849,
-    "final_score": 0.280526,
-    "reasoning": "The candidate has 2.9 years of experience, which is below the required 5 years, and their background is in HR management, not AI engineering."
-  },
-  {
-    "candidate_id": "CAND_0006015",
-    "llm_score": 0.0,
-    "semantic_score": 0.805667,
-    "behavioral_score": 0.795175,
-    "final_score": 0.28041,
-    "reasoning": "The candidate has no experience in AI engineering, marketing, and project management roles, and their education background is in Data Science and MBA, which does not match the requirements of the Senior AI Engineer position."
-  },
-  {
-    "candidate_id": "CAND_0080629",
-    "llm_score": 0.0,
-    "semantic_score": 0.816497,
-    "behavioral_score": 0.778855,
-    "final_score": 0.280128,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant education in machine learning."
-  },
-  {
-    "candidate_id": "CAND_0067339",
-    "llm_score": 0.0,
-    "semantic_score": 0.797747,
-    "behavioral_score": 0.80359,
-    "final_score": 0.280088,
-    "reasoning": "The candidate has 3.3 years of experience in customer support, which is significantly less than the required 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0014266",
-    "llm_score": 0.0,
-    "semantic_score": 0.794664,
-    "behavioral_score": 0.8071,
-    "final_score": 0.279998,
-    "reasoning": "The candidate has 12.5+ years of experience, but none of it is in AI engineering, and their background is in mechanical engineering and marketing management."
-  },
-  {
-    "candidate_id": "CAND_0091342",
-    "llm_score": 0.0,
-    "semantic_score": 0.807437,
-    "behavioral_score": 0.78982,
-    "final_score": 0.27996,
-    "reasoning": "The candidate has 14.7 years of experience in customer support and has no relevant experience in AI engineering, embeddings-based retrieval systems, or vector databases."
-  },
-  {
-    "candidate_id": "CAND_0021842",
-    "llm_score": 0.0,
-    "semantic_score": 0.811968,
-    "behavioral_score": 0.782935,
-    "final_score": 0.279834,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python, vector databases, or hybrid search infrastructure."
-  },
-  {
-    "candidate_id": "CAND_0038414",
-    "llm_score": 0.0,
-    "semantic_score": 0.810096,
-    "behavioral_score": 0.7852,
-    "final_score": 0.279799,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills such as Python, vector databases, or hybrid search infrastructure."
-  },
-  {
-    "candidate_id": "CAND_0069756",
-    "llm_score": 0.0,
-    "semantic_score": 0.800597,
-    "behavioral_score": 0.797725,
-    "final_score": 0.279778,
-    "reasoning": "The candidate has no experience in AI engineering, marketing manager experience is unrelated to the role, and their background is in civil engineering."
-  },
-  {
-    "candidate_id": "CAND_0070952",
-    "llm_score": 0.0,
-    "semantic_score": 0.816917,
-    "behavioral_score": 0.775795,
-    "final_score": 0.279753,
-    "reasoning": "The candidate has no experience in AI engineering, and their background is in sales and mechanical engineering, which does not align with the requirements of the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0056804",
-    "llm_score": 0.0,
-    "semantic_score": 0.806401,
-    "behavioral_score": 0.7888,
-    "final_score": 0.2796,
-    "reasoning": "The candidate has 14.3+ years of experience, but none of it is in AI engineering or related fields, and their education is in Data Science, not a relevant field for this role."
-  },
-  {
-    "candidate_id": "CAND_0043635",
-    "llm_score": 0.0,
-    "semantic_score": 0.805396,
-    "behavioral_score": 0.790075,
-    "final_score": 0.27959,
-    "reasoning": "The candidate has no experience in AI engineering, marketing leadership, and HR management, which are unrelated to the requirements of the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0047119",
-    "llm_score": 0.0,
-    "semantic_score": 0.814814,
-    "behavioral_score": 0.77656,
-    "final_score": 0.279447,
-    "reasoning": "The candidate has 4.9 years of experience, but it's in marketing manager roles, not AI engineering, and their education is in Computer Science, not a relevant field."
-  },
-  {
-    "candidate_id": "CAND_0007704",
-    "llm_score": 0.0,
-    "semantic_score": 0.823788,
-    "behavioral_score": 0.7633,
-    "final_score": 0.279253,
-    "reasoning": "The candidate has only 1.3 years of experience and their background is in marketing management, which does not align with the requirements of the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0045716",
-    "llm_score": 0.0,
-    "semantic_score": 0.814354,
-    "behavioral_score": 0.774265,
-    "final_score": 0.279011,
-    "reasoning": "The candidate has no experience in AI engineering, machine learning, or related fields, and their background is in customer support, marketing, and accounting."
-  },
-  {
-    "candidate_id": "CAND_0091291",
-    "llm_score": 0.0,
-    "semantic_score": 0.805773,
-    "behavioral_score": 0.78523,
-    "final_score": 0.278939,
-    "reasoning": "The candidate has no experience in AI engineering, and their background is in sales and marketing, which does not align with the requirements of the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0080099",
-    "llm_score": 0.0,
-    "semantic_score": 0.827771,
-    "behavioral_score": 0.75392,
-    "final_score": 0.278642,
-    "reasoning": "The candidate has 3.7 years of experience, but it's in marketing manager roles, not AI engineering, and their education is in Data Science, not a relevant field."
-  },
-  {
-    "candidate_id": "CAND_0035637",
-    "llm_score": 0.0,
-    "semantic_score": 0.828911,
-    "behavioral_score": 0.75104,
-    "final_score": 0.278438,
-    "reasoning": "The candidate has no experience in AI or related fields, and their background is in sales and marketing."
-  },
-  {
-    "candidate_id": "CAND_0007351",
-    "llm_score": 0.0,
-    "semantic_score": 0.816666,
-    "behavioral_score": 0.766615,
-    "final_score": 0.278325,
-    "reasoning": "The candidate has no experience in AI engineering, and their background is in business analysis, which does not align with the requirements of the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0088091",
-    "llm_score": 0.0,
-    "semantic_score": 0.815112,
-    "behavioral_score": 0.7684,
-    "final_score": 0.278282,
-    "reasoning": "The candidate has 4 years of experience as a Mechanical Engineer, which is below the required 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0091205",
-    "llm_score": 0.0,
-    "semantic_score": 0.811821,
-    "behavioral_score": 0.77248,
-    "final_score": 0.278236,
-    "reasoning": "The candidate has 2.7 years of experience as a Graphic Designer, which is significantly less than the required 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0084855",
-    "llm_score": 0.0,
-    "semantic_score": 0.811568,
-    "behavioral_score": 0.772735,
-    "final_score": 0.278224,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills, and their background is in sales and marketing roles."
-  },
-  {
-    "candidate_id": "CAND_0090345",
-    "llm_score": 0.0,
-    "semantic_score": 0.807701,
-    "behavioral_score": 0.774775,
-    "final_score": 0.277756,
-    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in mechanical engineering and marketing management."
-  },
-  {
-    "candidate_id": "CAND_0099445",
-    "llm_score": 0.0,
-    "semantic_score": 0.817114,
-    "behavioral_score": 0.76177,
-    "final_score": 0.277688,
-    "reasoning": "The candidate has 12.4+ years of experience in customer support, but there is no mention of experience with embeddings-based retrieval systems, vector databases, or Python skills."
-  },
-  {
-    "candidate_id": "CAND_0077694",
-    "llm_score": 0.0,
-    "semantic_score": 0.812334,
-    "behavioral_score": 0.765595,
-    "final_score": 0.277306,
-    "reasoning": "The candidate's background is in sales and accounting, with no experience in AI engineering or production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0016361",
-    "llm_score": 0.0,
-    "semantic_score": 0.81795,
-    "behavioral_score": 0.75728,
-    "final_score": 0.277182,
-    "reasoning": "The candidate has 13.6+ years of experience, but none of it is in AI engineering or related fields, and their background is in operations management, sales, and marketing."
-  },
-  {
-    "candidate_id": "CAND_0083873",
-    "llm_score": 0.0,
-    "semantic_score": 0.826577,
-    "behavioral_score": 0.74545,
-    "final_score": 0.277133,
-    "reasoning": "The candidate has 4.6 years of experience, which is below the required 5+ years, and their background is in mechanical engineering, not AI or software engineering."
-  },
-  {
-    "candidate_id": "CAND_0004252",
-    "llm_score": 0.0,
-    "semantic_score": 0.809704,
-    "behavioral_score": 0.76738,
-    "final_score": 0.277048,
-    "reasoning": "The candidate has no experience in AI engineering, production experience with embeddings-based retrieval systems, or relevant technical skills, and their background is in marketing manager roles."
-  },
-  {
-    "candidate_id": "CAND_0052066",
-    "llm_score": 0.0,
-    "semantic_score": 0.807698,
-    "behavioral_score": 0.76942,
-    "final_score": 0.276953,
-    "reasoning": "The candidate has 1.3 years of experience as a Graphic Designer and has an M.S. in Data Science, but there is no mention of AI, machine learning, or production experience in embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0019127",
-    "llm_score": 0.0,
-    "semantic_score": 0.816094,
-    "behavioral_score": 0.756415,
-    "final_score": 0.276681,
-    "reasoning": "The candidate has 2.8 years of experience as a Graphic Designer, which is significantly less than the required 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0048848",
-    "llm_score": 0.0,
-    "semantic_score": 0.807926,
-    "behavioral_score": 0.766615,
-    "final_score": 0.276577,
-    "reasoning": "The candidate has spent their career in marketing manager roles, mostly unrelated to AI engineering, and has no experience in production deployment of embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0073949",
-    "llm_score": 0.0,
-    "semantic_score": 0.831835,
-    "behavioral_score": 0.73423,
-    "final_score": 0.276501,
-    "reasoning": "The candidate has only 1.9 years of experience and is currently a Business Analyst, which does not match the 5+ years of production experience with embeddings-based retrieval systems required for the role."
-  },
-  {
-    "candidate_id": "CAND_0084282",
-    "llm_score": 0.0,
-    "semantic_score": 0.822586,
-    "behavioral_score": 0.742135,
-    "final_score": 0.275837,
-    "reasoning": "The candidate has 13.6+ years of experience, but none of it is in AI engineering, and their background is in customer support, marketing, and civil engineering."
-  },
-  {
-    "candidate_id": "CAND_0049911",
-    "llm_score": 0.0,
-    "semantic_score": 0.826043,
-    "behavioral_score": 0.737035,
-    "final_score": 0.275764,
-    "reasoning": "The candidate has no experience in AI engineering, sales experience is unrelated to the role, and their education is in Mathematics, not relevant to the position."
-  },
-  {
-    "candidate_id": "CAND_0030501",
-    "llm_score": 0.0,
-    "semantic_score": 0.829141,
-    "behavioral_score": 0.72632,
-    "final_score": 0.274776,
-    "reasoning": "The candidate has 3.5 years of experience as a Business Analyst, which is below the required 5+ years of production experience with embeddings-based retrieval systems."
-  },
-  {
-    "candidate_id": "CAND_0047280",
-    "llm_score": 0.0,
-    "semantic_score": 0.818532,
-    "behavioral_score": 0.73808,
-    "final_score": 0.274418,
-    "reasoning": "The candidate has no experience in AI or related fields, and their background is in mechanical engineering."
-  },
-  {
-    "candidate_id": "CAND_0061441",
-    "llm_score": 0.0,
-    "semantic_score": 0.828051,
-    "behavioral_score": 0.71288,
-    "final_score": 0.272542,
-    "reasoning": "The candidate has no experience in AI engineering, and their background is in marketing and mechanical engineering design, which does not align with the requirements of the Senior AI Engineer role."
-  },
-  {
-    "candidate_id": "CAND_0083740",
-    "llm_score": 0.0,
-    "semantic_score": 0.832468,
-    "behavioral_score": 0.7028,
-    "final_score": 0.271914,
-    "reasoning": "The candidate has no experience in AI, machine learning, or software engineering, and their background is in mechanical engineering and sales."
-  },
-  {
-    "candidate_id": "CAND_0081348",
-    "llm_score": 0.0,
-    "semantic_score": 0.83399,
-    "behavioral_score": 0.68816,
-    "final_score": 0.270022,
-    "reasoning": "The candidate has a background in mechanical engineering and marketing management, with no experience in AI or software engineering."
+    "final_score": 0.276567,
+    "reasoning": "Operations Manager with 11.3 yrs; 0 AI core skills; response rate 0.69."
   }
 ]
