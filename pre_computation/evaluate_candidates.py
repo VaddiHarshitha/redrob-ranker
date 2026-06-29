@@ -46,7 +46,7 @@ from pre_computation.config import (
 # Constants
 # ---------------------------------------------------------------------------
 
-BATCH_SIZE = 2                    # per-call candidate count; small bursts avoid TPM spikes
+BATCH_SIZE = 1                    # per-call candidate count; small bursts avoid TPM spikes
 SLEEP_BETWEEN_BATCHES = 4.0       # seconds — courtesy floor between calls
 MAX_RETRIES = 5
 LONG_WAIT_THRESHOLD_S = 60        # wait longer than this = likely daily cap, not per-minute
@@ -389,18 +389,59 @@ def build_eval_prompt(batch: list[dict[str, Any]], jd_profile: dict[str, Any]) -
 # Token sizing + retry-after parsing
 # ---------------------------------------------------------------------------
 
+class DailyQuotaExceeded(RuntimeError):
+    """Raised when Groq's daily token cap is hit.
+
+    Not fixable by retrying inside the same run — the quota only resets after
+    the daily window rolls over. Callers should save any partial checkpoint,
+    print a resume hint, and re-raise so the run halts cleanly.
+    """
+
+
 def estimate_max_tokens(batch_size: int) -> int:
     """Scales max_tokens with actual batch size. ~120 tokens per output entry + buffer."""
     return 120 * batch_size + 250
 
 
-_RETRY_AFTER_RE = re.compile(r"(?:try again in|retry after)\s*([\d.]+)\s*s?", re.IGNORECASE)
+# Matches Groq's "try again in 1h6m23.04s" / "1m54.048s" / "30s" / "retry after X"
+# formats. Each component is optional, but at least one must be present for the
+# message to count as a rate-limit hint. Order in the message is always
+# hours → minutes → seconds.
+_RETRY_AFTER_RE = re.compile(
+    r"(?:try again in|retry after)\s*"
+    r"(?:(\d+)h)?"
+    r"(?:(\d+)m)?"
+    r"(?:([\d.]+)s)?",
+    re.IGNORECASE,
+)
 
 
 def _suggested_wait_seconds(error_message: str) -> float | None:
-    """Pulls suggested wait time out of a Groq rate-limit error message."""
+    """Pull suggested wait time (in seconds) out of a Groq rate-limit error.
+
+    Returns ``None`` if no time hint is found. Handles all observed Groq
+    formats:
+
+    - ``"try again in 30s"``               → 30.0
+    - ``"try again in 1m54.048s"``         → 114.048
+    - ``"try again in 11m43.295999999s"``  → 703.296
+    - ``"try again in 1h6m23.04s"``        → 3983.04
+
+    Earlier versions of this parser only captured the leading digits, which
+    truncated ``"1m54.048s"`` to ``1`` and made the daily-cap detector in
+    ``evaluate_batch`` silently misclassify every TPD error as per-minute.
+    """
     match = _RETRY_AFTER_RE.search(error_message)
-    return float(match.group(1)) if match else None
+    if not match:
+        return None
+    h_str, m_str, s_str = match.groups()
+    if h_str is None and m_str is None and s_str is None:
+        return None
+    hours = float(h_str) if h_str else 0.0
+    minutes = float(m_str) if m_str else 0.0
+    seconds = float(s_str) if s_str else 0.0
+    total = hours * 3600 + minutes * 60 + seconds
+    return total if total > 0 else None
 
 
 # ---------------------------------------------------------------------------
@@ -456,10 +497,12 @@ def evaluate_batch(
                 # halts cleanly and can be resumed from the checkpoint.
                 if (wait is not None and wait > LONG_WAIT_THRESHOLD_S) or "daily" in msg.lower():
                     wait_desc = f"{wait:.0f}s" if wait is not None else "an extended period"
-                    raise RuntimeError(
-                        f"Groq suggests waiting {wait_desc} — likely a daily token cap, "
-                        f"not a per-minute one. Resume later with: "
-                        f"python -m pre_computation.pipeline --from 4"
+                    raise DailyQuotaExceeded(
+                        f"Groq daily token cap reached (suggested wait: {wait_desc}). "
+                        f"Retry in this run will not help — the quota only resets on a "
+                        f"daily window. Re-run the pipeline later to pick up from the "
+                        f"checkpoint. Resume with: python -m pre_computation.pipeline "
+                        f"--from 4 --force"
                     ) from e
                 # Per-minute TPM/RPM limit: respect Groq's suggested wait
                 # when present, otherwise exponential backoff.
@@ -481,12 +524,21 @@ def evaluate_one_with_fallback(
     jd_profile: dict[str, Any],
     llm,
 ) -> dict[str, Any]:
-    """Single-candidate retry used when a batch fails — isolates the broken candidate."""
+    """Single-candidate retry used when a batch fails — isolates the broken candidate.
+
+    Re-raises ``DailyQuotaExceeded`` so the caller can halt the whole run
+    cleanly. Otherwise masks the failure with a sentinel result so the loop
+    can keep moving on transient per-candidate errors.
+    """
     try:
         time.sleep(1)
         results, _ = evaluate_batch([c], jd_profile, llm)
         result = results[0]
         return {"score": float(result["score"]), "reasoning": result["reasoning"]}
+    except DailyQuotaExceeded:
+        # Don't mask this with a sentinel — the outer batch loop needs to
+        # know the daily cap is gone so it can save the checkpoint and bail.
+        raise
     except Exception as e:
         print(f"  Individual eval failed for {c.get('candidate_id', '?')}: {e}")
         return {
@@ -617,10 +669,35 @@ def run(artifacts_dir: str = ARTIFACTS_DIR, batch_size: int = BATCH_SIZE) -> dic
                         "score": float(r.get("score", 0.0)),
                         "reasoning": str(r.get("reasoning", "")),
                     }
+        except DailyQuotaExceeded as dqe:
+            # Daily token cap hit — save the checkpoint, tell the user how to
+            # resume, and let the run halt. Without this clause the outer
+            # ``except Exception`` would catch the TPD error and grind
+            # through every remaining candidate with sentinel scores, wasting
+            # retries and corrupting the rankings with "Automated scoring
+            # only" reasoning on hundreds of candidates.
+            _save_results(results, artifacts_dir)
+            print(f"\n[evaluate_candidates] Daily token quota exhausted.")
+            print(f"[evaluate_candidates] {dqe}")
+            print(f"[evaluate_candidates] Checkpoint saved ({len(results)} evals).")
+            print(f"[evaluate_candidates] Resume later with: "
+                  f"python -m pre_computation.pipeline --from 4 --force")
+            raise
         except Exception as e:
             print(f"\nBatch failed ({e}). Retrying individually...")
             for c in batch:
-                outcome = evaluate_one_with_fallback(c, jd_profile, llm)
+                try:
+                    outcome = evaluate_one_with_fallback(c, jd_profile, llm)
+                except DailyQuotaExceeded as dqe:
+                    # TPD hit during per-candidate retry — same handling as
+                    # above. Save everything done so far and bail.
+                    _save_results(results, artifacts_dir)
+                    print(f"\n[evaluate_candidates] Daily token quota exhausted.")
+                    print(f"[evaluate_candidates] {dqe}")
+                    print(f"[evaluate_candidates] Checkpoint saved ({len(results)} evals).")
+                    print(f"[evaluate_candidates] Resume later with: "
+                          f"python -m pre_computation.pipeline --from 4 --force")
+                    raise
                 cid = c.get("candidate_id", "")
                 if cid:
                     results[cid] = outcome
