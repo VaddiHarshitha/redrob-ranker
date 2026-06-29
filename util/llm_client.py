@@ -34,6 +34,7 @@ def build_groq_llm(
     model: str = DEFAULT_GROQ_MODEL,
     max_tokens: int = 2048,
     temperature: float = 0.0,
+    reasoning_effort: str | None = None,
 ) -> ChatGroq:
     """
     Build and return a ChatGroq client.
@@ -44,11 +45,21 @@ def build_groq_llm(
     Parameters
     ----------
     model
-        Groq model identifier (e.g. ``"llama-3.3-70b-versatile"``).
+        Groq model identifier (e.g. ``"llama-3.3-70b-versatile"``,
+        ``"openai/gpt-oss-120b"``).
     max_tokens
-        Maximum number of tokens the model may generate.
+        Maximum number of tokens the model may generate. For thinking models
+        (``gpt-oss-*``) this includes the model's internal reasoning tokens
+        as well as the visible output — see ``reasoning_effort`` below.
     temperature
         Sampling temperature; 0.0 (default) gives deterministic output.
+    reasoning_effort
+        Optional reasoning budget hint for thinking models. ``"low"``,
+        ``"medium"``, or ``"high"``. Ignored by non-thinking models.
+        When ``None`` (default) and ``model`` looks like a ``gpt-oss-*``
+        variant, this is auto-set to ``"low"`` — without that, the model
+        burns the entire output budget on internal reasoning and produces
+        empty content (finish_reason="length") at tight max_tokens settings.
 
     Returns
     -------
@@ -62,12 +73,26 @@ def build_groq_llm(
             "GROQ_API_KEY is not set in the .env file. "
             "Create a .env file in the project root with: GROQ_API_KEY=your_key"
         )
-    return ChatGroq(
+
+    kwargs: dict[str, Any] = dict(
         model=model,
         api_key=api_key,
         max_tokens=max_tokens,
         temperature=temperature,
     )
+
+    # Thinking-model guardrail: gpt-oss-* variants on Groq emit internal
+    # reasoning tokens that count against max_tokens. At the
+    # batch_size=1 / max_tokens=370 sizing used by evaluate_candidates,
+    # reasoning_tokens alone can exceed 368, leaving zero tokens for the
+    # visible JSON output. Auto-defaulting to "low" keeps reasoning around
+    # ~50 tokens for our eval prompt and preserves room for the answer.
+    if reasoning_effort is None and "gpt-oss" in model:
+        reasoning_effort = "low"
+    if reasoning_effort is not None:
+        kwargs["reasoning_effort"] = reasoning_effort
+
+    return ChatGroq(**kwargs)
 
 
 # ---------------------------------------------------------------------------
