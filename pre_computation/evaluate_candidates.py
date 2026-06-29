@@ -46,14 +46,19 @@ from pre_computation.config import (
 # Constants
 # ---------------------------------------------------------------------------
 
-BATCH_SIZE = 8                    # amortizes fixed JD-context cost across more candidates
-SLEEP_BETWEEN_BATCHES = 2.0       # seconds — courtesy gap for per-minute limits
+BATCH_SIZE = 2                    # per-call candidate count; small bursts avoid TPM spikes
+SLEEP_BETWEEN_BATCHES = 4.0       # seconds — courtesy floor between calls
 MAX_RETRIES = 5
-LONG_WAIT_THRESHOLD_S = 90        # wait longer than this = likely daily cap, not per-minute
+LONG_WAIT_THRESHOLD_S = 60        # wait longer than this = likely daily cap, not per-minute
+TARGET_RPM = 25                   # conservative under the 30 RPM free-tier limit
+GROQ_TPM_LIMIT = 6000             # Groq free-tier tokens-per-minute ceiling
+TPM_SAFETY_FACTOR = 0.7           # only use 70% of TPM; absorbs our rough token estimator
+EFFECTIVE_TPM = int(GROQ_TPM_LIMIT * TPM_SAFETY_FACTOR)
+MAX_PROMPT_TOKENS = 4000          # prompt-only cap; total per call is kept under EFFECTIVE_TPM by pacing
 
 # career_history is the single biggest token cost in the prompt by a wide margin.
-FULL_DETAIL_ROLES = 4             # most recent N roles get full description text
-MAX_TEXT_CHARS = 400              # truncation length for descriptions/summary
+FULL_DETAIL_ROLES = 2             # most recent N roles get full description text
+MAX_TEXT_CHARS = 400              # truncation length for descriptions/summary — preserves concrete facts
 
 # Skill names (lowercased substrings) that count as "AI/ML core skills" for the
 # reasoning format. Used to pre-compute the <N> AI core skills count shown in
@@ -105,6 +110,105 @@ def _truncate(text: str, max_chars: int) -> str:
     if len(text) <= max_chars:
         return text
     return text[:max_chars].rsplit(" ", 1)[0] + "\u2026"
+
+
+# ---------------------------------------------------------------------------
+# Token estimation and token-aware batching
+# ---------------------------------------------------------------------------
+
+def _estimate_tokens(text: str) -> int:
+    """Rough token estimate using a 4-char-per-token heuristic.
+
+    Good enough for prompt sizing against Groq's per-minute token budget
+    (6,000 TPM on the free tier) — we only need to avoid blowing past it,
+    not hit it exactly. Rounding up means we slightly under-batch, which is
+    the safe direction.
+    """
+    return (len(text) + 3) // 4
+
+
+def _estimate_total_tokens_for_batch(
+    batch: list[dict[str, Any]],
+    jd_profile: dict[str, Any],
+) -> int:
+    """Estimated input + output tokens for one batch call."""
+    prompt = build_eval_prompt(batch, jd_profile)
+    prompt_tokens = _estimate_tokens(prompt)
+    output_tokens = estimate_max_tokens(len(batch))
+    return prompt_tokens + output_tokens
+
+
+def _batch_by_token_budget(
+    candidates: list[dict[str, Any]],
+    jd_profile: dict[str, Any],
+    max_prompt_tokens: int,
+    max_candidates_per_call: int,
+) -> list[list[dict[str, Any]]]:
+    """
+    Build batches whose estimated prompt tokens stay within ``max_prompt_tokens``
+    and whose candidate count stays within ``max_candidates_per_call``.
+
+    Pure — no I/O, no API call. Builds the prompt once with an empty candidate
+    list to measure the fixed overhead (role context, JD requirements, etc.),
+    then greedily adds candidates until adding the next one would exceed either
+    budget, at which point it starts a new batch.
+
+    Parameters
+    ----------
+    candidates
+        Candidate records to partition into batches. Order is preserved.
+    jd_profile
+        The structured JD profile dict — used to measure prompt overhead.
+    max_prompt_tokens
+        Hard cap on the estimated prompt token count for any single batch.
+    max_candidates_per_call
+        Hard cap on the number of candidates in any single batch.
+
+    Returns
+    -------
+    list[list[dict]]
+        Ordered list of batches. Empty input yields ``[]``.
+    """
+    if not candidates:
+        return []
+
+    # Measure the fixed prompt overhead by building the prompt with no
+    # candidates. ``build_eval_prompt`` accepts an empty list and serialises
+    # it as "[]".
+    base_prompt = build_eval_prompt([], jd_profile)
+    base_tokens = _estimate_tokens(base_prompt)
+
+    # Defensive fallback: if the fixed overhead alone already blows the
+    # budget (e.g. a giant JD), degrade to one candidate per call so we still
+    # make progress instead of returning empty batches.
+    if base_tokens >= max_prompt_tokens:
+        return [[c] for c in candidates]
+
+    batches: list[list[dict[str, Any]]] = []
+    current: list[dict[str, Any]] = []
+    current_tokens = base_tokens
+
+    for c in candidates:
+        # Each candidate adds its serialised summary plus a few separator
+        # tokens (",", newline, indentation). 5 is a safe upper bound on
+        # those structural tokens for the indented JSON array.
+        c_tokens = _estimate_tokens(json.dumps(build_candidate_summary(c), indent=2)) + 5
+
+        if current and (
+            current_tokens + c_tokens > max_prompt_tokens
+            or len(current) >= max_candidates_per_call
+        ):
+            batches.append(current)
+            current = []
+            current_tokens = base_tokens
+
+        current.append(c)
+        current_tokens += c_tokens
+
+    if current:
+        batches.append(current)
+
+    return batches
 
 
 # ---------------------------------------------------------------------------
@@ -308,7 +412,7 @@ def evaluate_batch(
     jd_profile: dict[str, Any],
     llm,
     max_retries: int = MAX_RETRIES,
-) -> list[dict[str, Any]]:
+) -> tuple[list[dict[str, Any]], float]:
     """
     One LLM call for a batch, with retry/backoff on per-minute rate-limit errors.
 
@@ -329,27 +433,38 @@ def evaluate_batch(
 
     Returns
     -------
-    list[dict]
-        List of parsed LLM result dicts.
+    tuple[list[dict], float]
+        ``(parsed_results, total_rate_limit_wait_seconds)``. The wait total
+        lets ``run()`` skip redundant pacing sleep when a rate-limit backoff
+        already kept us idle longer than ``SLEEP_BETWEEN_BATCHES``.
     """
     prompt = build_eval_prompt(batch, jd_profile)
     last_err: Exception | None = None
+    total_rate_limit_wait = 0.0
     for attempt in range(max_retries):
         try:
             response = llm.invoke(prompt)
-            return parse_json_response(response.content)
+            return parse_json_response(response.content), total_rate_limit_wait
         except Exception as e:
             last_err = e
             msg = str(e)
             if "rate" in msg.lower() or "429" in msg:
                 wait = _suggested_wait_seconds(msg)
-                if wait is not None and wait > LONG_WAIT_THRESHOLD_S:
+                # Daily-cap detection: very long suggested wait OR message
+                # literally mentions a daily limit. Either way we won't fix
+                # it by retrying inside this minute — surface it so the run
+                # halts cleanly and can be resumed from the checkpoint.
+                if (wait is not None and wait > LONG_WAIT_THRESHOLD_S) or "daily" in msg.lower():
+                    wait_desc = f"{wait:.0f}s" if wait is not None else "an extended period"
                     raise RuntimeError(
-                        f"Groq suggests waiting {wait:.0f}s — likely a daily token cap, "
+                        f"Groq suggests waiting {wait_desc} — likely a daily token cap, "
                         f"not a per-minute one. Resume later with: "
                         f"python -m pre_computation.pipeline --from 4"
                     ) from e
+                # Per-minute TPM/RPM limit: respect Groq's suggested wait
+                # when present, otherwise exponential backoff.
                 backoff = wait if wait is not None else 2 ** attempt
+                total_rate_limit_wait += backoff
                 print(f"  Rate limited, waiting {backoff:.0f}s (attempt {attempt + 1}/{max_retries})...")
                 time.sleep(backoff)
                 continue
@@ -369,7 +484,8 @@ def evaluate_one_with_fallback(
     """Single-candidate retry used when a batch fails — isolates the broken candidate."""
     try:
         time.sleep(1)
-        result = evaluate_batch([c], jd_profile, llm)[0]
+        results, _ = evaluate_batch([c], jd_profile, llm)
+        result = results[0]
         return {"score": float(result["score"]), "reasoning": result["reasoning"]}
     except Exception as e:
         print(f"  Individual eval failed for {c.get('candidate_id', '?')}: {e}")
@@ -411,7 +527,9 @@ def run(artifacts_dir: str = ARTIFACTS_DIR, batch_size: int = BATCH_SIZE) -> dic
     artifacts_dir
         Directory where artefacts are read from / written to.
     batch_size
-        Number of candidates per LLM API call (default 8).
+        Maximum number of candidates per LLM API call. Actual batch sizes are
+        smaller when the token budget (``MAX_PROMPT_TOKENS``) would otherwise
+        be exceeded (see ``_batch_by_token_budget``).
 
     Returns
     -------
@@ -464,17 +582,34 @@ def run(artifacts_dir: str = ARTIFACTS_DIR, batch_size: int = BATCH_SIZE) -> dic
         return results
 
     print(f"[evaluate_candidates] Evaluating {len(remaining)} candidates "
-          f"in batches of {batch_size}...")
-    print(f"[evaluate_candidates] Estimated API calls: "
-          f"{len(remaining) // batch_size + 1}")
+          f"with token-aware batching (max {batch_size}/call)...")
+
+    # Build batches using token-aware sizing: respects MAX_PROMPT_TOKENS AND
+    # the caller's batch_size cap. Counts and sizes are logged below.
+    batches = _batch_by_token_budget(
+        remaining,
+        jd_profile,
+        max_prompt_tokens=MAX_PROMPT_TOKENS,
+        max_candidates_per_call=batch_size,
+    )
+    print(f"[evaluate_candidates] {len(batches)} batches planned "
+          f"(target \u2264 {TARGET_RPM} RPM, \u2264 {EFFECTIVE_TPM} total tokens/min, "
+          f"\u2264 {MAX_PROMPT_TOKENS} prompt tokens/call).")
 
     # 5. Batch evaluation loop
     failed: list[str] = []
-    batches = [remaining[i:i + batch_size] for i in range(0, len(remaining), batch_size)]
+    # Adaptive pacing: respect both RPM and TPM limits. For each batch we
+    # estimate total tokens (prompt + expected output) and ensure we do not
+    # exceed EFFECTIVE_TPM per minute. We also stay under TARGET_RPM. If a
+    # rate-limit backoff inside ``evaluate_batch`` already kept us idle
+    # longer than the computed interval, we skip redundant extra sleep.
+    last_call_time = time.monotonic()
+    rpm_interval = 60.0 / TARGET_RPM
 
     for batch in tqdm(batches, desc="LLM evaluation"):
+        rate_limit_wait = 0.0
         try:
-            batch_results = evaluate_batch(batch, jd_profile, llm)
+            batch_results, rate_limit_wait = evaluate_batch(batch, jd_profile, llm)
             for r in batch_results:
                 cid = r.get("candidate_id", "")
                 if cid:
@@ -495,7 +630,18 @@ def run(artifacts_dir: str = ARTIFACTS_DIR, batch_size: int = BATCH_SIZE) -> dic
         # Checkpoint after every batch — not just once at the end.
         _save_results(results, artifacts_dir)
         print(f"    [evaluate_candidates] Checkpoint saved ({len(results)} evals)")
-        time.sleep(SLEEP_BETWEEN_BATCHES)
+
+        # Adaptive sleep: respect RPM and TPM budgets. Larger calls wait longer.
+        elapsed = time.monotonic() - last_call_time
+        batch_tokens = _estimate_total_tokens_for_batch(batch, jd_profile)
+        tpm_interval = (batch_tokens / EFFECTIVE_TPM) * 60.0
+        min_interval = max(rpm_interval, tpm_interval)
+        needed = min_interval - elapsed
+        if rate_limit_wait < SLEEP_BETWEEN_BATCHES:
+            sleep_for = max(SLEEP_BETWEEN_BATCHES, needed)
+            if sleep_for > 0:
+                time.sleep(sleep_for)
+        last_call_time = time.monotonic()
 
     print(f"[evaluate_candidates] llm_evaluations.json saved "
           f"({len(results)} total candidates)")

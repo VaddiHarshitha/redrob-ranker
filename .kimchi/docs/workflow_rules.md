@@ -42,3 +42,13 @@ It does **not** apply to:
 - The `tests/` directory has been removed by the user. Do not recreate it unless explicitly requested.
 - `validate_submission.py` is hackathon-provided and should be left untouched unless the user explicitly agrees otherwise.
 - `util/submission.py` should remain as a utility module for `rank.py`.
+
+### Rule: Parameter / Quality Trade-offs
+
+Before changing numerical parameters that affect API rate limits, cost, or output quality (for example: `BATCH_SIZE`, `MAX_TEXT_CHARS`, `FULL_DETAIL_ROLES`, `MAX_PROMPT_TOKENS`, sleep intervals, retry counts, or model names), the assistant MUST:
+
+1. State the proposed values and the trade-off rationale.
+2. If a sample input is available, inspect it before deciding truncation/cost parameters.
+3. Ask the user for explicit agreement using the same "Are you agreeing to implement this approach at the particular file?" framing.
+
+This prevents bias from premature truncation or rate-limit settings that the user did not approve.
