@@ -2,7 +2,7 @@
 """
 Redrob Candidate Ranker — Streamlit demo app.
 
-Demonstration UI that ranks the top 100 candidates from the full candidate
+Demonstration UI that ranks the top candidates from the full candidate
 pool using pre-computed scores produced by the offline scoring pipeline.
 
 Usage
@@ -28,6 +28,7 @@ ARTIFACTS_DIR = Path(__file__).parent / "artifacts"
 RANKING_FILE = ARTIFACTS_DIR / "final_ranking.json"
 CONFIG_FILE = ARTIFACTS_DIR / "rank_config.json"
 MAX_CANDIDATES = 100
+HARD_FLOOR_THRESHOLD = 0.15  # must match util/scoring.py — disqualifying band
 
 # ---------------------------------------------------------------------------
 # Artifact loading
@@ -51,12 +52,21 @@ def load_weights() -> dict[str, float]:
 
 
 def recompute_score(record: dict[str, Any], weights: dict[str, float]) -> float:
-    """Recompute final score from component scores using given weights."""
+    """
+    Recompute final score from component scores using given weights.
+    Mirrors util/scoring.compute_final_score() (and therefore rank.py):
+    an llm_score at or below the disqualifying band is authoritative on
+    its own and is never blended with semantic/behavioral signals.
+    """
+    llm_score = record.get("llm_score", 0.0)
+    if llm_score <= HARD_FLOOR_THRESHOLD:
+        return llm_score
+
     w_llm = weights.get("llm_weight", 0.65)
     w_sem = weights.get("semantic_weight", 0.20)
     w_beh = weights.get("behavioral_weight", 0.15)
     return (
-        w_llm * record.get("llm_score", 0.0)
+        w_llm * llm_score
         + w_sem * record.get("semantic_score", 0.0)
         + w_beh * record.get("behavioral_score", 0.0)
     )
@@ -97,8 +107,10 @@ def build_csv(rows: list[dict[str, Any]]) -> str:
 st.set_page_config(page_title="Redrob Candidate Ranker", page_icon="🏆", layout="wide")
 st.title("🏆 Redrob Candidate Ranker")
 st.markdown(
-    "Click **Run Ranking** to rank the top 100 candidates from the full "
-    "pool of 100,000 using the pre-computed scoring pipeline."
+    "An AI-driven ranking system that reasons about candidate fit against a "
+    "role — combining semantic understanding, LLM judgment, and availability "
+    "signals into a single ranked shortlist. Click **Run Ranking** to see the "
+    "top matches for this role."
 )
 
 # Load artifacts
@@ -107,16 +119,23 @@ weights = load_weights()
 
 if not ranking_lookup:
     st.error(
-        f"`{RANKING_FILE}` not found. "
-        "Run Phase A (`python -m pre_computation.pipeline`) to generate artifacts."
+        "No ranking results are available yet. Run the scoring pipeline first "
+        "to generate a candidate ranking before using this app."
     )
     st.stop()
 
-st.success(
-    f"Loaded {len(ranking_lookup)} pre-computed ranking record(s) from "
-    f"`{RANKING_FILE.name}`."
-)
-st.caption(f"Active weights: {weights}")
+st.success("Candidate ranking is ready.")
+
+with st.expander("How candidates are scored"):
+    st.markdown(
+        "Each candidate is evaluated on three signals: how well an LLM judges "
+        "their actual career history against the role's requirements, how "
+        "semantically similar their profile is to the ideal candidate "
+        "description, and how reachable/available they currently are. "
+        "A candidate the LLM identifies as a clear mismatch is not allowed to "
+        "be rescued by the other two signals — that judgment is treated as "
+        "final rather than just one vote among three."
+    )
 
 # Run Ranking button
 if st.button("▶️ Run Ranking", type="primary"):
@@ -133,7 +152,7 @@ if st.button("▶️ Run Ranking", type="primary"):
     # Cap display at MAX_CANDIDATES
     top = records[:MAX_CANDIDATES]
 
-    st.info("Showing the top 100 ranked candidates.")
+    st.info(f"Showing the top {len(top)} ranked candidates for this role.")
 
     rows = build_display_rows(top)
     csv_out = build_csv(rows)
@@ -162,6 +181,4 @@ if st.button("▶️ Run Ranking", type="primary"):
 
 # Footer
 st.divider()
-st.caption(
-    "Redrob Candidate Ranker · Demo · Top-100 ranking from pre-computed scores."
-)
+st.caption("Redrob Candidate Ranker · AI-driven candidate ranking, not keyword matching.")
