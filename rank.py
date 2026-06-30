@@ -7,8 +7,9 @@ Must finish in ≤5 minutes.
 
 Usage
 -----
-    python rank.py --candidates ./candidates.jsonl --out ./submission.csv
-    python rank.py --candidates ./candidates.jsonl --out ./submission.csv --artifacts ./artifacts
+    python rank.py --candidates ./candidates.jsonl
+    python rank.py --candidates ./candidates.jsonl --out "./AI Builders.csv"
+    python rank.py --candidates ./candidates.jsonl --out "./AI Builders.csv" --artifacts ./artifacts
 """
 
 from __future__ import annotations
@@ -42,8 +43,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--out",
-        required=True,
-        help="Output path for the submission CSV.",
+        default="AI Builders.csv",
+        help='Output path for the submission CSV (default: "AI Builders.csv").',
     )
     parser.add_argument(
         "--artifacts",

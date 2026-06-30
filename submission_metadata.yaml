@@ -5,7 +5,7 @@
 # ============================================================================
 # Team identity
 # ============================================================================
-team_name: "redrob-ai"
+team_name: "AI builders"
 
 primary_contact:
   name: "Redrob Team"
@@ -20,11 +20,11 @@ team_members:
 # ============================================================================
 # Code and reproducibility
 # ============================================================================
-github_repo: "https://github.com/redrobai/redrobai"
+github_repo: "https://github.com/VaddiHarshitha/redrob-ranker"
 
-sandbox_link: "https://redrobai.app"
+sandbox_link: "https://redrob-airanker.streamlit.app/"
 
-reproduce_command: "python rank.py --candidates ./candidates.jsonl --out ./submission.csv"
+reproduce_command: "python rank.py --candidates ./candidates.jsonl --out \"AI Builders.csv\""
 
 # ============================================================================
 # Compute environment
@@ -44,15 +44,18 @@ compute:
 # AI tools declaration
 # ============================================================================
 ai_tools_used:
-  - "Groq (Llama 3.3 70B via langchain-groq)"
+  - "Groq (openai/gpt-oss-120b via langchain-groq)"
   - "sentence-transformers"
 
 ai_usage_summary: |
-  Phase A pre-computation uses Groq (Llama 3.3 70B) via langchain-groq for two purposes:
+  Phase A pre-computation uses Groq (openai/gpt-oss-120b) via langchain-groq for two
+  purposes:
   (1) One initial call to analyze the job description and extract key requirements;
-  (2) Approximately 38 batch LLM calls to evaluate candidates against those requirements,
-      generating reasoning and scores for each candidate. Sentence-transformers is used
-      to compute semantic embeddings for all candidates during the same phase.
+  (2) Token-aware batch LLM calls to evaluate the shortlisted candidates against those
+      requirements, generating reasoning and scores for each candidate. Batch counts
+      are driven by a 6,000 TPM token budget and depend on prompt size per batch.
+      Sentence-transformers is used to compute semantic embeddings for all candidates
+      during the same phase.
   Phase B (rank.py) is completely network-free — it loads pre-computed artifacts and
   produces the ranked CSV using only local compute. No LLM calls, no embedding model
   loading, and no network access during the ranking phase.
@@ -61,13 +64,14 @@ ai_usage_summary: |
 # Approach summary (optional but recommended)
 # ============================================================================
 methodology_summary: |
-  Two-phase offline-capable ranker. Phase A pre-computes LLM scores, semantic
-  embeddings, and behavioral signals for all candidates using Groq and sentence-
-  transformers. Phase B loads the pre-computed artifacts, recomputes a weighted
-  final score (65% LLM, 20% semantic, 15% behavioral), sorts by descending score
-  with candidate_id tie-breaking, and outputs the top-100 ranked candidates to
-  submission.csv. Weight tuning is supported by editing rank_config.json and
-  re-running Phase B without re-computing Phase A.
+  Two-phase offline-capable ranker. Phase A pre-computes LLM scores for the
+  shortlisted candidates and semantic embeddings plus behavioral signals for the
+  full pool using Groq (openai/gpt-oss-120b) and sentence-transformers. Phase B
+  loads the pre-computed artifacts, recomputes a weighted final score (65% LLM,
+  20% semantic, 15% behavioral), sorts by descending score with candidate_id
+  tie-breaking, and outputs the ranked candidates to "AI Builders.csv". Weight
+  tuning is supported by editing rank_config.json and re-running Phase B without
+  re-computing Phase A.
 
 # ============================================================================
 # Declarations

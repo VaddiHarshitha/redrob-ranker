@@ -1,34 +1,32 @@
 {
-  "embedding_text": "I have designed and shipped production embedding retrieval pipelines that served 50M daily queries with sub-100ms p99 latency, measured against NDCG@10 in offline evaluation. I have worked on modern ML systems, including embeddings, retrieval, ranking, and LLMs, and have experience with vector databases and hybrid search infrastructure. I have a strong background in Python and have hands-on experience designing evaluation frameworks for ranking systems, including NDCG, MRR, MAP, offline-to-online correlation, and A/B test interpretation. I have driven the long-term architecture of candidate-JD matching systems at scale and have mentored junior engineers.",
-  "role_summary": "This role owns the intelligence layer of Redrob's product, including ranking, retrieval, and matching systems. The ideal candidate will have deep technical depth in modern ML systems and a scrappy product-engineering attitude, with the ability to ship working systems quickly and iterate based on real user feedback.",
+  "embedding_text": "I have designed, built, and shipped a production ranking and retrieval pipeline that serves millions of recruiter and candidate queries daily. I audited legacy BM25 systems, replaced them with a hybrid dense\u2011sparse retrieval architecture, and deployed an embeddings\u2011based ranker that improved recruiter click\u2011through rate by 23% in A/B tests. I managed embedding drift, performed nightly index refreshes, and maintained vector search infrastructure on a managed vector database, ensuring sub\u2011100\u202fms p99 latency at 10\u202fM+ queries per day. I created end\u2011to\u2011end evaluation frameworks, defining offline NDCG@10, MRR, and MAP metrics and correlating them with online A/B results, leading to data\u2011driven iteration cycles. I wrote production\u2011grade Python code, integrated LLM re\u2011ranking via fine\u2011tuned models, and mentored a growing team of engineers while collaborating closely with product managers on recruiter\u2011experience features.",
+  "role_summary": "The Senior AI Engineer owns Redrob's intelligence layer, building and iterating on ranking, retrieval, and matching systems that power recruiter and candidate search. They audit existing pipelines, ship improved models quickly, and establish rigorous offline and online evaluation to drive product impact.",
   "hard_requirements": [
-    "Production experience with embeddings-based retrieval systems deployed to real users, including handling embedding drift, index refresh, and retrieval-quality regression",
-    "Production experience with vector databases or hybrid search infrastructure, including operational experience with technologies like Pinecone, Weaviate, or OpenSearch",
-    "Strong Python skills, with a focus on code quality",
-    "Hands-on experience designing evaluation frameworks for ranking systems, including NDCG, MRR, MAP, offline-to-online correlation, and A/B test interpretation"
+    "Shipped a production embeddings\u2011based retrieval system to real users, handling embedding drift, index refreshes, and quality regression in a live environment",
+    "Operated vector database or hybrid search infrastructure at scale (e.g., Pinecone, Weaviate, Qdrant, Milvus, OpenSearch, Elasticsearch, FAISS) with production reliability",
+    "Delivered production\u2011grade Python code for core ranking components, demonstrating strong code quality and maintainability",
+    "Designed and implemented rigorous evaluation frameworks for ranking systems, including offline NDCG, MRR, MAP metrics and online A/B test analysis"
   ],
   "nice_to_have_requirements": [
-    "LLM fine-tuning experience, including LoRA, QLoRA, or PEFT",
-    "Experience with learning-to-rank models, including XGBoost-based or neural models",
-    "Prior exposure to HR-tech, recruiting tech, or marketplace products",
-    "Background in distributed systems or large-scale inference optimization",
-    "Open-source contributions in the AI/ML space"
+    "Fine\u2011tuned large language models using LoRA, QLoRA, or PEFT for re\u2011ranking or query augmentation",
+    "Built learning\u2011to\u2011rank models using XGBoost or neural approaches",
+    "Worked on HR\u2011tech, recruiting platforms, or marketplace products",
+    "Background in distributed systems or large\u2011scale inference optimization",
+    "Contributed open\u2011source projects in the AI/ML ecosystem"
   ],
   "disqualifier_patterns": [
-    "Entire career spent in pure research environments without production deployment experience",
-    "AI experience limited to recent projects using LangChain to call OpenAI, without substantial pre-LLM-era ML production experience",
-    "Senior engineers who haven't written production code in the last 18 months due to 'architecture' or 'tech lead' roles",
-    "Title-chasers who optimize for title progression by switching companies every 1.5 years",
-    "Framework enthusiasts who focus on frameworks rather than systems",
-    "Candidates with no product-company experience, only working at consulting firms",
-    "Candidates with primary expertise in computer vision, speech, or robotics without significant NLP/IR exposure",
-    "Candidates who have only worked on closed-source proprietary systems for 5+ years without external validation"
+    "Career spent entirely in academic or pure research labs with no production deployment experience",
+    "Recent (under 12 months) AI work limited to using LangChain to call hosted LLM APIs without prior pre\u2011LLM retrieval or ranking production experience",
+    "Senior engineer who has not written production code in the last 18 months, focusing only on architecture or tech\u2011lead responsibilities",
+    "Career trajectory of rapid title\u2011chasing with company changes every ~1.5 years, indicating intent to leave within 3 years",
+    "Primary experience at consulting firms (e.g., TCS, Infosys, Wipro, Accenture, Cognizant, Capgemini) without prior product\u2011company engineering roles",
+    "Specialization in computer vision, speech, or robotics with little to no NLP/IR exposure"
   ],
-  "preferred_location": "Pune/Noida, India (Hybrid \u2014 flexible cadence), with openness to relocation candidates from Tier-1 Indian cities",
+  "preferred_location": "Pune or Noida, India (open to other Tier\u20111 Indian cities; relocation possible)",
   "experience_years": {
     "min": 5,
     "max": 9
   },
-  "notice_preference": "Sub-30-day notice, with the ability to buy out up to 30 days",
-  "evaluation_guidance": "When evaluating candidates, prioritize those who have demonstrated production experience with embeddings-based retrieval systems, vector databases, and evaluation frameworks. Nice-to-have items should increase a candidate's score only if their hard requirements are already met. Be cautious of title-chasers, framework enthusiasts, and candidates with limited production experience. Consider behavioral signals, such as login activity and recruiter response rate, when evaluating candidate availability."
+  "notice_preference": "Prefer sub\u201130\u2011day notice; can buy out up to 30 days; candidates with >30\u2011day notice still considered but with higher bar",
+  "evaluation_guidance": "Prioritize candidates who have demonstrable production experience building and shipping embedding\u2011based retrieval or ranking systems at scale, with concrete evaluation metrics and Python code quality. Nice\u2011to\u2011have items only boost the score after all hard requirements are satisfied. Disqualify any profile that lacks production deployment, relies solely on recent LangChain demos, shows a pattern of rapid title\u2011chasing, or is limited to consulting or pure research roles."
 }

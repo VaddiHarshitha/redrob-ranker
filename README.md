@@ -1,12 +1,12 @@
 # Redrob Hackathon — AI-Driven Candidate Ranker
 
-An offline-capable, two-phase candidate ranking system that uses Groq (Llama 3.3 70B) for JD analysis and candidate evaluation during pre-computation, then runs completely network-free during the ranking phase.
+An offline-capable, two-phase candidate ranking system that uses Groq (openai/gpt-oss-120b) for JD analysis and candidate evaluation during pre-computation, then runs completely network-free during the ranking phase.
 
 ## Architecture
 
 The system follows a **two-phase design**:
 
-- **Phase A — Pre-computation**: Network-dependent. Uses Groq LLM API and sentence-transformers to analyze the job description and score all candidates. Produces artifacts (LLM scores, semantic embeddings, behavioral signals). Takes ~45–60 minutes for large candidate pools.
+- **Phase A — Pre-computation**: Network-dependent. Uses Groq LLM API and sentence-transformers to analyze the job description and score the shortlist of top candidates (e.g., 300) with Groq, while computing embeddings and behavioral signals for the full pool. Produces artifacts (LLM scores, semantic embeddings, behavioral signals). Takes ~45–60 minutes for large candidate pools.
 - **Phase B — Ranking**: Network-free. Loads pre-computed artifacts and produces a ranked submission CSV in under 5 minutes on CPU.
 
 ## Setup
@@ -20,6 +20,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 echo "GROQ_API_KEY=gsk" > .env
+echo "HF_HOME=.cache" >> .env
+echo "HUGGINGFACE_HUB_CACHE=.cache/hub" >> .env
 ```
 
 ## Phase A — Pre-computation
@@ -33,17 +35,23 @@ python -m pre_computation.pipeline --jd data/job_description.docx
 This step:
 - Extracts key requirements from the job description using Groq (1 LLM call)
 - Generates candidate embeddings via sentence-transformers
-- Evaluates each candidate with Groq (~38 batch calls for typical datasets)
+- Evaluates shortlisted candidates with Groq in token-aware batches over the shortlisted candidates; count depends on prompt size
 - Produces `artifacts/final_ranking.json` and `artifacts/rank_config.json`
 
 **Time:** ~45–60 minutes for large candidate pools (network ON required)
 
 ## Phase B — Ranking step
 
-Produce the submission CSV from pre-computed artifacts (network OFF):
+Produces `AI Builders.csv` by default from pre-computed artifacts (network OFF):
 
 ```bash
-python rank.py --candidates ./candidates.jsonl --out ./submission.csv
+python rank.py --candidates ./candidates.jsonl
+```
+
+To specify an explicit output path:
+
+```bash
+python rank.py --candidates ./candidates.jsonl --out "AI Builders.csv"
 ```
 
 **Time:** Under 5 minutes on CPU with 16 GB RAM (no network access)
@@ -63,30 +71,30 @@ After Phase A, edit `artifacts/rank_config.json` to adjust scoring weights:
 Then re-run Phase B:
 
 ```bash
-python rank.py --candidates ./candidates.jsonl --out ./submission.csv
+python rank.py --candidates ./candidates.jsonl
 ```
 
 Scores are recomputed from component scores using the new weights — no need to re-run Phase A.
 
 ## Running a single step in isolation
 
-Each pre-computation step can be run independently:
+Each pre-computation step can be run independently using module execution with positional arguments:
 
 ```bash
 # Step 1: Analyze job description
-python -m pre_computation.analyze_jd --jd data/job_description.docx
+python -m pre_computation.analyze_jd data/job_description.docx
 
 # Step 2: Generate candidate embeddings
-python embed_candidates.py --candidates ./candidates.jsonl
+python -m pre_computation.embed_candidates data/candidates.jsonl
 
 # Step 3: Build shortlist based on embeddings
-python build_shortlist.py --candidates ./candidates.jsonl
+python -m pre_computation.build_shortlist data/candidates.jsonl
 
 # Step 4: Evaluate candidates with LLM
-python evaluate_candidates.py --candidates ./candidates.jsonl
+python -m pre_computation.evaluate_candidates
 
 # Step 5: Assemble final ranking
-python assemble_ranking.py
+python -m pre_computation.assemble_ranking
 ```
 
 ## Validation
@@ -94,15 +102,17 @@ python assemble_ranking.py
 Validate your submission CSV:
 
 ```bash
-python validate_submission.py submission.csv
+python validate_submission.py "AI Builders.csv"
 ```
 
 ## Sandbox
 
-Run the interactive Streamlit sandbox for demo and testing (max 100 candidates):
+Run the interactive Streamlit sandbox for demo and testing (max 300 candidates):
 
 ```bash
 streamlit run app.py
 ```
 
-Upload a JSON or JSONL file with candidate records. Candidates found in the pre-computed ranking display their full scores and reasoning; missing candidates fall back to behavioral-only scoring.# redrob-ranker
+Click **Run Ranking** to rank the bundled `data/sample_candidates.json`. Pre-computed rankings are used when available; missing candidates fall back to behavioral-only scoring. Results can be downloaded as `ranked.csv`.
+
+# redrob-ranker

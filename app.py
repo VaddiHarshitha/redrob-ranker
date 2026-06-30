@@ -170,7 +170,7 @@ def build_csv(rows: list[dict[str, Any]]) -> str:
 st.set_page_config(page_title="Redrob Candidate Ranker", page_icon="🏆", layout="wide")
 st.title("🏆 Redrob Candidate Ranker")
 st.markdown(
-    "Upload a JSON or JSONL file with ≤100 candidates to see their rankings. "
+    "Click **Run Ranking** to rank the bundled sample candidates from `data/sample_candidates.json`. "
     "Pre-computed rankings from `artifacts/final_ranking.json` are used when available; "
     "missing candidates fall back to behavioral-only scoring."
 )
@@ -187,26 +187,25 @@ else:
         "(behavioral score only, weight 1.0)."
     )
 
-# File uploader
-uploaded_file = st.file_uploader(
-    "Upload candidates (JSON or JSONL, max 100)",
-    type=["json", "jsonl"],
-    help="Upload a JSON array or JSONL file with candidate records.",
-)
+SAMPLE_FILE = Path("data/sample_candidates.json")
 
-if uploaded_file is not None:
-    content = uploaded_file.read().decode("utf-8")
+# Run Ranking button
+if st.button("▶️ Run Ranking", type="primary"):
+    if not SAMPLE_FILE.exists():
+        st.error(f"Sample file not found: {SAMPLE_FILE}")
+        st.stop()
+
     try:
-        candidates = parse_candidates(content)
+        candidates = parse_candidates(SAMPLE_FILE.read_text(encoding="utf-8"))
     except json.JSONDecodeError as e:
-        st.error(f"Failed to parse JSON: {e}")
+        st.error(f"Failed to parse {SAMPLE_FILE.name}: {e}")
         st.stop()
 
     if len(candidates) > MAX_CANDIDATES:
         st.error(f"Too many candidates: {len(candidates)} (max {MAX_CANDIDATES}).")
         st.stop()
 
-    st.info(f"Parsed {len(candidates)} candidate(s).")
+    st.info(f"Loaded {len(candidates)} candidate(s) from {SAMPLE_FILE}.")
 
     # Rank candidates
     ranked = rank_candidates(candidates, ranking_lookup, weights)
@@ -234,8 +233,6 @@ if uploaded_file is not None:
         mime="text/csv",
         help="Download the ranked candidates as a CSV file.",
     )
-else:
-    st.info("👆 Upload a candidate file to get started.")
 
 # Footer
 st.divider()
