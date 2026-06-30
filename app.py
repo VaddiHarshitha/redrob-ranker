@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 """
-Redrob Candidate Ranker — Streamlit sandbox app.
+Redrob Candidate Ranker — Streamlit demo app.
 
-Allows demo/testing with up to 100 candidates.
-- Loads pre-computed ranking from artifacts/final_ranking.json if available.
-- For candidates in the pre-computed ranking: displays their final_score and reasoning.
-- For candidates NOT in the pre-computed ranking: falls back to behavioral-only
-  scoring via compute_behavioral_score with simple reasoning "Not in pre-computed ranking."
+Demonstration UI that ranks the top 100 candidates from the full candidate
+pool using pre-computed scores produced by the offline scoring pipeline.
 
 Usage
 -----
@@ -15,24 +12,22 @@ Usage
 
 from __future__ import annotations
 
-import json
 import csv
+import io
+import json
 from pathlib import Path
 from typing import Any
 
 import streamlit as st
-import io 
-
-from util.behavioral import compute_behavioral_score
 
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
 
-ARTIFACTS_DIR = Path("artifacts")
+ARTIFACTS_DIR = Path(__file__).parent / "artifacts"
 RANKING_FILE = ARTIFACTS_DIR / "final_ranking.json"
 CONFIG_FILE = ARTIFACTS_DIR / "rank_config.json"
-MAX_CANDIDATES = 300
+MAX_CANDIDATES = 100
 
 # ---------------------------------------------------------------------------
 # Artifact loading
@@ -60,89 +55,19 @@ def recompute_score(record: dict[str, Any], weights: dict[str, float]) -> float:
     w_llm = weights.get("llm_weight", 0.65)
     w_sem = weights.get("semantic_weight", 0.20)
     w_beh = weights.get("behavioral_weight", 0.15)
-    return w_llm * record.get("llm_score", 0.0) + w_sem * record.get("semantic_score", 0.0) + w_beh * record.get("behavioral_score", 0.0)
+    return (
+        w_llm * record.get("llm_score", 0.0)
+        + w_sem * record.get("semantic_score", 0.0)
+        + w_beh * record.get("behavioral_score", 0.0)
+    )
 
 
 # ---------------------------------------------------------------------------
-# File parsing
+# Row building
 # ---------------------------------------------------------------------------
-
-def parse_candidates(content: str) -> list[dict[str, Any]]:
-    """
-    Parse uploaded file content as either a JSON list or JSONL.
-
-    Parameters
-    ----------
-    content
-        Raw text from the uploaded file.
-
-    Returns
-    -------
-    list[dict]
-        List of candidate dicts.
-    """
-    content = content.strip()
-    if content.startswith("["):
-        # JSON array
-        return json.loads(content)
-    else:
-        # JSONL — one JSON object per line
-        records = []
-        for line in content.splitlines():
-            line = line.strip()
-            if line:
-                records.append(json.loads(line))
-        return records
-
-
-# ---------------------------------------------------------------------------
-# Ranking logic
-# ---------------------------------------------------------------------------
-
-def rank_candidates(
-    candidates: list[dict[str, Any]],
-    ranking_lookup: dict[str, dict[str, Any]],
-    weights: dict[str, float],
-) -> list[dict[str, Any]]:
-    """
-    Rank a list of candidates.
-
-    For candidates found in ranking_lookup: use pre-computed score + reasoning.
-    For missing candidates: use behavioral score with reduced weight (0.3) to
-    indicate lower confidence, with reasoning "Not in pre-computed ranking."
-
-    Returns a sorted list of dicts ready for display.
-    """
-    records = []
-    for candidate in candidates:
-        cid = candidate.get("candidate_id", "unknown")
-        if cid in ranking_lookup:
-            rec = ranking_lookup[cid].copy()
-            rec["final_score"] = recompute_score(rec, weights)
-            rec["reasoning"] = rec.get("reasoning", "")
-        else:
-            beh_score = compute_behavioral_score(candidate)
-            # Apply reduced weight (0.3) to indicate lower confidence
-            adjusted_score = beh_score * 0.3
-            rec = {
-                "candidate_id": cid,
-                "llm_score": 0.0,
-                "semantic_score": 0.0,
-                "behavioral_score": beh_score,
-                "final_score": adjusted_score,
-                "reasoning": "Not in pre-computed ranking.",
-            }
-        rec["title"] = candidate.get("title", rec.get("title", ""))
-        records.append(rec)
-
-    # Sort: descending score, then ascending candidate_id for tie-breaking
-    records.sort(key=lambda r: (-r["final_score"], r["candidate_id"]))
-
-    return records
-
 
 def build_display_rows(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    """Build rows for DataFrame display with rank column."""
+    """Build rows for DataFrame display with rank, candidate_id, score, reasoning."""
     rows = []
     for rank_pos, rec in enumerate(records, start=1):
         rows.append({
@@ -157,7 +82,9 @@ def build_display_rows(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def build_csv(rows: list[dict[str, Any]]) -> str:
     """Convert display rows to CSV string."""
     output = io.StringIO()
-    writer = csv.DictWriter(output, fieldnames=["rank", "candidate_id", "score", "reasoning"])
+    writer = csv.DictWriter(
+        output, fieldnames=["rank", "candidate_id", "score", "reasoning"]
+    )
     writer.writeheader()
     writer.writerows(rows)
     return output.getvalue()
@@ -170,46 +97,45 @@ def build_csv(rows: list[dict[str, Any]]) -> str:
 st.set_page_config(page_title="Redrob Candidate Ranker", page_icon="🏆", layout="wide")
 st.title("🏆 Redrob Candidate Ranker")
 st.markdown(
-    "Click **Run Ranking** to rank the bundled sample candidates from `data/sample_candidates.json`. "
-    "Pre-computed rankings from `artifacts/final_ranking.json` are used when available; "
-    "missing candidates fall back to behavioral-only scoring."
+    "Click **Run Ranking** to rank the top 100 candidates from the full "
+    "pool of 100,000 using the pre-computed scoring pipeline."
 )
 
 # Load artifacts
 ranking_lookup = load_ranking_data()
 weights = load_weights()
 
-if ranking_lookup:
-    st.success(f"Loaded pre-computed rankings for {len(ranking_lookup)} candidates.")
-else:
-    st.warning(
-        "`artifacts/final_ranking.json` not found — running in sandbox mode "
-        "(behavioral score only, weight 1.0)."
+if not ranking_lookup:
+    st.error(
+        f"`{RANKING_FILE}` not found. "
+        "Run Phase A (`python -m pre_computation.pipeline`) to generate artifacts."
     )
+    st.stop()
 
-SAMPLE_FILE = Path("data/sample_candidates.json")
+st.success(
+    f"Loaded {len(ranking_lookup)} pre-computed ranking record(s) from "
+    f"`{RANKING_FILE.name}`."
+)
+st.caption(f"Active weights: {weights}")
 
 # Run Ranking button
 if st.button("▶️ Run Ranking", type="primary"):
-    if not SAMPLE_FILE.exists():
-        st.error(f"Sample file not found: {SAMPLE_FILE}")
-        st.stop()
+    # Recompute final scores with the active weights (mirrors rank.py)
+    records: list[dict[str, Any]] = []
+    for rec in ranking_lookup.values():
+        rec_copy = dict(rec)
+        rec_copy["final_score"] = recompute_score(rec_copy, weights)
+        records.append(rec_copy)
 
-    try:
-        candidates = parse_candidates(SAMPLE_FILE.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as e:
-        st.error(f"Failed to parse {SAMPLE_FILE.name}: {e}")
-        st.stop()
+    # Sort: descending score, then ascending candidate_id (same tie-break as rank.py)
+    records.sort(key=lambda r: (-r["final_score"], r["candidate_id"]))
 
-    if len(candidates) > MAX_CANDIDATES:
-        st.error(f"Too many candidates: {len(candidates)} (max {MAX_CANDIDATES}).")
-        st.stop()
+    # Cap display at MAX_CANDIDATES
+    top = records[:MAX_CANDIDATES]
 
-    st.info(f"Loaded {len(candidates)} candidate(s) from {SAMPLE_FILE}.")
+    st.info("Showing the top 100 ranked candidates.")
 
-    # Rank candidates
-    ranked = rank_candidates(candidates, ranking_lookup, weights)
-    rows = build_display_rows(ranked)
+    rows = build_display_rows(top)
     csv_out = build_csv(rows)
 
     # Display sortable DataFrame
@@ -237,6 +163,5 @@ if st.button("▶️ Run Ranking", type="primary"):
 # Footer
 st.divider()
 st.caption(
-    "Redrob Candidate Ranker · Phase A pre-computation required for full scoring · "
-    "Sandbox mode uses behavioral signals only for missing candidates."
+    "Redrob Candidate Ranker · Demo · Top-100 ranking from pre-computed scores."
 )
