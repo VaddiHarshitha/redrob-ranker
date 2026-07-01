@@ -39,8 +39,8 @@ reproduce_command: "python rank.py --candidates ./candidates.jsonl --out \"AI Bu
 # Compute environment
 # ============================================================================
 compute:
-  platform: "MacBook Pro M2"
-  cpu_cores: 8
+  platform: "MacBook Air M5"
+  cpu_cores: 10
   ram_gb: 16
   python_version: "3.11.4"
   os: "macOS 14.2"
