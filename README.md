@@ -2,6 +2,55 @@
 
 An offline-capable, two-phase candidate ranking system that uses Groq (openai/gpt-oss-120b) for JD analysis and candidate evaluation during pre-computation, then runs completely network-free during the ranking phase.
 
+## Sandbox / Demo
+
+Try it online with no install required:
+
+**Live demo:** https://redrob-airanker.streamlit.app/
+
+The sandbox exposes a single **Run Ranking** button that scores the bundled candidate pool and displays the top-100 ranking directly in your browser.
+
+To run the same sandbox locally:
+
+```bash
+streamlit run app.py
+```
+
+Pre-computed rankings are used when available; missing candidates fall back to behavioral-only scoring. Results can be downloaded as `ranked.csv`.
+
+## Quick start
+
+Generate the top-100 submission CSV locally from the bundled candidates and pre-computed artifacts. **No network access required**, finishes in **under 5 minutes on CPU**:
+
+```bash
+python rank.py --candidates ./candidates.jsonl
+```
+
+This writes **`AI Builders.csv`** to the repository root — that is the default output filename used by `rank.py`. The command is fully offline because Phase A artifacts are already cached under `artifacts/`.
+
+To specify an explicit output path:
+
+```bash
+python rank.py --candidates ./candidates.jsonl --out "AI Builders.csv"
+```
+
+## Repository overview
+
+The repository is organised around the two phases of the pipeline:
+
+- **`rank.py`** — Phase B entry point. Loads pre-computed artifacts and produces the ranked submission CSV (`AI Builders.csv` by default).
+- **`app.py`** — Streamlit sandbox / demo UI (see the *Sandbox / Demo* section above).
+- **`pre_computation/`** — Phase A pipeline:
+  - `analyze_jd.py` — extract key requirements from the job description (Groq, 1 LLM call)
+  - `embed_candidates.py` — generate candidate embeddings (sentence-transformers)
+  - `build_shortlist.py` — shortlist candidates based on embedding similarity
+  - `evaluate_candidates.py` — LLM-based scoring of shortlisted candidates
+  - `assemble_ranking.py` — assemble the final ranking from component scores
+  - `pipeline.py` — wires the steps above together as the single `python -m pre_computation.pipeline` entry point
+- **`artifacts/`** — pre-computed files required by `rank.py` and `app.py` (JD profile and embedding, LLM evaluations, behavioral scores, shortlist, final ranking, rank config).
+- **`data/`** — released job description (`job_description.docx`), full candidate pool (`candidates.jsonl`), submission spec (`submission_spec.docx`), and the smaller sample used by the sandbox (`sample_candidates.json`).
+- **`util/`** — shared helpers (LLM client, behavioral scoring, candidate text builder, submission utilities).
+
 ## Architecture
 
 The system follows a **two-phase design**:
@@ -33,6 +82,7 @@ python -m pre_computation.pipeline --jd data/job_description.docx
 ```
 
 This step:
+
 - Extracts key requirements from the job description using Groq (1 LLM call)
 - Generates candidate embeddings via sentence-transformers
 - Evaluates shortlisted candidates with Groq in token-aware batches over the shortlisted candidates; count depends on prompt size
@@ -104,15 +154,3 @@ Validate your submission CSV:
 ```bash
 python validate_submission.py "AI Builders.csv"
 ```
-
-## Sandbox
-
-Run the interactive Streamlit sandbox for demo and testing (max 300 candidates):
-
-```bash
-streamlit run app.py
-```
-
-Click **Run Ranking** to rank the bundled `data/sample_candidates.json`. Pre-computed rankings are used when available; missing candidates fall back to behavioral-only scoring. Results can be downloaded as `ranked.csv`.
-
-# redrob-ranker

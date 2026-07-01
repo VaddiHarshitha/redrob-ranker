@@ -8,14 +8,23 @@
 team_name: "AI builders"
 
 primary_contact:
-  name: "Redrob Team"
-  email: "team@redrob.ai"
-  phone: "+1-555-000-0000"
+  name: "Kiran Kumar"
+  email: "kirankumarasapu66@gmail.com"
+  phone: "+917075722544"
 
 team_members:
-  - name: "Redrob Team"
-    email: "team@redrob.ai"
-    role: "ML Engineer"
+  - name: "Phanisri Sriram"
+    email: "phanisrisriram4@gmail.com"
+    role: "Software Engineer"
+  - name: "Prashansa D"
+    email: "prashansa2255@gmail.com"
+    role: "Software Engineer"
+  - name: "Harshitha Vaddi"
+    email: "harshithavaddi32@gmail.com"
+    role: "Software Engineer"
+
+
+
 
 # ============================================================================
 # Code and reproducibility

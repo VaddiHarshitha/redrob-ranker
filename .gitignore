@@ -6,5 +6,10 @@ __pycache__/
 artifacts/candidate_embeddings.npy
 artifacts/candidate_ids.txt
 artifacts/shortlist.jsonl
-.kimchi/ferments/ 
+.kimchi/
 .cache/
+
+# Generated submission files
+AI Builders.csv
+submission.csv
+*.csv
