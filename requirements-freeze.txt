@@ -68,7 +68,7 @@ sympy==1.14.0
 tenacity==9.1.4
 threadpoolctl==3.6.0
 tokenizers==0.22.2
-torch==2.12.1
+torch==2.13.0
 tqdm==4.68.3
 transformers==5.0.0rc3
 triton==3.7.1
